@@ -1,0 +1,30 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(491,5): warning MSB8028: El directorio intermedio (Debug\) contiene archivos compartidos de otro proyecto (HolaSDL.vcxproj). Esto puede dar lugar a un comportamiento incorrecto de limpieza y recompilación.
+  Game.cpp
+C:\Users\jd\Desktop\Uni\Segundo\TPV\Practica2FantasnasListos\Practica2\PAC-MAN\HolaSDL\GameCharacter.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\jd\Desktop\Uni\Segundo\TPV\Practica2FantasnasListos\Practica2\PAC-MAN\HolaSDL\Game.cpp(23,20): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\jd\Desktop\Uni\Segundo\TPV\Practica2FantasnasListos\Practica2\PAC-MAN\HolaSDL\Game.cpp(25,12): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+C:\Users\jd\Desktop\Uni\Segundo\TPV\Practica2FantasnasListos\Practica2\PAC-MAN\HolaSDL\Game.cpp(158,20): warning C4018: '<': no coinciden signed/unsigned
+  GameCharacter.cpp
+C:\Users\jd\Desktop\Uni\Segundo\TPV\Practica2FantasnasListos\Practica2\PAC-MAN\HolaSDL\GameCharacter.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+  GameMap.cpp
+C:\Users\jd\Desktop\Uni\Segundo\TPV\Practica2FantasnasListos\Practica2\PAC-MAN\HolaSDL\GameCharacter.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\jd\Desktop\Uni\Segundo\TPV\Practica2FantasnasListos\Practica2\PAC-MAN\HolaSDL\GameMap.cpp(14,23): warning C4018: '<': no coinciden signed/unsigned
+  GameObject.cpp
+  Ghost.cpp
+C:\Users\jd\Desktop\Uni\Segundo\TPV\Practica2FantasnasListos\Practica2\PAC-MAN\HolaSDL\GameCharacter.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\jd\Desktop\Uni\Segundo\TPV\Practica2FantasnasListos\Practica2\PAC-MAN\HolaSDL\Ghost.cpp(12,12): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+C:\Users\jd\Desktop\Uni\Segundo\TPV\Practica2FantasnasListos\Practica2\PAC-MAN\HolaSDL\Ghost.cpp(22,12): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+C:\Users\jd\Desktop\Uni\Segundo\TPV\Practica2FantasnasListos\Practica2\PAC-MAN\HolaSDL\Ghost.cpp(87,21): warning C4018: '<': no coinciden signed/unsigned
+  InfoBar.cpp
+C:\Users\jd\Desktop\Uni\Segundo\TPV\Practica2FantasnasListos\Practica2\PAC-MAN\HolaSDL\GameCharacter.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+  main.cpp
+C:\Users\jd\Desktop\Uni\Segundo\TPV\Practica2FantasnasListos\Practica2\PAC-MAN\HolaSDL\GameCharacter.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+  PacMan.cpp
+C:\Users\jd\Desktop\Uni\Segundo\TPV\Practica2FantasnasListos\Practica2\PAC-MAN\HolaSDL\GameCharacter.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+  SmartGhost.cpp
+C:\Users\jd\Desktop\Uni\Segundo\TPV\Practica2FantasnasListos\Practica2\PAC-MAN\HolaSDL\GameCharacter.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+  texture.cpp
+  Vector2D.cpp
+C:\Users\jd\Desktop\Uni\Segundo\TPV\Practica2FantasnasListos\Practica2\PAC-MAN\HolaSDL\Vector2D.cpp(24,13): warning C4244: 'return': conversión de 'double' a 'int'; posible pérdida de datos
+  Generando código...
+  HolaSDL.vcxproj -> C:\Users\jd\Desktop\Uni\Segundo\TPV\Practica2FantasnasListos\Practica2\PAC-MAN\bin\proyectoPMDebug.exe
