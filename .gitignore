@@ -46,3 +46,9 @@ HolaSDL/Debug/HolaSDL.log
 *.tlog
 
 *.lastbuildstate
+
+*.db
+
+*.db-shm
+
+*.db-wal
