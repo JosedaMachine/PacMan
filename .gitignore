@@ -34,3 +34,15 @@
 .vs/PacMan/v16/Browse.VC.opendb
 
 .vs/PacMan/v16/Browse.VC.db
+
+*.pdb
+
+HolaSDL/Debug/vc142.idb
+
+.vs/PacMan/v16/.suo
+
+HolaSDL/Debug/HolaSDL.log
+
+*.tlog
+
+*.lastbuildstate
