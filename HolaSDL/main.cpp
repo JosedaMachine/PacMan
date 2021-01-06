@@ -2,8 +2,6 @@
 //Jose Daniel Rave Robayo
 //Ángel López Benítez
 
-
-
 #include "checkML.h"
 #include <iostream>
 #include <fstream>
@@ -21,7 +19,6 @@ void PacManGame() {
 	//Por que PacMan y Ghisr han de llevar destructora si no crean nada?
 	//El infobar tiene que heredar de GO?
 	//SI pongo Game g = Game() lo hace por copia
-
 
 	Game g;
 
