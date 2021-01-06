@@ -380,7 +380,7 @@ void Game::ToroidalPos(Point2D& pos)
 	else if (pos.getY() < mapRect.y + OFFSET_HEIGHT) pos = Point2D(pos.getX(), mapRect.y + map->width * OFFSET_HEIGHT);
 }
 //Coloca a cada fantasma como "comible" o no
-void Game::setGhostEdable(bool eda)
+void Game::setGhostsEdables(bool eda)
 {
 	 for (Ghost* g : Ghosts) g->setEdable(eda);
 }

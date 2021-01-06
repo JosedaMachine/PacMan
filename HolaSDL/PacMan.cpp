@@ -53,7 +53,7 @@ void PacMan::render()
 	 }
 
 	if (energyLeft > 0)--energyLeft;
-	else if(energyLeft==0) g->setGhostEdable(false);
+	else if(energyLeft==0) g->setGhostsEdables(false);
 	
 	if (respawn > 0)respawn--;
 
@@ -119,7 +119,7 @@ void PacMan::eat()
 		if(n==2)g->FoodEaten();
 		else {
 			energyLeft = 600;
-			g->setGhostEdable(true);
+			g->setGhostsEdables(true);
 		}
 	}
 }
