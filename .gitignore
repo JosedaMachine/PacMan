@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+
+.vs/PacMan/v16/Browse.VC.opendb
+
+.vs/PacMan/v16/Browse.VC.db
