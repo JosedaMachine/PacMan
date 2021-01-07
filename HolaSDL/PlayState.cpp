@@ -1,6 +1,6 @@
 #include "PlayState.h"
 
-void Game::load(int lives)
+void PlayState::load(int lives)
 {
 	ifstream input;
 
@@ -67,7 +67,7 @@ void Game::load(int lives)
 	
 }
 //Cargamos una partida guardada, que contiene el mapa, el número de objetos, vidas y puntuación
-void Game::loadMatch(ifstream& input)
+void PlayState::loadMatch(ifstream& input)
 {
 	input >> lives >> points >> fils >> cols;
 	if(!input) throw FileFormatError("Format wrong. Data type unexpected.");
@@ -96,23 +96,23 @@ void Game::loadMatch(ifstream& input)
 	createNPositionate(input);
 }
 //devolvemos el tipo de casilla en función de una posición dada
-int Game::getCellType(Point2D posPlayer) const
+int PlayState::getCellType(Point2D posPlayer) const
 {
 	return map->celdas[posPlayer.getY()][posPlayer.getX()];
 }
 //Devuelve la textura relacionada con el Enum y el entero de entrada
-Texture* Game::getTexture(TextureName t)
+Texture* PlayState::getTexture(TextureName t)
 {
 	return Textures[(int)t];
 }
 //resta en una unidad las vidas y devuelve si el jugador sigue vivo
-bool Game::restLife()
+bool PlayState::restLife()
 {
 	lives--;
 	return lives > 0;
 }
 //crea los fantasmas y el player dado un flujo de entrada y el numero de objetos
-void Game::createNPositionate(ifstream& input)
+void PlayState::createNPositionate(ifstream& input)
 {
 	int gameObjects;
 	input >> gameObjects;
@@ -139,7 +139,7 @@ void Game::createNPositionate(ifstream& input)
 	}
 }
 //comprobamos si los fantasmas y el pac-man están en la misma posición y actuamos en consecuencia
-void Game::colissions(const SDL_Rect rect) const
+void PlayState::colissions(const SDL_Rect rect) const
 {
 	for (Ghost* g : Ghosts){		
 		SDL_Rect ghostRect = g->getDestRect();
@@ -154,7 +154,7 @@ void Game::colissions(const SDL_Rect rect) const
 	}
 }
 //Comprobamos si un fantasma de tipo SmartGhost ha colisionado con otro fantasma, para asi reproducirse
-void Game::collisionGhost(const SDL_Rect rect, Ghost* ghost)
+void PlayState::collisionGhost(const SDL_Rect rect, Ghost* ghost)
 {
 	SmartGhost* smart = dynamic_cast<SmartGhost*>(ghost);
 	if (smart != NULL){
@@ -167,7 +167,7 @@ void Game::collisionGhost(const SDL_Rect rect, Ghost* ghost)
 	}
 }
 //Guarda cada uno de los GameObjects del juego, incluyendo las vidas y la puntuación.
-void Game::saveToFileGame()
+void PlayState::saveToFileGame()
 {
 	ofstream output;
 	string file = ".//matches//" + user + ".dat";
@@ -187,7 +187,7 @@ void Game::saveToFileGame()
 	output.close();
 }
 //Metodo que recibe dos fantasmas, los analiza y si corresponde, se crea un nuevo fantasma dependiendo del tipo de los padres
-void Game::reproduce(SmartGhost* _father, Ghost* couple)
+void PlayState::reproduce(SmartGhost* _father, Ghost* couple)
 {
 	//Comprobamos solo la madre porque anteriormente comprobamos que lo es el padre
 	bool freePos = false;
@@ -225,7 +225,7 @@ void Game::reproduce(SmartGhost* _father, Ghost* couple)
 	}
 }
 //Dada una poscición y un n que hace referencia al tipo de celda, cambiamos el valor en el mapa
-void Game::setCell(int n, Point2D posPlayer)
+void PlayState::setCell(int n, Point2D posPlayer)
 {
 	map->celdas[posPlayer.getY()][posPlayer.getX()] = (MapCell)n;
 }

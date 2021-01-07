@@ -22,6 +22,8 @@ class PlayState : public GameState
 	int Current_Level; //Nivel actual
 	int lives;
 
+	bool hasWon, wantLoad;	//Controladores del juego
+
 	struct TextureAtributes { string filename; int numRows; int numCols; };
 	//ARRAY DE NIVELES
 	const array<string, NUM_LEVELS> Levels = { "levels/level01.dat", "levels/level02.dat", "levels/level03.dat" , "levels/level04.dat", "levels/level05.dat", "levels/test1.dat" };

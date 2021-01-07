@@ -46,7 +46,7 @@ private:
 
 	GameStateMachine* stateMachine;
 
-	bool exit, hasWon, hasSaved, wantLoad; //Controladores del juego
+	bool exit, /*hasWon*/hasSaved; /*wantLoad*/ //Controladores del juego
 		
 	int OFFSET_WIDTH; //Tama�o de cada texturas
 	int OFFSET_HEIGHT; //Tama�o de cada texturas

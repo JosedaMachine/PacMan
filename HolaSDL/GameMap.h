@@ -18,7 +18,8 @@ enum  MapCell {Empty, Wall, Foodie, Vitamins};
 
 class GameMap : public GameObject
 {
-	friend class Game;
+	//friend class Game;
+	friend class PlayState;
 private:
 
 	MapCell** celdas; //Array dinámico de 2D
