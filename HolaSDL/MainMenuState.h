@@ -13,9 +13,9 @@ public:
 
 	}
 
-	virtual void Render() {};
-	virtual void HandleEvents() {};
-	virtual void Update() {};
+	virtual void render(){};
+	virtual void update(){};
+	virtual void HandleEvents(SDL_Event& event){};
 
 };
 

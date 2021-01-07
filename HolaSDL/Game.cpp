@@ -16,10 +16,6 @@ Game::Game()
 	stateMachine = new GameStateMachine();
 	stateMachine->pushState(new MainMenuState());
 
-
-	//points = 0;
-	//lives = 3;
-	//Current_Level = 0;
 	exit = false;
 	hasSaved = false;
 
@@ -349,30 +345,32 @@ void Game::menu()
 	wantLoad = op;
 }
 //comprobamos que input está introduciendo el usuario y actuamos en consecuencia
-//void Game::handleEvent(SDL_Event& event, bool& exit)
-//{
-//	while (SDL_PollEvent(&event) && !exit) 
-//	{
-//		if (event.type == SDL_QUIT)
-//		{
-//			exit = true;
-//			cout << "Game has been closed.";
-//		}
-//		else if (event.type == SDL_KEYDOWN)
-//		{
-//			SDL_Keycode key = event.key.keysym.sym;
-//
-//			if(key != SDLK_s)player->handleEvent(key);
-//			else
-//			{
-//				exit = true;
-//				hasSaved = true;
-//				saveToFileGame();
-//			}
-//		}
-//
-//	}
-//}
+void Game::handleEvent(SDL_Event& event, bool& exit)
+{
+	while (SDL_PollEvent(&event) && !exit) 
+	{
+		if (event.type == SDL_QUIT)
+		{
+			exit = true;
+			cout << "Game has been closed.";
+		}
+		else if (event.type == SDL_KEYDOWN)
+		{
+			stateMachine->currentState()->handleEvents(event);
+
+			SDL_Keycode key = event.key.keysym.sym;
+
+			if(key != SDLK_s)player->handleEvent(key);
+			else
+			{
+				exit = true;
+				hasSaved = true;
+				saveToFileGame();
+			}
+		}
+
+	}
+}
 ////Suma puntos
 //void Game::SumaPuntos(int cantidad)
 //{

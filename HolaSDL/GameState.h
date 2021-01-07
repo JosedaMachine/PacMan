@@ -5,7 +5,7 @@
 using namespace std;
 
 class Game;
-enum TextureName { WallMap, Characters, Food, Digits, PowerUp };
+
 class GameState
 {
 	list<GameObject*> gO;
@@ -13,8 +13,10 @@ class GameState
 	Game* g;
 
 public:
-	virtual void render() = 0;
+
+	GameState(Game* g) {};
+	virtual void render();
 	virtual void update() = 0;
-	virtual void HandleEvents() = 0;
+	virtual void handleEvents(SDL_Event& event) = 0;
 };
 
