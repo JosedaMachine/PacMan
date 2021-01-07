@@ -1,5 +1,7 @@
 #include "GameMap.h"
 #include "Game.h"
+#include "PlayState.h"
+
 //Constructora
 GameMap::GameMap(Point2D pos, int f, int c,  Game* game) : GameObject(pos, c, f, game)
 {

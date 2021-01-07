@@ -12,7 +12,9 @@ void PlayState::load(int lives)
 		input >> fils >> cols;
 		if (!input) throw FileFormatError("Format wrong. Data type unexpected.");
 
-		OFFSET_WIDTH = WIN_WIDTH / cols;
+
+
+		OFFSET_WIDTH = g.getWidth();   /*WIN_WIDTH / cols;*/
 		OFFSET_HEIGHT = WIN_HEIGHT / fils;
 
 		map = new GameMap(Point2D(0, 0), fils, cols, this);
@@ -105,11 +107,58 @@ Texture* PlayState::getTexture(TextureName t)
 {
 	return Textures[(int)t];
 }
+void PlayState::Borra()
+{
+	for (auto gameOb : objectsToErase)
+	{
+		delete *gameOb; //es un iterador y hay que eliminar el objeto de la lista
+		//erase elimina el Nodo donde esta ubicado el iterador
+		gO.erase(gameOb);
+	}
+	objectsToErase.clear(); //borrar iteradores de la lista
+}
 //resta en una unidad las vidas y devuelve si el jugador sigue vivo
 bool PlayState::restLife()
 {
 	lives--;
 	return lives > 0;
+}
+//Cambia el nivel en caso de que haya terminado de consumir todas las celdas de comida. Reinicia la puntuación pero mantiene las vidas.
+void PlayState::changeLevel()
+{
+	int currentLifes = lives;
+	
+	for (GameObject* gameOb : gO) delete gameOb;
+	
+	Ghosts.clear();
+	gO.clear();
+	
+	Current_Level++;
+	points = 0;
+	
+	load(currentLifes);
+}
+//Suma puntos
+void PlayState::SumaPuntos(int cantidad)
+{
+	points += cantidad;
+}
+//Comprueba si uno de los personajes ha salido de pantalla y le permite transportarse al otro lado
+void PlayState::ToroidalPos(Point2D& pos)
+{
+	SDL_Rect mapRect = map->getDestRect();
+
+	if (pos.getX() + OFFSET_WIDTH > mapRect.x + map->width*OFFSET_WIDTH) pos = Point2D(mapRect.x, pos.getY());
+	else if (pos.getX() < mapRect.x) 
+		pos = Point2D(mapRect.x + map->width * OFFSET_WIDTH - OFFSET_WIDTH, pos.getY());
+	else if (pos.getY() > mapRect.y + map->width*OFFSET_HEIGHT) 
+		pos = Point2D(pos.getX(), mapRect.y+OFFSET_HEIGHT);
+	else if (pos.getY() < mapRect.y + OFFSET_HEIGHT) pos = Point2D(pos.getX(), mapRect.y + map->width * OFFSET_HEIGHT);
+}
+////Coloca a cada fantasma como "comible" o no
+void PlayState::setGhostsEdables(bool eda)
+{
+	 for (Ghost* g : Ghosts) g->setEdable(eda);
 }
 //crea los fantasmas y el player dado un flujo de entrada y el numero de objetos
 void PlayState::createNPositionate(ifstream& input)
@@ -153,6 +202,22 @@ void PlayState::colissions(const SDL_Rect rect) const
 		}
 	}
 }
+void PlayState::handleEvent(SDL_Event& event, bool& exit)
+{
+	//el handle event del player, sacar el menu y esas cosas
+}
+//Convierte las coordenadas de las celdas a pixeles
+void PlayState::mapCoordToSDLPoint(Point2D old, Point2D& newP)
+ {
+	 newP.setX(old.getX()* OFFSET_WIDTH);
+	 newP.setY(old.getY() * OFFSET_HEIGHT + OFFSET_HEIGHT);
+ }
+//Convierte las coordenadas de pixeles a celdas del mapa
+void PlayState::SDLPointToMapCoords(Point2D old, Point2D& newP)
+ {
+	 newP.setX(old.getX() / OFFSET_WIDTH);
+	 newP.setY((old.getY() - OFFSET_HEIGHT ) / OFFSET_HEIGHT);
+ }
 //Comprobamos si un fantasma de tipo SmartGhost ha colisionado con otro fantasma, para asi reproducirse
 void PlayState::collisionGhost(const SDL_Rect rect, Ghost* ghost)
 {
@@ -166,6 +231,26 @@ void PlayState::collisionGhost(const SDL_Rect rect, Ghost* ghost)
 		}
 	}
 }
+//Comprueba si el siguiente pixel es válido para moverse
+bool PlayState::tryMove(SDL_Rect rect, Vector2D dir, Point2D Pos)
+ {
+	 SDL_Rect newRect;
+	 Point2D newPos = Pos + dir;
+	 newRect.w = rect.w;
+     newRect.h = rect.h;
+		
+	 newRect.x = newPos.getX();
+	 newRect.y = newPos.getY();
+
+	 //Si no ha intersectado (false) se nega para que pueda avanzar.
+	 return !map->intersectWall(newRect);
+ }
+//almacena los fantasmas que han muerto para luego eliminarlos de la escena
+void PlayState::borraFantasma(list<GameObject*>::iterator it, Ghost* fantasma)
+ {
+	 Ghosts.remove(fantasma);
+	 objectsToErase.push_back(it);
+ }
 //Guarda cada uno de los GameObjects del juego, incluyendo las vidas y la puntuación.
 void PlayState::saveToFileGame()
 {

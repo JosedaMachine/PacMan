@@ -25,7 +25,7 @@ void PacManGame() {
 	try
 	{
 		//Carga de juego aqui por si ocurre un fallo al leer archivos, ya que el load se llamaba en la constructora
-		g.load(3);
+		g.load(3);  //haremos el load dentro de propio Game. LLamando al PlayState
 		g.run();
 	}
 	catch (PacManError& e)

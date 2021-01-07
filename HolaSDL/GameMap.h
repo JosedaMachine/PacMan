@@ -10,7 +10,7 @@
 
 //si pongo aqui el Include "Game.h" se genera dependencia circular,  por eso lo meto en el cpp
 
-class Game; //engañar al Editor Texto
+class PlayState; //engañar al Editor Texto. Ya no hace falta hacerlo con el Game ya que el Game ya no incluye al mapa
 using namespace std;
 
 //Tipos de celdas

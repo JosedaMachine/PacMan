@@ -3,5 +3,5 @@
 
 void GameState::render()
 {
-	for (GameObject* o : gO) gO->update();
+	for (GameObject* o : gO) o->update();
 }
