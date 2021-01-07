@@ -6,21 +6,22 @@ GameState* GameStateMachine::currentState()
     return states.top();
 }
 
-
-void GameStateMachine::changeState(GameState* state)
-{
-    //GameState* estado = state;
-
-    popState();
-    pushState(state);
-}
-
 void GameStateMachine::pushState(GameState* state)
 {
     states.push(state);
 }
 
+void GameStateMachine::changeState(GameState* state)
+{
+    popState();
+    pushState(state);
+}
+
 void GameStateMachine::popState()
 {
-    states.pop();
+    if (!states.empty())
+    {
+        delete states.top();
+        states.pop();
+    }
 }

@@ -13,9 +13,13 @@ Game::Game()
 	if (window == nullptr || renderer == nullptr) throw SDLError("Error loading window o renderer.");
 	#pragma endregion
 
-	points = 0;
-	lives = 3;
-	Current_Level = 0;
+	stateMachine = new GameStateMachine();
+	stateMachine->pushState(new MainMenuState());
+
+
+	//points = 0;
+	//lives = 3;
+	//Current_Level = 0;
 	exit = false;
 	hasSaved = false;
 
@@ -27,6 +31,8 @@ Game::Game()
 //Borramos toda la memoria dinámica que se había creado
 Game::~Game()
 {
+	delete stateMachine;
+
 	delete bar;
 
 	for (GameObject* gameOb : gO) delete gameOb;
@@ -146,8 +152,11 @@ void Game::run()
 		startTime = SDL_GetTicks();
 
 		handleEvent(event, exit);
-		update();
-		render();
+
+		stateMachine->currentState()->update();
+		stateMachine->currentState()->render();
+		//update();
+		//render();
 
 		frameTime = SDL_GetTicks() - startTime; // Tiempo de la iteración
 		if (frameTime < FRAME_RATE)
@@ -176,6 +185,8 @@ void Game::update()
 //renderiza el mapa, con cada textura correspondiente en su lugar. Luego renderiza el jugador y la barra de HUD. 
 void Game::render() 
 {
+
+	//todo esto seria del PlayState
 	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 	SDL_RenderClear(renderer);
 

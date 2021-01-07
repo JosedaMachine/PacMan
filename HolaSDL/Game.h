@@ -16,6 +16,9 @@
 #include "InfoBar.h"
 #include "checkML.h"
 
+#include "GameStateMachine.h"
+#include "MainMenuState.h"
+
 
 //const int NUM_TEXTURES = 5; 
 //const int NUM_LEVELS = 6;
@@ -34,13 +37,14 @@ private:
 
 	SDL_Window* window = nullptr; //Puntero a la ventana
 	SDL_Renderer* renderer = nullptr;  //puntero a renderer
-
 	//int fils, cols; 
 	//int amountFood; //comida restante en el juego
 	//int points;  //Puntuacion del juego 
 	//int Current_Level; //Nivel actual
 	string user;
 	//int lives;
+
+	GameStateMachine* stateMachine;
 
 	bool exit, hasWon, hasSaved, wantLoad; //Controladores del juego
 		
