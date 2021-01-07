@@ -1,17 +1,18 @@
 #include "GameStateMachine.h"
 
-GameState GameStateMachine::currentState()
+GameState* GameStateMachine::currentState()
 {
-    return (*states.top());
+    //Si no es vacia, pero no tendria porque dar fallo
+    return states.top();
 }
 
 
-void GameStateMachine::changeState(GameState state)
+void GameStateMachine::changeState(GameState* state)
 {
-    GameState* estado = &state;
+    //GameState* estado = state;
 
     popState();
-    pushState(estado);
+    pushState(state);
 }
 
 void GameStateMachine::pushState(GameState* state)

@@ -22,7 +22,7 @@
 
 const int FRAME_RATE = 5;
 
-//Tamaño en X e Y de la pantalla
+//Tamaï¿½o en X e Y de la pantalla
 const uint WIN_WIDTH = 700;
 const uint WIN_HEIGHT = 700;
 
@@ -44,8 +44,8 @@ private:
 
 	bool exit, hasWon, hasSaved, wantLoad; //Controladores del juego
 		
-	int OFFSET_WIDTH; //Tamaño de cada texturas
-	int OFFSET_HEIGHT; //Tamaño de cada texturas
+	int OFFSET_WIDTH; //Tamaï¿½o de cada texturas
+	int OFFSET_HEIGHT; //Tamaï¿½o de cada texturas
 	//puedo acceder a sus parametros aunque sean privados
 
 	////Tipos de texturas
