@@ -12,9 +12,9 @@ class GameState
 	list<EventHandler*> events;
 	Game* g;
 
-protected:
-	virtual void Render() = 0;
-	virtual void Update() = 0;
+public:
+	virtual void render() = 0;
+	virtual void update() = 0;
 	virtual void HandleEvents() = 0;
 };
 

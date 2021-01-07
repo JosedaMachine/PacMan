@@ -7,12 +7,18 @@ class GameStateMachine
 {
 private:
 	stack <GameState*> states;
-
-	void pushState(GameState* state);
-	void popState();
-
 public:
+	void popState();
 	GameState* currentState();
+	void pushState(GameState* state);
 	void changeState(GameState* state);
+
+	GameStateMachine(){};
+
+	~GameStateMachine()
+	{
+		while (!states.empty())
+			popState();
+	}
 };
 
