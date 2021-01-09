@@ -54,7 +54,7 @@ public:
 	void setCell(int n, Point2D posPlayer);
 	void createNPositionate(ifstream& input);
 	void colissions(const SDL_Rect rect)const;
-	void handleEvent(SDL_Event& event);
+	void handleEvent(SDL_Event& event, bool& exit);
 	void mapCoordToSDLPoint(Point2D old, Point2D& newP);
 	void SDLPointToMapCoords(Point2D old, Point2D& newP);
 	void collisionGhost(const SDL_Rect rect, Ghost* ghost);
