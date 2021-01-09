@@ -26,7 +26,7 @@ private:
 
 public:
 
-	GameMap(Point2D pos, int fils, int cols, Game* g);
+	GameMap(Point2D pos, int fils, int cols, PlayState* g);
 	virtual ~GameMap();
 	virtual void saveToFile(ofstream& output);
 	void render();

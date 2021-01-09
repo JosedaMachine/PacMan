@@ -1,7 +1,8 @@
 #pragma once
 #include "Ghost.h"
-class Game;
+class PlayState;
 enum State {Child, Adult, Quarantine, Dead};
+
 class SmartGhost : public Ghost
 {
 	State state;
@@ -16,8 +17,8 @@ class SmartGhost : public Ghost
 
 public:
 
-	SmartGhost(Point2D initPos, Game* game, Texture* t, Point2D const size, int colText, Point2D const deadT);
-	SmartGhost(ifstream& input, Game* game, Texture* t, Point2D const size, Point2D const deadT);
+	SmartGhost(Point2D initPos, PlayState* game, Texture* t, Point2D const size, int colText, Point2D const deadT);
+	SmartGhost(ifstream& input, PlayState* game, Texture* t, Point2D const size, Point2D const deadT);
 	void render(); 
 	virtual void update();
 	virtual void saveToFile(ofstream& output);

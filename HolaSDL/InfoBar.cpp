@@ -1,7 +1,7 @@
 #include "InfoBar.h"
-#include "Game.h"
+#include "PlayState.h"
 //Constructora de la barra HUB
-InfoBar::InfoBar(Game* game, Texture* life, Texture* digits)
+InfoBar::InfoBar(PlayState* game, Texture* life, Texture* digits)
 {
 	maxLifes = 3;
 	maxDigits = 3;

@@ -10,7 +10,7 @@
 
 const int NUM_DIR = 4;
 
-class Game;
+class PlayState;
 class Ghost : public GameCharacter
 {
 protected:
@@ -25,8 +25,8 @@ protected:
 	Point2D auxTextures;
 
 public:
-	Ghost(Point2D initPos, Game* game, Texture* t, Point2D const size, int colText );
-	Ghost(ifstream& input, Game* game, Texture* t, Point2D const size, int colText);
+	Ghost(Point2D initPos, PlayState* game, Texture* t, Point2D const size, int colText );
+	Ghost(ifstream& input, PlayState* game, Texture* t, Point2D const size, int colText);
 
 	void render();
 	virtual void update();

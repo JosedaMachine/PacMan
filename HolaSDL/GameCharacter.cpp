@@ -1,7 +1,8 @@
-#include "Game.h"
+#include "PlayState.h"
 #include "GameCharacter.h"
+
 //Constructora que incializa los atributos del GameCharacter y el GameObject																													//esta es la current 
-GameCharacter::GameCharacter(Point2D posInitial, Game* ga, Texture* t, Point2D textureF, Point2D const size) : GameObject(posInitial, size.getX(), size.getY(), ga)
+GameCharacter::GameCharacter(Point2D posInitial, PlayState* gS, Texture* t, Point2D textureF, Point2D const size) : GameObject(posInitial, size.getX(), size.getY(), gS)
 {
 	texture = t;
 	dir = Point2D(0, 0);
@@ -11,28 +12,28 @@ GameCharacter::GameCharacter(Point2D posInitial, Game* ga, Texture* t, Point2D t
 	posIni = posInitial;
 }
 //Constructora por flujo
-GameCharacter::GameCharacter(ifstream& input, Game* ga, Texture* t, Point2D textureF, Point2D size)
+GameCharacter::GameCharacter(ifstream& input, PlayState* gSt, Texture* t, Point2D textureF, Point2D size)
 {
 	texture = t;
 	textureFrame = textureF;
 	dir = Point2D(0, 0);
 	height = size.getY();
 	width = size.getX();
-	g = ga;
+	gS = gSt;
 
 	//Variables de lectura
 	int x, y;
 	//Posicion Inicial
 	input >> x >> y;
 	Point2D posi (x, y); 
-
-	g->mapCoordToSDLPoint(posi,posIni);
+	
+	gS->mapCoordToSDLPoint(posi,posIni);
 
 	input >> x >> y;
 	posi.setX(x);
 	posi.setY(y);
 
-	g->mapCoordToSDLPoint(posi, pos);
+	gS->mapCoordToSDLPoint(posi, pos);
 	//Posicion actual
 	input >> x >> y;
 	nextDir = Vector2D(x, y);
@@ -41,10 +42,10 @@ GameCharacter::GameCharacter(ifstream& input, Game* ga, Texture* t, Point2D text
 void GameCharacter::saveToFile(ofstream& output)
 {
 	Point2D actPos;
-	g->SDLPointToMapCoords(posIni, actPos);
+	gS->SDLPointToMapCoords(posIni, actPos);
 	output << actPos.getX() << " " << actPos.getY() << " ";
 
-	g->SDLPointToMapCoords(pos, actPos);
+	gS->SDLPointToMapCoords(pos, actPos);
 
 	output << actPos.getX() << " " << actPos.getY() << " ";
 	output << dir.getX() << " " << dir.getY() << " ";

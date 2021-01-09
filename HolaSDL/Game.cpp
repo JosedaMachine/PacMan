@@ -19,23 +19,16 @@ Game::Game()
 	exit = false;
 	hasSaved = false;
 
-	//Inicilizamos las texturas
-	for (int i = 0; i < Textures.size(); i++)
-		Textures[i] = new Texture(renderer, TEXTURE_ATRIB[i].filename, TEXTURE_ATRIB[i].numRows, TEXTURE_ATRIB[i].numCols);
+	
 	srand(time(nullptr));
 }
 //Borramos toda la memoria dinámica que se había creado
 Game::~Game()
 {
 	delete stateMachine;
+	delete tM;
 
-	delete bar;
-
-	for (GameObject* gameOb : gO) delete gameOb;
-	for (Texture* t : Textures) delete t;
-
-	Ghosts.clear();
-	gO.clear();
+	
 
 	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(window);
@@ -173,10 +166,7 @@ void Game::run()
 //Actualiza cada uno de los elementos del Juego: posicion, vidas y las colisiones entre el jugador y los fantasmas
 void Game::update()
 {
-	for (GameObject* gameOb : gO) 
-		gameOb->update();
-
-	Borra();
+	stateMachine->currentState()->update();
 }
 //renderiza el mapa, con cada textura correspondiente en su lugar. Luego renderiza el jugador y la barra de HUD. 
 void Game::render() 
@@ -186,11 +176,11 @@ void Game::render()
 	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 	SDL_RenderClear(renderer);
 
-	for (GameObject* gameOb : gO) 
-		gameOb->render();
+	stateMachine->currentState()->render();
 
-	bar->updateInfo(lives, points);
-	bar->render();
+	
+	//estos valores hay que cambiarlos para que sean una referencia y no hacer el Update en el render
+	
 
 	SDL_RenderPresent(renderer);
 }
@@ -199,11 +189,7 @@ void Game::render()
 //{
 //	return map->celdas[posPlayer.getY()][posPlayer.getX()];
 //}
-////Devuelve la textura relacionada con el Enum y el entero de entrada
-//Texture* Game::getTexture(TextureName t)
-//{
-//	return Textures[(int)t];
-//}
+
 ////resta en una unidad las vidas y devuelve si el jugador sigue vivo
 //bool Game::restLife()
 //{

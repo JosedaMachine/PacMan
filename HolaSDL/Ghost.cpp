@@ -1,8 +1,8 @@
 #include "Ghost.h"
-#include "Game.h"
+#include "PlayState.h"
 #include <ctime>
 //Constructora del Fantasma en cuestión, que recibe una textura, su posicion. 
-Ghost::Ghost(Point2D initPosi, Game* game, Texture* t, Point2D const size, int colText) : GameCharacter(initPosi, game, t, Point2D(colText * 2, 0), size)
+Ghost::Ghost(Point2D initPosi, PlayState* game, Texture* t, Point2D const size, int colText) : GameCharacter(initPosi, game, t, Point2D(colText * 2, 0), size)
 {
 	auxTextures = Point2D(textureFrame.getX(), textureFrame.getY());
 	edable = false;
@@ -12,7 +12,7 @@ Ghost::Ghost(Point2D initPosi, Game* game, Texture* t, Point2D const size, int c
 	srand(time(nullptr));
 }
 //Constructora por copia
-Ghost::Ghost(ifstream& input, Game* game, Texture* t, Point2D const size, int colText) : GameCharacter(input, game, t, Point2D(colText * 2, 0), size)
+Ghost::Ghost(ifstream& input, PlayState* game, Texture* t, Point2D const size, int colText) : GameCharacter(input, game, t, Point2D(colText * 2, 0), size)
 {
 	auxTextures = Point2D(textureFrame.getX(), textureFrame.getY());
 	edable = false;
@@ -37,7 +37,7 @@ void Ghost::update()
 	
 	pos = pos + dir;
 	//Comprobamos si va a aparecer por el otro lado
-	g->ToroidalPos(pos);
+	gS->ToroidalPos(pos);
 	//Cambiamos el Sprite en caso de que sea comible
 
 	if(!edable)
@@ -79,14 +79,14 @@ void Ghost::checkNextDir()
 	newPos.setX(GhostRect.x);
 	newPos.setY(GhostRect.y);
 	newPos=newPos + dir;
-	g->SDLPointToMapCoords(newPos, newPos);
-	g->SDLPointToMapCoords(pos, posCor);
+	gS->SDLPointToMapCoords(newPos, newPos);
+	gS->SDLPointToMapCoords(pos, posCor);
 		
-	if(newPos!=posCor || !g->tryMove(GhostRect, dir, pos) || dir == Point2D(0,0)){
+	if(newPos!=posCor || !gS->tryMove(GhostRect, dir, pos) || dir == Point2D(0,0)){
 			//Recorrido para buscar una dirección válida
 		for (int i = 0; i < directions.size(); i++){
 			if (directions[i] != opst)
-				if (g->tryMove(GhostRect, directions[i], pos)){
+				if (gS->tryMove(GhostRect, directions[i], pos)){
 					candidates[numCandidates] = directions[i];
 					numCandidates++;
 				}
@@ -96,7 +96,7 @@ void Ghost::checkNextDir()
 			int select = (rand()%numCandidates);
 			dir = candidates[select];
 
-			if (g->tryMove(GhostRect, dir, pos) == false)
+			if (gS->tryMove(GhostRect, dir, pos) == false)
 				int n = 0;
 		}
 		else dir = opst;

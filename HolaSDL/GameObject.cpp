@@ -4,6 +4,6 @@ GameObject::GameObject()
 {
 	height = height;
 	width = width;
-	g = g;
+	gS = gS;
 	pos = pos;
 }

@@ -4,7 +4,7 @@
 #include "checkML.h"
 #include "GameCharacter.h"
 
-class Game;
+class PlayState;
 
 class PacMan : public GameCharacter
 {
@@ -17,8 +17,8 @@ private:
 
 public:
 
-	PacMan(Point2D posi, Game* game, Texture* t, Point2D const size);
-	PacMan(ifstream& input, Game* game, Texture* t, Point2D const size);
+	PacMan(Point2D posi, PlayState* game, Texture* t, Point2D const size);
+	PacMan(ifstream& input, PlayState* game, Texture* t, Point2D const size);
 
 	void render();
 

@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-#include "texture.h";
+
 #include <array>;
 #include "Ghost.h";
 #include "GameState.h";
@@ -11,11 +11,12 @@
 
 using namespace std;
 
-const int NUM_TEXTURES = 5;
+
 const int NUM_LEVELS = 6;
-enum TextureName { WallMap, Characters, Food, Digits, PowerUp };
+
 class PlayState : public GameState
 {
+
 	int fils, cols;
 	int amountFood; //comida restante en el juego
 	int points;  //Puntuacion del juego 
@@ -23,14 +24,10 @@ class PlayState : public GameState
 	int lives;
 
 	bool hasWon, wantLoad;	//Controladores del juego
-
-	struct TextureAtributes { string filename; int numRows; int numCols; };
+	
 	//ARRAY DE NIVELES
 	const array<string, NUM_LEVELS> Levels = { "levels/level01.dat", "levels/level02.dat", "levels/level03.dat" , "levels/level04.dat", "levels/level05.dat", "levels/test1.dat" };
-	//ARRAY ESTATICO DE ATRIBUTOS DE TEXTURAS
-	const TextureAtributes TEXTURE_ATRIB[NUM_TEXTURES] = { {"../images/wall3.png", 1, 1}, {"../images/characters.png", 4, 14} , {"../images/food2.png", 1, 1}, {"../images/digits.jpeg", 3, 4}, {"../images/burguer.png", 1, 1} };
-	//ARRAY DE NIVELES
-	array<Texture*, NUM_TEXTURES> Textures;
+	
 
 	list<Ghost*> Ghosts;
 	list<list<GameObject*>::iterator> objectsToErase;
@@ -40,10 +37,15 @@ class PlayState : public GameState
 	PacMan* player;			//Puntero al jugador
 	InfoBar* bar;			//Puntero al HUD
 public:
+	PlayState(Game* game, TextureManager* tM);
+	~PlayState();
+
 	void load(int lifes);
 	void FoodEaten() { --amountFood; };
-	Texture* getTexture(TextureName t);
+	
 	void Borra();
+	void update();
+	void render();
 	bool restLife();
 	void changeLevel();
 	void SumaPuntos(int cantidad);

@@ -3,10 +3,7 @@
 class MainMenuState : public GameState
 {
 public:
-	MainMenuState()
-	{
-
-	}
+	MainMenuState();
 
 	~MainMenuState()
 	{

@@ -1,14 +1,14 @@
 #include "SmartGhost.h"
-#include "Game.h"
+#include "PlayState.h"
 //Constructora del Fantasma en cuestión, que recibe una textura, su posicion. Inicializa los atributos adecuados, como el estado y la edad.
-SmartGhost::SmartGhost(Point2D initPos, Game* game, Texture* t, Point2D size, int colText, Point2D deadT) : Ghost(initPos, game, t, size, colText)
+SmartGhost::SmartGhost(Point2D initPos, PlayState* game, Texture* t, Point2D size, int colText, Point2D deadT) : Ghost(initPos, game, t, size, colText)
 {
 	state = Child;
 	age = 0;
 	deadText = deadT;
 }
 //Constructora por copia
-SmartGhost::SmartGhost(ifstream& input, Game* game, Texture* t, Point2D const size, Point2D const deadT) : Ghost(input, game, t, size, 4)
+SmartGhost::SmartGhost(ifstream& input, PlayState* game, Texture* t, Point2D const size, Point2D const deadT) : Ghost(input, game, t, size, 4)
 {
 	state = Child;
 	deadText = deadT;
@@ -35,10 +35,10 @@ void SmartGhost::render()
 void SmartGhost::update()
 {
 	SmartGhost* gh = this;
-	g->collisionGhost(getDestRect(), gh);
+	gS->collisionGhost(getDestRect(), gh);
 
 	if (state != Dead) {
-		Point2D newDir = g->PlayerPos() - pos;
+		Point2D newDir = gS->PlayerPos() - pos;
 		if (newDir.module() > 150) Ghost::update();
 		else
 		{
@@ -46,7 +46,7 @@ void SmartGhost::update()
 			//actualizamos a la siguiente pos
 			pos = pos + dir;
 			//Comprobamos si va a aparecer por el otro lado
-			g->ToroidalPos(pos);
+			gS->ToroidalPos(pos);
 			//Cambiamos el Sprite en caso de que sea comible
 			if (!edable)
 				ChangeSprite();
@@ -60,11 +60,11 @@ void SmartGhost::update()
 		}
 	}
 	else if (age > tiempoDeDescomposicion) {
-		g->borraFantasma(it, this);
+		gS->borraFantasma(it, this);
 	}
 	age++;
 
-	g->collisionGhost(getDestRect(), this);
+	gS->collisionGhost(getDestRect(), this);
 }
 //guarda en un archivo .dat su identificador, posicion inicial, posicion actual y direccion
 void SmartGhost::saveToFile(ofstream& output)
@@ -83,7 +83,7 @@ void SmartGhost::checkSmartDir(Point2D newDir)
 	int numCandidates = 0;
 
 	
-	//Si es comible, pues CORREEEEETe
+	//Si es comible, el fantasma huye
 	if (edable)
 		newDir = newDir.oposite();
 
@@ -97,15 +97,15 @@ void SmartGhost::checkSmartDir(Point2D newDir)
 	newPos.setX(GhostRect.x);
 	newPos.setY(GhostRect.y);
 	newPos = newPos + dir;
-	g->SDLPointToMapCoords(newPos, newPos);
-	g->SDLPointToMapCoords(pos, posCor);
+	gS->SDLPointToMapCoords(newPos, newPos);
+	gS->SDLPointToMapCoords(pos, posCor);
 
 	//Dos candidatos máximo
 	//Elige exactamente dos candidatos respecto a la pos actual del Player
-	if (newPos != posCor || !g->tryMove(GhostRect, dir, pos) || dir == Point2D(0, 0))
+	if (newPos != posCor || !gS->tryMove(GhostRect, dir, pos) || dir == Point2D(0, 0))
 	{
 		//Comprobacion de que puede ir por arriba o por abajo
-		if (g->tryMove(getDestRect(), Point2D(newDir.getX(), 0), pos))
+		if (gS->tryMove(getDestRect(), Point2D(newDir.getX(), 0), pos))
 		{
 			candidates[0] = Point2D(newDir.getX(), 0);
 			numCandidates++;
@@ -116,7 +116,7 @@ void SmartGhost::checkSmartDir(Point2D newDir)
 		}
 
 		//Comprobacion de que puede ir por la derecha o la izquierda
-		if (g->tryMove(getDestRect(), Point2D(0, newDir.getY()), pos))
+		if (gS->tryMove(getDestRect(), Point2D(0, newDir.getY()), pos))
 		{
 			candidates[1] = Point2D(0, newDir.getY());
 			numCandidates++;

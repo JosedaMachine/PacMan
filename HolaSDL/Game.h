@@ -18,10 +18,7 @@
 
 #include "GameStateMachine.h"
 #include "MainMenuState.h"
-
-
-//const int NUM_TEXTURES = 5; 
-//const int NUM_LEVELS = 6;
+#include "TextureManager.h"
 
 const int FRAME_RATE = 5;
 
@@ -45,6 +42,7 @@ private:
 	//int lives;
 
 	GameStateMachine* stateMachine;
+	TextureManager* tM;
 
 	bool exit, /*hasWon*/hasSaved; /*wantLoad*/ //Controladores del juego
 		
@@ -106,8 +104,7 @@ public:
 	int getWidth() const { return WIN_WIDTH; }
 	int getHeight() const { return WIN_HEIGHT; }
 	int getFrameRate() const { return FRAME_RATE; }
-	int getOffsetWidth() const { return OFFSET_WIDTH;}
-	int getOffsetHeight() const { return OFFSET_HEIGHT;}
+	
 	//Point2D PlayerPos() const { return player->GetPos(); }
 	#pragma endregion
 

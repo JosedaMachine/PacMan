@@ -1,7 +1,7 @@
 #pragma once
 #include "texture.h"
 #include "checkML.h"
-class Game;
+class PlayState;
 
 class InfoBar
 {
@@ -13,10 +13,10 @@ private:
 	int lifesCol, lifesRow;
 	int points, vidas;
 
-	Game * g;
+	PlayState * g;
 public:
 
-	InfoBar(Game* game, Texture* lives, Texture* digits);
+	InfoBar(PlayState* game, Texture* lives, Texture* digits);
 
 	void render()const;
 	void updateInfo(int vidas, int points);

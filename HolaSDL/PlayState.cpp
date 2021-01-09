@@ -1,4 +1,19 @@
 #include "PlayState.h"
+#include "Game.h"
+
+PlayState::PlayState(Game* game, TextureManager* tM) : GameState(game, tM)
+{
+	g = game;
+}
+
+PlayState::~PlayState()
+{
+	delete bar;
+
+	for (GameObject* gameOb : gO) delete gameOb;
+	Ghosts.clear();
+	gO.clear();
+}
 
 void PlayState::load(int lives)
 {
@@ -11,16 +26,13 @@ void PlayState::load(int lives)
 
 		input >> fils >> cols;
 		if (!input) throw FileFormatError("Format wrong. Data type unexpected.");
-
-
-
-		OFFSET_WIDTH = g.getWidth();   /*WIN_WIDTH / cols;*/
-		OFFSET_HEIGHT = WIN_HEIGHT / fils;
+		OFFSET_WIDTH = g->getWidth()/ cols;
+		OFFSET_HEIGHT = g->getHeight()/ fils;
 
 		map = new GameMap(Point2D(0, 0), fils, cols, this);
 		gO.push_back(map);
 
-		bar = new InfoBar(this, Textures[1], Textures[3]);
+		bar = new InfoBar(this, tM->getTexture(Characters), tM->getTexture(Digits));
 
 		for (int i = 0; i < fils; i++) {
 			for (int j = 0; j < cols; j++) {
@@ -35,17 +47,17 @@ void PlayState::load(int lives)
 				else {
 					if (n == 9)
 					{
-						player = (new PacMan(Point2D(j * OFFSET_WIDTH, i * OFFSET_HEIGHT + OFFSET_HEIGHT), this, Textures[1], Point2D(OFFSET_WIDTH, OFFSET_HEIGHT))); //cambio el orden de j e i ya que las columnas( cada una representa una pos en X )
+						player = (new PacMan(Point2D(j * OFFSET_WIDTH, i * OFFSET_HEIGHT + OFFSET_HEIGHT), this, tM->getTexture(Characters), Point2D(OFFSET_WIDTH, OFFSET_HEIGHT))); //cambio el orden de j e i ya que las columnas( cada una representa una pos en X )
 						player->SetItList(gO.insert(gO.end(), player));
 						//inserta en el iterador que tu le pasar, el obketo que tu le pasas, y te devuelve el iterador donde se ha insertado
 					}
 					else if (n != 4) {
-						Ghost* newG = new Ghost(Point2D(j * OFFSET_WIDTH, i * OFFSET_HEIGHT + OFFSET_HEIGHT), this, Textures[1], Point2D(OFFSET_WIDTH, OFFSET_HEIGHT), n - 5);
+						Ghost* newG = new Ghost(Point2D(j * OFFSET_WIDTH, i * OFFSET_HEIGHT + OFFSET_HEIGHT), this, tM->getTexture(Characters), Point2D(OFFSET_WIDTH, OFFSET_HEIGHT), n - 5);
 						newG->SetItList(gO.insert(gO.end(), newG));
 						Ghosts.push_back(newG);
 					}
 					else if (n == 4){
-						SmartGhost* newG = new SmartGhost(Point2D(j * OFFSET_WIDTH, i * OFFSET_HEIGHT + OFFSET_HEIGHT), this, Textures[1], Point2D(OFFSET_WIDTH, OFFSET_HEIGHT), n, Point2D(12, 1));
+						SmartGhost* newG = new SmartGhost(Point2D(j * OFFSET_WIDTH, i * OFFSET_HEIGHT + OFFSET_HEIGHT), this, tM->getTexture(Characters), Point2D(OFFSET_WIDTH, OFFSET_HEIGHT), n, Point2D(12, 1));
 						newG->SetItList(gO.insert(gO.end(), newG));
 						Ghosts.push_back(newG);
 					}
@@ -76,7 +88,7 @@ void PlayState::loadMatch(ifstream& input)
 
 	OFFSET_WIDTH = WIN_WIDTH / cols;
 	OFFSET_HEIGHT = WIN_HEIGHT / fils;
-
+	
 	map = new GameMap(Point2D(0, 0), fils, cols, this);
 	gO.push_back(map);
 
@@ -94,7 +106,7 @@ void PlayState::loadMatch(ifstream& input)
 		}
 	}
 
-	bar = new InfoBar(this, Textures[1], Textures[3]);
+	bar = new InfoBar(this, tM->getTexture(Characters), tM->getTexture(Digits));
 	createNPositionate(input);
 }
 //devolvemos el tipo de casilla en función de una posición dada
@@ -102,11 +114,7 @@ int PlayState::getCellType(Point2D posPlayer) const
 {
 	return map->celdas[posPlayer.getY()][posPlayer.getX()];
 }
-//Devuelve la textura relacionada con el Enum y el entero de entrada
-Texture* PlayState::getTexture(TextureName t)
-{
-	return Textures[(int)t];
-}
+
 void PlayState::Borra()
 {
 	for (auto gameOb : objectsToErase)
@@ -116,6 +124,19 @@ void PlayState::Borra()
 		gO.erase(gameOb);
 	}
 	objectsToErase.clear(); //borrar iteradores de la lista
+}
+void PlayState::update()
+{
+	GameState::update();
+
+	Borra();
+}
+void PlayState::render()
+{
+	GameState::render();
+
+	bar->updateInfo(lives, points);
+	bar->render();
 }
 //resta en una unidad las vidas y devuelve si el jugador sigue vivo
 bool PlayState::restLife()
@@ -172,16 +193,16 @@ void PlayState::createNPositionate(ifstream& input)
 		input >> n;
 		if (!input) throw FileFormatError("Format wrong. Data type unexpected.");
 		if (n == 9) {
-			player = new PacMan(input, this, Textures[1], Point2D(OFFSET_WIDTH, OFFSET_HEIGHT));
+			player = new PacMan(input, this, tM->getTexture(Characters), Point2D(OFFSET_WIDTH, OFFSET_HEIGHT));
 			player->SetItList(gO.insert(gO.end(), player));
 		}
 		else if (n != 4) {
-			Ghost* newG = new Ghost(input, this, Textures[1], Point2D(OFFSET_WIDTH, OFFSET_HEIGHT), n - 4);
+			Ghost* newG = new Ghost(input, this, tM->getTexture(Characters), Point2D(OFFSET_WIDTH, OFFSET_HEIGHT), n - 4);
 			newG->SetItList(gO.insert(gO.end(), newG));
 			Ghosts.push_back(newG);
 		}
 		else {
-			SmartGhost* newG = new SmartGhost(input, this, Textures[1], Point2D(OFFSET_WIDTH, OFFSET_HEIGHT), Point2D(12, 1));
+			SmartGhost* newG = new SmartGhost(input, this, tM->getTexture(Characters), Point2D(OFFSET_WIDTH, OFFSET_HEIGHT), Point2D(12, 1));
 			newG->SetItList(gO.insert(gO.end(), newG));
 			Ghosts.push_back(newG);
 		}
@@ -289,7 +310,7 @@ void PlayState::reproduce(SmartGhost* _father, Ghost* couple)
 
 		if (mother !=NULL){
 			if (mother->getState() == Adult){
-				SmartGhost* newG = new SmartGhost(_father->GetPos() + _father->getDir(i), this, Textures[1], Point2D(OFFSET_WIDTH, OFFSET_HEIGHT), 4, Point2D(12,1));
+				SmartGhost* newG = new SmartGhost(_father->GetPos() + _father->getDir(i), this, tM->getTexture(Characters), Point2D(OFFSET_WIDTH, OFFSET_HEIGHT), 4, Point2D(12,1));
 				newG->SetItList(gO.insert(gO.end(), newG));
 				Ghosts.push_back(newG);
 				//Pone a ambos padres en cuarentena
@@ -301,7 +322,7 @@ void PlayState::reproduce(SmartGhost* _father, Ghost* couple)
 			//selecciona un color del padre random.
 			int select = (rand() % 3);
 
-			Ghost* newG = new Ghost(_father->GetPos() + _father->getDir(i), this, Textures[1], Point2D(OFFSET_WIDTH, OFFSET_HEIGHT), select);
+			Ghost* newG = new Ghost(_father->GetPos() + _father->getDir(i), this, tM->getTexture(Characters), Point2D(OFFSET_WIDTH, OFFSET_HEIGHT), select);
 			newG->SetItList(gO.insert(gO.end(), newG));
 			Ghosts.push_back(newG);
 

@@ -1,7 +1,7 @@
 #include "PacMan.h"
-#include "Game.h"
+#include "PlayState.h"
 //Constructora que inicializa pos, vidas, energia y textura.
-PacMan::PacMan(Point2D posi, Game* game, Texture* t, Point2D const size) : GameCharacter(posi, game, t, Point2D(10, 0), size)
+PacMan::PacMan(Point2D posi, PlayState* game, Texture* t, Point2D const size) : GameCharacter(posi, game, t, Point2D(10, 0), size)
 {
 	vidasRow = textureFrame.getY();
 	vidasCol = textureFrame.getX();
@@ -11,7 +11,7 @@ PacMan::PacMan(Point2D posi, Game* game, Texture* t, Point2D const size) : GameC
 	respawn = 0;
 }
 //Constructora por flujo
-PacMan::PacMan(ifstream& input, Game* game, Texture* t, Point2D const size) : GameCharacter(input, game, t, Point2D(10, 0), size)
+PacMan::PacMan(ifstream& input, PlayState* game, Texture* t, Point2D const size) : GameCharacter(input, game, t, Point2D(10, 0), size)
 {
 	vidasRow = textureFrame.getY();
 	vidasCol = textureFrame.getX();
@@ -30,9 +30,9 @@ void PacMan::render()
 //Actualiza la posición del pacman y su sprite
  void PacMan::update()
 {
-	 g->colissions(getDestRect());
+	 gS->colissions(getDestRect());
 		//actualizamos a la siguiente pos
-	 if (g->tryMove(getDestRect(), nextDir, pos))
+	 if (gS->tryMove(getDestRect(), nextDir, pos))
 	 {
 		dir = nextDir;
 
@@ -42,22 +42,22 @@ void PacMan::render()
 		else  textureFrame.setY(2);
 	 }
 
-	 if (g->tryMove(getDestRect(), dir, pos))
+	 if (gS->tryMove(getDestRect(), dir, pos))
 	 {
 		pos = pos + dir;
 
 		//Comprobamos si va a aparecer por el otro lado
-		g->ToroidalPos(pos);
+		gS->ToroidalPos(pos);
 
 		eat();
 	 }
 
 	if (energyLeft > 0)--energyLeft;
-	else if(energyLeft==0) g->setGhostsEdables(false);
+	else if(energyLeft==0) gS->setGhostsEdables(false);
 	
 	if (respawn > 0)respawn--;
 
-	g->colissions(getDestRect());
+	gS->colissions(getDestRect());
 
 }
 //guarda en un archivo .dat su identificador, posicion inicial, posicion actual y direccion
@@ -70,12 +70,12 @@ void PacMan::render()
 //Muerte (restamos una vida y lo devolvemos a su posicion inicial, además de quitarle la dirección)
 void PacMan::death()
 {
-	if (g->restLife())
+	if (gS->restLife())
 	{
 		pos = posIni;
 		dir = Vector2D(0, 0);
 		nextDir = Vector2D(0, 0);
-		respawn = 60 * g->getFrameRate();
+		respawn = 60 * gS->getFrameRate();
 	}
 }
 //Cambia la siguiente dirección del PacMan en función del input
@@ -109,17 +109,17 @@ void PacMan::eat()
 	//EL PACMAN ES UN GLOTON Y COME ANTES
 	Point2D posCoord;
 	
-	g->SDLPointToMapCoords(pos,posCoord);
+	gS->SDLPointToMapCoords(pos,posCoord);
 
-	int n = g->getCellType(posCoord);
+	int n = gS->getCellType(posCoord);
 
 	if (n == 2 || n == 3) {
-		g->setCell(0, posCoord);
-		g->SumaPuntos(1);
-		if(n==2)g->FoodEaten();
+		gS->setCell(0, posCoord);
+		gS->SumaPuntos(1);
+		if(n==2)gS->FoodEaten();
 		else {
 			energyLeft = 600;
-			g->setGhostsEdables(true);
+			gS->setGhostsEdables(true);
 		}
 	}
 }

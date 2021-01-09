@@ -4,19 +4,19 @@
 
 
 #pragma once
-class Game;
+class GameState;
 
 class GameObject
 {
 protected:
 	//Tamaño del game object en pantalla
 	int height, width;
-	Game* g;
+	GameState* gS;
 	Point2D pos;
 public:
 
 	GameObject();
-	GameObject(Point2D pos, int w, int h, Game* g): pos(pos), width(w), height(h), g(g){};
+	GameObject(Point2D pos, int w, int h, GameState* gSt): pos(pos), width(w), height(h), gS(gSt){};
 
 	//Abstracto
 	virtual ~GameObject() {};
