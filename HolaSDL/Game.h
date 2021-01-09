@@ -17,6 +17,7 @@
 #include "checkML.h"
 
 #include "GameStateMachine.h"
+#include "PlayState.h"
 #include "MainMenuState.h"
 #include "TextureManager.h"
 

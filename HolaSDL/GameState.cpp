@@ -5,8 +5,6 @@ GameState::GameState(Game* game, TextureManager* textM)
 {
 	g = game;
 	tM = textM;
-
-	g->render();
 }
 
 void GameState::update()
