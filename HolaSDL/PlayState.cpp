@@ -3,8 +3,12 @@
 
 PlayState::PlayState(Game* game, TextureManager* tM) : GameState(game, tM)
 {
-	load(3);
 	wantLoad = false;
+	Current_Level = 1;
+	int liv = 3;
+
+	hasWon = false;
+	load(liv);
 }
 
 PlayState::~PlayState()
@@ -16,10 +20,10 @@ PlayState::~PlayState()
 	gO.clear();
 }
 
-void PlayState::load(int lives)
+void PlayState::load(int liv)
 {
 	ifstream input;
-
+	lives = liv;
 	if (!wantLoad)
 	{
 		input.open(Levels[Current_Level]);
