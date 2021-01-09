@@ -26,7 +26,7 @@ public:
 	virtual void saveToFile(ofstream& output);
 
 	void death();
-	void handleEvent(const SDL_Keycode&event);
+	void handleEvent(const SDL_Keycode& event);
 	void eat();
 
 #pragma region GETTERS

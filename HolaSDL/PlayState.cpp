@@ -3,7 +3,7 @@
 
 PlayState::PlayState(Game* game, TextureManager* tM) : GameState(game, tM)
 {
-
+	load(3);
 }
 
 PlayState::~PlayState()
@@ -246,8 +246,16 @@ void PlayState::colissions(const SDL_Rect rect) const
 		}
 	}
 }
-void PlayState::handleEvent(SDL_Event& event, bool& exit)
+void PlayState::handleEvent(SDL_Event& event)
 {
+	SDL_Keycode key = event.key.keysym.sym;
+	/*if () {*/
+	//	//Cambias al menu
+	//}
+	//else {
+
+		player->handleEvent(key);
+	//}
 	//el handle event del player, sacar el menu y esas cosas
 }
 //Convierte las coordenadas de las celdas a pixeles

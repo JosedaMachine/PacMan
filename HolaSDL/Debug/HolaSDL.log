@@ -1,5 +1,81 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(452,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (HolaSDL.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  Game.cpp
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\GameCharacter.h(2,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\GameState.h(2,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\GameState.h(3,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\GameState.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\TextureManager.h(2,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\TextureManager.h(3,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+  GameCharacter.cpp
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\Game.cpp(23,12): warning C4244:  'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\PlayState.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\PlayState.h(5,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\GameCharacter.h(2,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\PlayState.h(6,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\GameState.h(2,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\GameState.h(3,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\GameState.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\TextureManager.h(2,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\TextureManager.h(3,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\PlayState.h(7,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\PlayState.h(8,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\PlayState.h(9,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+  GameMap.cpp
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\PlayState.h(10,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\GameCharacter.h(2,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\GameState.h(2,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\GameState.h(3,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\GameState.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\TextureManager.h(2,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\TextureManager.h(3,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\PlayState.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\PlayState.h(5,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\PlayState.h(6,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\PlayState.h(7,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\PlayState.h(8,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\PlayState.h(9,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\PlayState.h(10,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+  GameState.cpp
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\GameMap.cpp(17,23): warning C4018:  '<': no coinciden signed/unsigned
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\GameState.h(2,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\GameState.h(3,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\GameState.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\TextureManager.h(2,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\TextureManager.h(3,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\GameState.cpp(2,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+  Ghost.cpp
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\GameCharacter.h(2,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\GameCharacter.h(2,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\PlayState.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\PlayState.h(5,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\PlayState.h(6,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\GameState.h(2,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\GameState.h(3,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\GameState.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\TextureManager.h(2,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\TextureManager.h(3,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\PlayState.h(7,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\PlayState.h(8,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\PlayState.h(9,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\PlayState.h(10,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\Ghost.cpp(12,12): warning C4244:  'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\Ghost.cpp(22,12): warning C4244:  'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+  InfoBar.cpp
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\Ghost.cpp(87,21): warning C4018:  '<': no coinciden signed/unsigned
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\PlayState.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\PlayState.h(5,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\GameCharacter.h(2,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\PlayState.h(6,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\GameState.h(2,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\GameState.h(3,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\GameState.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\TextureManager.h(2,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\TextureManager.h(3,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\PlayState.h(7,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\PlayState.h(8,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\PlayState.h(9,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
   main.cpp
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\PlayState.h(10,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\GameCharacter.h(2,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\GameState.h(2,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\GameState.h(3,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
@@ -12,9 +88,49 @@ D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\GameState.h(3,10)
 D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\GameState.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\TextureManager.h(2,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\TextureManager.h(3,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-  Vector2D.cpp
+  PacMan.cpp
 D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\GameCharacter.h(2,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\GameCharacter.h(2,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\PlayState.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\PlayState.h(5,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\PlayState.h(6,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\GameState.h(2,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\GameState.h(3,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\GameState.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\TextureManager.h(2,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\TextureManager.h(3,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\PlayState.h(7,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\PlayState.h(8,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\PlayState.h(9,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+  PlayState.cpp
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\PlayState.h(10,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\PlayState.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\PlayState.h(5,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\GameCharacter.h(2,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\PlayState.h(6,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\GameState.h(2,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\GameState.h(3,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\GameState.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\TextureManager.h(2,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\TextureManager.h(3,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\PlayState.h(7,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\PlayState.h(8,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\PlayState.h(9,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\PlayState.h(10,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+  SmartGhost.cpp
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\PlayState.cpp(147,22): warning C4018:  '<': no coinciden signed/unsigned
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\GameCharacter.h(2,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\PlayState.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\PlayState.h(5,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\PlayState.h(6,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\GameState.h(2,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\GameState.h(3,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\GameState.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\TextureManager.h(2,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\TextureManager.h(3,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\PlayState.h(7,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\PlayState.h(8,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\PlayState.h(9,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
   Generando código...
-D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\Vector2D.cpp(24,13): warning C4244:  'return': conversión de 'double' a 'int'; posible pérdida de datos
-  LINK : no se encontró D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\bin\proyectoPMDebug.exe o no lo generó el último vínculo incremental; ejecutando vínculo completo
+D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\HolaSDL\PlayState.h(10,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
   HolaSDL.vcxproj -> D:\Universidad\Uni\Segundo\TPV\PacMan3\Pacam3-3\PacMan\bin\proyectoPMDebug.exe

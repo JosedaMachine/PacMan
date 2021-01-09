@@ -28,8 +28,6 @@ Game::~Game()
 	delete stateMachine;
 	delete tM;
 
-	
-
 	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(window);
 	SDL_Quit();
@@ -335,6 +333,7 @@ void Game::handleEvent(SDL_Event& event, bool& exit)
 {
 	while (SDL_PollEvent(&event) && !exit) 
 	{
+		//Separar en métodos maybe
 		if (event.type == SDL_QUIT)
 		{
 			exit = true;
