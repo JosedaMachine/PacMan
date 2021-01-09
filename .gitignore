@@ -222,3 +222,11 @@ IATETerminologyProvider/IATETerminologyProvider/pluginpackage.manifest_LOCAL_178
 *.vcxproj
 
 *.filters
+
+*.exe
+
+*.tlog
+
+*.lastbuildstate
+
+*.idb
