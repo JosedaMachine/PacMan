@@ -3,7 +3,8 @@
 
 PlayState::PlayState(Game* game, TextureManager* tM) : GameState(game, tM)
 {
-
+	load(3);
+	wantLoad = false;
 }
 
 PlayState::~PlayState()
@@ -158,6 +159,7 @@ void PlayState::render()
 {
 	GameState::render();
 
+	//estos valores hay que cambiarlos para que sean una referencia y no hacer el Update en el render
 	bar->updateInfo(lives, points);
 	bar->render();
 }

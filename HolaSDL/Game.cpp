@@ -2,7 +2,7 @@
 #include <ctime>
 Game::Game()
 {
-	menu();
+	//menu();
 
 	#pragma region SDL_INIT
 	SDL_Init(SDL_INIT_EVERYTHING);
@@ -12,13 +12,14 @@ Game::Game()
 	//Codigo Defensivo
 	if (window == nullptr || renderer == nullptr) throw SDLError("Error loading window o renderer.");
 	#pragma endregion
+
 	tM = new TextureManager(renderer);
 	stateMachine = new GameStateMachine();
-	stateMachine->pushState(new MainMenuState(this, tM));
+
+	stateMachine->pushState(new PlayState(this, tM));
 
 	exit = false;
 	hasSaved = false;
-
 	
 	srand(time(nullptr));
 }
@@ -27,8 +28,6 @@ Game::~Game()
 {
 	delete stateMachine;
 	delete tM;
-
-	
 
 	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(window);
@@ -141,11 +140,8 @@ void Game::run()
 		startTime = SDL_GetTicks();
 
 		handleEvent(event, exit);
-
-		stateMachine->currentState()->update();
-		stateMachine->currentState()->render();
-		//update();
-		//render();
+		update();
+		render();
 
 		frameTime = SDL_GetTicks() - startTime; // Tiempo de la iteración
 		if (frameTime < FRAME_RATE)
@@ -171,17 +167,10 @@ void Game::update()
 //renderiza el mapa, con cada textura correspondiente en su lugar. Luego renderiza el jugador y la barra de HUD. 
 void Game::render() 
 {
-
-	//todo esto seria del PlayState
 	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 	SDL_RenderClear(renderer);
 
 	stateMachine->currentState()->render();
-
-	
-	//estos valores hay que cambiarlos para que sean una referencia y no hacer el Update en el render
-	
-
 	SDL_RenderPresent(renderer);
 }
 //devolvemos el tipo de casilla en función de una posición dada
