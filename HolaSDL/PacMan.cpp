@@ -81,8 +81,6 @@ void PacMan::death()
 //Cambia la siguiente dirección del PacMan en función del input
 void PacMan::handleEvent(const SDL_Keycode& key)
 {
-	//SDL_Keycode key = event.key.keysym.sym;
-
 	switch (key)
 	{
 		case SDLK_UP:

@@ -329,7 +329,7 @@ void Game::handleEvent(SDL_Event& event, bool& exit)
 			exit = true;
 			cout << "Game has been closed.";
 		}
-		else if (event.type == SDL_KEYDOWN)
+		else
 		{
 			stateMachine->currentState()->handleEvents(event);
 

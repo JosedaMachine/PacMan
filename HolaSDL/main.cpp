@@ -20,7 +20,9 @@ void PacManGame() {
 
 	//Es correcto tener en GameCharacter un puntero a PlayState? Y que Map , InfoBar,.. tengan los punteros correspondientes? Ya que en caso de los botones, hay 3 estados distintos en los que ellos existen
 	Game g;
-
+	//puntucuion nio se ve
+	//player no muere no se poirque
+	//menu y esas mierda
 	try
 	{
 		//Carga de juego aqui por si ocurre un fallo al leer archivos, ya que el load se llamaba en la constructora

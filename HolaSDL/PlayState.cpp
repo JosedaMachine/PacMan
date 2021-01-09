@@ -252,7 +252,7 @@ void PlayState::colissions(const SDL_Rect rect) const
 		}
 	}
 }
-void PlayState::handleEvent(SDL_Event& event)
+void PlayState::handleEvents(SDL_Event& event)
 {
 	SDL_Keycode key = event.key.keysym.sym;
 
