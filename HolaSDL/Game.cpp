@@ -136,7 +136,7 @@ void Game::run()
 	SDL_Event event;
 	int startTime, frameTime;
 
-	while (!exit && !hasWon && lives > 0)
+	while (!exit)
 	{
 		startTime = SDL_GetTicks();
 
@@ -151,17 +151,17 @@ void Game::run()
 		if (frameTime < FRAME_RATE)
 			SDL_Delay(FRAME_RATE - frameTime); // Suspende por el tiempo restante
 
-		if (amountFood == 0)
-		{
-			if(Current_Level<Levels.size()) changeLevel();
-			else  hasWon = true;
-		}
+		//if (amountFood == 0)
+		//{
+		//	if(Current_Level<Levels.size()) changeLevel();
+		//	else  hasWon = true;
+		//}
 	}
 
-	if(hasSaved) cout << "Congratulations! You have saved cause you're a pussy. Hope you never come back.";
+	/*if(hasSaved) cout << "Congratulations! You have saved cause you're a pussy. Hope you never come back.";
 	else if (hasWon) cout << "You have won, go and fuck off";
 	else if (!hasWon && lives <= 0) cout << "You have lost, you are so bad, you literally suck";
-	else cout << " Hope you never come back.";
+	else cout << " Hope you never come back.";*/
 }
 //Actualiza cada uno de los elementos del Juego: posicion, vidas y las colisiones entre el jugador y los fantasmas
 void Game::update()
@@ -328,7 +328,7 @@ void Game::menu()
 		cin >> op;
 	} while (op != 1 && op != 0);
 
-	wantLoad = op;
+	//wantLoad = op;
 }
 //comprobamos que input está introduciendo el usuario y actuamos en consecuencia
 void Game::handleEvent(SDL_Event& event, bool& exit)
@@ -346,13 +346,13 @@ void Game::handleEvent(SDL_Event& event, bool& exit)
 
 			SDL_Keycode key = event.key.keysym.sym;
 
-			if(key != SDLK_s)player->handleEvent(key);
-			else
-			{
-				exit = true;
-				hasSaved = true;
-				saveToFileGame();
-			}
+			//if(key != SDLK_s)player->handleEvent(key);
+			//else
+			//{
+			//	exit = true;
+			//	hasSaved = true;
+			//	saveToFileGame();
+			//}
 		}
 
 	}

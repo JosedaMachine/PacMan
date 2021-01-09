@@ -17,6 +17,6 @@ void GameState::update()
 
 void GameState::render()
 {
-	for (GameObject* o : gO) o->update();
+	for (GameObject* o : gO) o->render();
 }
 

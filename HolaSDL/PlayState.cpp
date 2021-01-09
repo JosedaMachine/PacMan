@@ -68,11 +68,11 @@ void PlayState::load(int lives)
 	}
 	else
 	{
-		string file = ".//matches//" + user + ".dat";
+		string file = ".//matches.dat//" /*+ user + ".dat"*/;
 		input.open(file);
 
 		if (!input.is_open()) 
-			throw FileNotFoundError("Can't find file " + user + ".dat");
+			throw FileNotFoundError("Can't find file .dat" /*+ user + ".dat"*/);
 
 		loadMatch(input);
 
@@ -139,9 +139,20 @@ void PlayState::Borra()
 }
 void PlayState::update()
 {
-	GameState::update();
+	if (GetRunning()) {
+		GameState::update();
 
-	Borra();
+		if (amountFood == 0)
+		{
+			if (Current_Level < Levels.size()) changeLevel();
+			else  hasWon = true;
+		}
+
+		Borra();
+	}
+	else {
+
+	}
 }
 void PlayState::render()
 {
@@ -288,9 +299,9 @@ void PlayState::borraFantasma(list<GameObject*>::iterator it, Ghost* fantasma)
 void PlayState::saveToFileGame()
 {
 	ofstream output;
-	string file = ".//matches//" + user + ".dat";
+	string file = ".//matches//" /*+ user + ".dat"*/;
 	output.open(file);
-	if (!output.is_open()) throw FileNotFoundError("Can't find file" + user + ".dat");
+	if (!output.is_open()) throw FileNotFoundError("Can't find file" /*+ user + ".dat"*/);
 
 	output << lives << " " << points << endl;
 	map->saveToFile(output);

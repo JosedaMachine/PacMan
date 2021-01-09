@@ -73,6 +73,8 @@ private:
 	int getCols() const { return cols; }
 	int getFils() const { return fils; }
 	int GetLives() const { return lives; }
+	bool GetRunning() const { return !hasWon && lives > 0; }
+	
 public:
 	Point2D PlayerPos() const { return player->GetPos(); }
 	int getWindowWidth() const;
