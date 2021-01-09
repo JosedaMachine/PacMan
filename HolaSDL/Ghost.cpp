@@ -37,7 +37,7 @@ void Ghost::update()
 	
 	pos = pos + dir;
 	//Comprobamos si va a aparecer por el otro lado
-	gS->ToroidalPos(pos);
+	pS->ToroidalPos(pos);
 	//Cambiamos el Sprite en caso de que sea comible
 
 	if(!edable)
@@ -79,14 +79,14 @@ void Ghost::checkNextDir()
 	newPos.setX(GhostRect.x);
 	newPos.setY(GhostRect.y);
 	newPos=newPos + dir;
-	gS->SDLPointToMapCoords(newPos, newPos);
-	gS->SDLPointToMapCoords(pos, posCor);
+	pS->SDLPointToMapCoords(newPos, newPos);
+	pS->SDLPointToMapCoords(pos, posCor);
 		
-	if(newPos!=posCor || !gS->tryMove(GhostRect, dir, pos) || dir == Point2D(0,0)){
+	if(newPos!=posCor || !pS->tryMove(GhostRect, dir, pos) || dir == Point2D(0,0)){
 			//Recorrido para buscar una dirección válida
 		for (int i = 0; i < directions.size(); i++){
 			if (directions[i] != opst)
-				if (gS->tryMove(GhostRect, directions[i], pos)){
+				if (pS->tryMove(GhostRect, directions[i], pos)){
 					candidates[numCandidates] = directions[i];
 					numCandidates++;
 				}
@@ -96,7 +96,7 @@ void Ghost::checkNextDir()
 			int select = (rand()%numCandidates);
 			dir = candidates[select];
 
-			if (gS->tryMove(GhostRect, dir, pos) == false)
+			if (pS->tryMove(GhostRect, dir, pos) == false)
 				int n = 0;
 		}
 		else dir = opst;

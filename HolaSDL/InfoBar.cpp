@@ -1,12 +1,12 @@
 #include "InfoBar.h"
 #include "PlayState.h"
 //Constructora de la barra HUB
-InfoBar::InfoBar(PlayState* game, Texture* life, Texture* digits)
+InfoBar::InfoBar(PlayState* pSt, Texture* life, Texture* digits)
 {
 	maxLifes = 3;
 	maxDigits = 3;
 
-	g = game;
+	pS = pSt;
 	
 	lifes = life;
 	numbers = digits;
@@ -22,8 +22,8 @@ void InfoBar::render() const
 {
 	SDL_Rect destRect;
 
-	destRect.w = g->getOffsetWidth();
-	destRect.h = g->getOffsetHeight();
+	destRect.w = pS->getOffsetWidth();
+	destRect.h = pS->getOffsetHeight();
 
 	//VIDAS
 	destRect.x = 0; destRect.y = 0;
@@ -35,7 +35,7 @@ void InfoBar::render() const
 	}
 
 	//PUNTOS
-	destRect.x = g->getWidth() - g->getOffsetWidth();
+	destRect.x = pS->getWindowWidth() - pS->getOffsetWidth();
 
 	int n = points;
 
@@ -44,7 +44,7 @@ void InfoBar::render() const
 		int digit = n % 10;
 		renderNum(destRect, digit);
 		n = n / 10;
-		destRect.x = destRect.x - g->getOffsetWidth();
+		destRect.x = destRect.x - pS->getOffsetWidth();
 	}
 }
 //Actualiza la informacion de la barra HUD. Tanto las vidas como los puntos

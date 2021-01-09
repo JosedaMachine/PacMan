@@ -11,12 +11,12 @@ class GameObject
 protected:
 	//Tamaño del game object en pantalla
 	int height, width;
-	GameState* gS;
+	//GameState* gS;
 	Point2D pos;
 public:
 
 	GameObject();
-	GameObject(Point2D pos, int w, int h, GameState* gSt): pos(pos), width(w), height(h), gS(gSt){};
+	GameObject(Point2D pos, int w, int h/*, GameState* gSt*/): pos(pos), width(w), height(h)/*, gS(gSt)*/{};
 
 	//Abstracto
 	virtual ~GameObject() {};

@@ -35,10 +35,10 @@ void SmartGhost::render()
 void SmartGhost::update()
 {
 	SmartGhost* gh = this;
-	gS->collisionGhost(getDestRect(), gh);
+	pS->collisionGhost(getDestRect(), gh);
 
 	if (state != Dead) {
-		Point2D newDir = gS->PlayerPos() - pos;
+		Point2D newDir = pS->PlayerPos() - pos;
 		if (newDir.module() > 150) Ghost::update();
 		else
 		{
@@ -46,7 +46,7 @@ void SmartGhost::update()
 			//actualizamos a la siguiente pos
 			pos = pos + dir;
 			//Comprobamos si va a aparecer por el otro lado
-			gS->ToroidalPos(pos);
+			pS->ToroidalPos(pos);
 			//Cambiamos el Sprite en caso de que sea comible
 			if (!edable)
 				ChangeSprite();
@@ -60,11 +60,11 @@ void SmartGhost::update()
 		}
 	}
 	else if (age > tiempoDeDescomposicion) {
-		gS->borraFantasma(it, this);
+		pS->borraFantasma(it, this);
 	}
 	age++;
 
-	gS->collisionGhost(getDestRect(), this);
+	pS->collisionGhost(getDestRect(), this);
 }
 //guarda en un archivo .dat su identificador, posicion inicial, posicion actual y direccion
 void SmartGhost::saveToFile(ofstream& output)
@@ -97,15 +97,15 @@ void SmartGhost::checkSmartDir(Point2D newDir)
 	newPos.setX(GhostRect.x);
 	newPos.setY(GhostRect.y);
 	newPos = newPos + dir;
-	gS->SDLPointToMapCoords(newPos, newPos);
-	gS->SDLPointToMapCoords(pos, posCor);
+	pS->SDLPointToMapCoords(newPos, newPos);
+	pS->SDLPointToMapCoords(pos, posCor);
 
 	//Dos candidatos máximo
 	//Elige exactamente dos candidatos respecto a la pos actual del Player
-	if (newPos != posCor || !gS->tryMove(GhostRect, dir, pos) || dir == Point2D(0, 0))
+	if (newPos != posCor || !pS->tryMove(GhostRect, dir, pos) || dir == Point2D(0, 0))
 	{
 		//Comprobacion de que puede ir por arriba o por abajo
-		if (gS->tryMove(getDestRect(), Point2D(newDir.getX(), 0), pos))
+		if (pS->tryMove(getDestRect(), Point2D(newDir.getX(), 0), pos))
 		{
 			candidates[0] = Point2D(newDir.getX(), 0);
 			numCandidates++;
@@ -116,7 +116,7 @@ void SmartGhost::checkSmartDir(Point2D newDir)
 		}
 
 		//Comprobacion de que puede ir por la derecha o la izquierda
-		if (gS->tryMove(getDestRect(), Point2D(0, newDir.getY()), pos))
+		if (pS->tryMove(getDestRect(), Point2D(0, newDir.getY()), pos))
 		{
 			candidates[1] = Point2D(0, newDir.getY());
 			numCandidates++;

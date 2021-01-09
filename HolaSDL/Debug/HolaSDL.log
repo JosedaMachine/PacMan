@@ -6,8 +6,6 @@ C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(3,
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(4,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\TextureManager.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\TextureManager.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\MainMenuState.h(6,15): error C2512: 'GameState': no hay disponible un constructor predeterminado adecuado
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(10,7): message : vea la declaración de 'GameState'
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\Game.cpp(23,12): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\Game.cpp(139,19): error C2065: 'hasWon': identificador no declarado
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\Game.cpp(139,29): error C2065: 'lives': identificador no declarado
@@ -36,14 +34,6 @@ C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PlayState.h(7,
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PlayState.h(8,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PlayState.h(9,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PlayState.h(10,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameCharacter.cpp(30,6): error C2039: "mapCoordToSDLPoint": no es un miembro de "GameState"
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(10): message : vea la declaración de 'GameState'
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameCharacter.cpp(36,6): error C2039: "mapCoordToSDLPoint": no es un miembro de "GameState"
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(10): message : vea la declaración de 'GameState'
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameCharacter.cpp(45,6): error C2039: "SDLPointToMapCoords": no es un miembro de "GameState"
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(10): message : vea la declaración de 'GameState'
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameCharacter.cpp(48,6): error C2039: "SDLPointToMapCoords": no es un miembro de "GameState"
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(10): message : vea la declaración de 'GameState'
   GameMap.cpp
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameCharacter.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
@@ -51,8 +41,6 @@ C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(3,
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(4,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\TextureManager.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\TextureManager.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\MainMenuState.h(6,15): error C2512: 'GameState': no hay disponible un constructor predeterminado adecuado
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(10,7): message : vea la declaración de 'GameState'
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PlayState.h(4,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PlayState.h(5,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PlayState.h(6,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
@@ -60,11 +48,7 @@ C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PlayState.h(7,
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PlayState.h(8,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PlayState.h(9,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PlayState.h(10,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameMap.cpp(16,23): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameMap.cpp(69,6): error C2039: "SDLPointToMapCoords": no es un miembro de "GameState"
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(10): message : vea la declaración de 'GameState'
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameMap.cpp(70,6): error C2039: "SDLPointToMapCoords": no es un miembro de "GameState"
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(10): message : vea la declaración de 'GameState'
+C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameMap.cpp(17,23): warning C4018: '<': no coinciden signed/unsigned
   GameState.cpp
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
@@ -73,14 +57,6 @@ C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\TextureManager
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\TextureManager.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.cpp(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameCharacter.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\MainMenuState.h(6,15): error C2512: 'GameState': no hay disponible un constructor predeterminado adecuado
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(10,7): message : vea la declaración de 'GameState'
-  GameStateMachine.cpp
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(4,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\TextureManager.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\TextureManager.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
   Ghost.cpp
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameCharacter.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PlayState.h(4,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
@@ -97,19 +73,7 @@ C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PlayState.h(9,
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PlayState.h(10,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\Ghost.cpp(12,12): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\Ghost.cpp(22,12): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\Ghost.cpp(40,6): error C2039: "ToroidalPos": no es un miembro de "GameState"
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(10): message : vea la declaración de 'GameState'
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\Ghost.cpp(82,6): error C2039: "SDLPointToMapCoords": no es un miembro de "GameState"
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(10): message : vea la declaración de 'GameState'
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\Ghost.cpp(83,6): error C2039: "SDLPointToMapCoords": no es un miembro de "GameState"
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(10): message : vea la declaración de 'GameState'
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\Ghost.cpp(85,28): error C2039: "tryMove": no es un miembro de "GameState"
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(10): message : vea la declaración de 'GameState'
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\Ghost.cpp(87,21): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\Ghost.cpp(89,13): error C2039: "tryMove": no es un miembro de "GameState"
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(10): message : vea la declaración de 'GameState'
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\Ghost.cpp(99,12): error C2039: "tryMove": no es un miembro de "GameState"
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(10): message : vea la declaración de 'GameState'
   InfoBar.cpp
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PlayState.h(4,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PlayState.h(5,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
@@ -124,8 +88,6 @@ C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PlayState.h(7,
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PlayState.h(8,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PlayState.h(9,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PlayState.h(10,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\InfoBar.cpp(38,18): error C2039: "getWidth": no es un miembro de "PlayState"
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PlayState.h(17): message : vea la declaración de 'PlayState'
   main.cpp
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameCharacter.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
@@ -133,9 +95,7 @@ C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(3,
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(4,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\TextureManager.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\TextureManager.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\MainMenuState.h(6,15): error C2512: 'GameState': no hay disponible un constructor predeterminado adecuado
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(10,7): message : vea la declaración de 'GameState'
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\main.cpp(28,5): error C2039: "load": no es un miembro de "Game"
+C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\main.cpp(27,5): error C2039: "load": no es un miembro de "Game"
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\Game.h(31): message : vea la declaración de 'Game'
   MainMenuState.cpp
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
@@ -143,8 +103,7 @@ C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(3,
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(4,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\TextureManager.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\TextureManager.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\MainMenuState.h(6,15): error C2512: 'GameState': no hay disponible un constructor predeterminado adecuado
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(10,7): message : vea la declaración de 'GameState'
+C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameCharacter.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
   PacMan.cpp
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameCharacter.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PlayState.h(4,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
@@ -159,35 +118,6 @@ C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PlayState.h(7,
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PlayState.h(8,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PlayState.h(9,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PlayState.h(10,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PacMan.cpp(33,7): error C2039: "colissions": no es un miembro de "GameState"
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(10): message : vea la declaración de 'GameState'
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PacMan.cpp(35,11): error C2039: "tryMove": no es un miembro de "GameState"
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(10): message : vea la declaración de 'GameState'
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PacMan.cpp(45,11): error C2039: "tryMove": no es un miembro de "GameState"
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(10): message : vea la declaración de 'GameState'
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PacMan.cpp(50,7): error C2039: "ToroidalPos": no es un miembro de "GameState"
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(10): message : vea la declaración de 'GameState'
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PacMan.cpp(56,29): error C2039: "setGhostsEdables": no es un miembro de "GameState"
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(10): message : vea la declaración de 'GameState'
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PacMan.cpp(60,6): error C2039: "colissions": no es un miembro de "GameState"
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(10): message : vea la declaración de 'GameState'
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PacMan.cpp(73,10): error C2039: "restLife": no es un miembro de "GameState"
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(10): message : vea la declaración de 'GameState'
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PacMan.cpp(78,22): error C2039: "getFrameRate": no es un miembro de "GameState"
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(10): message : vea la declaración de 'GameState'
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PacMan.cpp(112,6): error C2039: "SDLPointToMapCoords": no es un miembro de "GameState"
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(10): message : vea la declaración de 'GameState'
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PacMan.cpp(114,14): error C2039: "getCellType": no es un miembro de "GameState"
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(10): message : vea la declaración de 'GameState'
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PacMan.cpp(117,7): error C2039: "setCell": no es un miembro de "GameState"
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(10): message : vea la declaración de 'GameState'
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PacMan.cpp(118,7): error C2039: "SumaPuntos": no es un miembro de "GameState"
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(10): message : vea la declaración de 'GameState'
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PacMan.cpp(119,15): error C2039: "FoodEaten": no es un miembro de "GameState"
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(10): message : vea la declaración de 'GameState'
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PacMan.cpp(122,8): error C2039: "setGhostsEdables": no es un miembro de "GameState"
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(10): message : vea la declaración de 'GameState'
-  PauseState.cpp
   PlayState.cpp
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PlayState.h(4,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PlayState.h(5,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
@@ -202,16 +132,14 @@ C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PlayState.h(7,
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PlayState.h(8,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PlayState.h(9,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PlayState.h(10,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\MainMenuState.h(6,15): error C2512: 'GameState': no hay disponible un constructor predeterminado adecuado
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(10,7): message : vea la declaración de 'GameState'
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PlayState.cpp(71,34): error C2065: 'user': identificador no declarado
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PlayState.cpp(75,49): error C2065: 'user': identificador no declarado
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PlayState.cpp(75,62): error C2512: 'FileNotFoundError': no hay disponible un constructor predeterminado adecuado
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PlayState.cpp(75,62): message : Ningún constructor ha podido aceptar el tipo de origen o bien la resolución de sobrecarga del constructor era ambigua
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PlayState.cpp(279,33): error C2065: 'user': identificador no declarado
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PlayState.cpp(281,69): error C2065: 'user': identificador no declarado
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PlayState.cpp(281,82): error C2512: 'FileNotFoundError': no hay disponible un constructor predeterminado adecuado
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PlayState.cpp(281,82): message : Ningún constructor ha podido aceptar el tipo de origen o bien la resolución de sobrecarga del constructor era ambigua
+C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PlayState.cpp(291,33): error C2065: 'user': identificador no declarado
+C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PlayState.cpp(293,69): error C2065: 'user': identificador no declarado
+C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PlayState.cpp(293,82): error C2512: 'FileNotFoundError': no hay disponible un constructor predeterminado adecuado
+C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PlayState.cpp(293,82): message : Ningún constructor ha podido aceptar el tipo de origen o bien la resolución de sobrecarga del constructor era ambigua
   SmartGhost.cpp
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameCharacter.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PlayState.h(4,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
@@ -226,26 +154,6 @@ C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PlayState.h(7,
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PlayState.h(8,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PlayState.h(9,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\PlayState.h(10,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\SmartGhost.cpp(38,6): error C2039: "collisionGhost": no es un miembro de "GameState"
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(10): message : vea la declaración de 'GameState'
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\SmartGhost.cpp(41,24): error C2039: "PlayerPos": no es un miembro de "GameState"
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(10): message : vea la declaración de 'GameState'
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\SmartGhost.cpp(49,8): error C2039: "ToroidalPos": no es un miembro de "GameState"
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(10): message : vea la declaración de 'GameState'
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\SmartGhost.cpp(63,7): error C2039: "borraFantasma": no es un miembro de "GameState"
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(10): message : vea la declaración de 'GameState'
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\SmartGhost.cpp(67,6): error C2039: "collisionGhost": no es un miembro de "GameState"
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(10): message : vea la declaración de 'GameState'
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\SmartGhost.cpp(100,6): error C2039: "SDLPointToMapCoords": no es un miembro de "GameState"
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(10): message : vea la declaración de 'GameState'
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\SmartGhost.cpp(101,6): error C2039: "SDLPointToMapCoords": no es un miembro de "GameState"
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(10): message : vea la declaración de 'GameState'
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\SmartGhost.cpp(105,31): error C2039: "tryMove": no es un miembro de "GameState"
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(10): message : vea la declaración de 'GameState'
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\SmartGhost.cpp(108,11): error C2039: "tryMove": no es un miembro de "GameState"
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(10): message : vea la declaración de 'GameState'
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\SmartGhost.cpp(119,11): error C2039: "tryMove": no es un miembro de "GameState"
-C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\GameState.h(10): message : vea la declaración de 'GameState'
   TextureManager.cpp
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\TextureManager.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Users\jd\Desktop\Uni\Segundo\TPV\PacMANDEVERDAD\PacMan\HolaSDL\TextureManager.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea

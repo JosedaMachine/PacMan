@@ -2,7 +2,7 @@
 #include "texture.h"
 #include "checkML.h"
 class PlayState;
-
+//InfoBar tiene que ser un GameObject?
 class InfoBar
 {
 private:
@@ -13,7 +13,8 @@ private:
 	int lifesCol, lifesRow;
 	int points, vidas;
 
-	PlayState * g;
+	PlayState * pS;
+
 public:
 
 	InfoBar(PlayState* game, Texture* lives, Texture* digits);

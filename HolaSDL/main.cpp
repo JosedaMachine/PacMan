@@ -15,11 +15,10 @@ using namespace std;
 using uint = unsigned int;
 
 void PacManGame() {
+	//DUDAS
+	//Si GameState tiene un campo Game* g. Y PlayState hereda g, si desde un GameCharacter intento llamar a un metodo de Game, tengo que hacer un getter de PlayState que devuelva un getter de Game. Es correcto?
 
-	//Por que PacMan y Ghisr han de llevar destructora si no crean nada?
-	//El infobar tiene que heredar de GO?
-	//SI pongo Game g = Game() lo hace por copia
-
+	//Es correcto tener en GameCharacter un puntero a PlayState? Y que Map , InfoBar,.. tengan los punteros correspondientes? Ya que en caso de los botones, hay 3 estados distintos en los que ellos existen
 	Game g;
 
 	try

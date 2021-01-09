@@ -17,6 +17,5 @@ public:
 	TextureManager(SDL_Renderer* renderer);
 	~TextureManager();
 	Texture* getTexture(TextureName t);
-
 };
 

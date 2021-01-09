@@ -3,7 +3,7 @@
 
 PlayState::PlayState(Game* game, TextureManager* tM) : GameState(game, tM)
 {
-	g = game;
+
 }
 
 PlayState::~PlayState()
@@ -108,6 +108,18 @@ void PlayState::loadMatch(ifstream& input)
 
 	bar = new InfoBar(this, tM->getTexture(Characters), tM->getTexture(Digits));
 	createNPositionate(input);
+}
+int PlayState::getWindowWidth() const
+{
+	return g->getWidth();
+}
+int PlayState::getWindowHeight() const
+{
+	return g->getHeight();
+}
+int PlayState::getGameFrameRate() const
+{
+	return g->getFrameRate();
 }
 //devolvemos el tipo de casilla en función de una posición dada
 int PlayState::getCellType(Point2D posPlayer) const

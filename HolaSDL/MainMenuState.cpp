@@ -5,3 +5,9 @@ MainMenuState::MainMenuState(Game* game, TextureManager* tM) : GameState(game, t
 {
 
 }
+
+MainMenuState::~MainMenuState()
+{
+
+}
+

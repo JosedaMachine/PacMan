@@ -3,12 +3,9 @@
 class MainMenuState : public GameState
 {
 public:
-	MainMenuState();
+	MainMenuState(Game* game, TextureManager* tM);
 
-	~MainMenuState()
-	{
-
-	}
+	~MainMenuState();
 
 	virtual void render(){};
 	virtual void update(){};

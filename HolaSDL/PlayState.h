@@ -32,10 +32,10 @@ class PlayState : public GameState
 	list<Ghost*> Ghosts;
 	list<list<GameObject*>::iterator> objectsToErase;
 
-
 	GameMap* map;			//Puntero al mapa
 	PacMan* player;			//Puntero al jugador
 	InfoBar* bar;			//Puntero al HUD
+
 public:
 	PlayState(Game* game, TextureManager* tM);
 	~PlayState();
@@ -61,6 +61,7 @@ public:
 	bool tryMove(SDL_Rect rect, Vector2D dir, Point2D newPos);
 	void borraFantasma(list<GameObject*>::iterator it, Ghost* fantasma);
 
+	
 
 private:
 	void saveToFileGame();
@@ -72,7 +73,11 @@ private:
 	int getCols() const { return cols; }
 	int getFils() const { return fils; }
 	int GetLives() const { return lives; }
+public:
 	Point2D PlayerPos() const { return player->GetPos(); }
+	int getWindowWidth() const;
+	int getWindowHeight() const;
+	int getGameFrameRate() const;
 	int getCellType(Point2D posPlayer) const;
 #pragma endregion
 };

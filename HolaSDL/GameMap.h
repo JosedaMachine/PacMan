@@ -25,8 +25,8 @@ private:
 	MapCell** celdas; //Array dinámico de 2D
 
 public:
-
-	GameMap(Point2D pos, int fils, int cols, PlayState* g);
+	PlayState* pS;
+	GameMap(Point2D pos, int fils, int cols, PlayState* pSt);
 	virtual ~GameMap();
 	virtual void saveToFile(ofstream& output);
 	void render();

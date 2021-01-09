@@ -3,12 +3,13 @@
 #include "PlayState.h"
 
 //Constructora
-GameMap::GameMap(Point2D pos, int f, int c, PlayState* game) : GameObject(pos, c, f, game)
+GameMap::GameMap(Point2D pos, int f, int c, PlayState* pSt) : GameObject(pos, c, f/*, game*/)
 {
 	celdas = new MapCell *[height];
 
 	for (int i = 0; i < height; i++)
 		celdas[i] = new MapCell[width];
+	pS = pSt;
 }
 //Destructora(borramos memoria dinámica)
 GameMap::~GameMap()
@@ -33,15 +34,15 @@ void GameMap::saveToFile(ofstream& output)
 //Renderiza el mapa con las texturas correspondientes: Vitaminas, Comida, y Muro.
 void GameMap::render() 
 {
-	Texture* wall = gS->tM->getTexture(WallMap);
-	Texture* food = gS->tM->getTexture(Food);
-	Texture* vitamins = gS->tM->getTexture(PowerUp);
+	Texture* wall = pS->tM->getTexture(WallMap);
+	Texture* food = pS->tM->getTexture(Food);
+	Texture* vitamins = pS->tM->getTexture(PowerUp);
 
 	SDL_Rect destRect;
 	
-	destRect.w = gS->getOffsetWidth();
-	destRect.h = gS->getOffsetHeight();
-	destRect.y = gS->getOffsetHeight();
+	destRect.w = pS->getOffsetWidth();
+	destRect.h = pS->getOffsetHeight();
+	destRect.y = pS->getOffsetHeight();
 
 	for (int i = 0; i < height; i++)
 	{
@@ -66,8 +67,8 @@ bool GameMap::intersectWall(const SDL_Rect& rect) const
 	Point2D topLeft, botRight;
 
 	//Metodo que tiene el estado PlayState
-	gS->SDLPointToMapCoords(iz, topLeft);
-	gS->SDLPointToMapCoords(der, botRight);
+	pS->SDLPointToMapCoords(iz, topLeft);
+	pS->SDLPointToMapCoords(der, botRight);
 	//Comprobamos si alguna de las esquinas intersecta con un muro, ya que el PacMan puede estar en dos casillas al mismpo tiempo.
 	//En definitiva estamos comprobando las cuatro esquinas
 	for (int cols = topLeft.getX(); cols <= botRight.getX(); cols++)

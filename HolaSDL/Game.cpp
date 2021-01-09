@@ -12,9 +12,9 @@ Game::Game()
 	//Codigo Defensivo
 	if (window == nullptr || renderer == nullptr) throw SDLError("Error loading window o renderer.");
 	#pragma endregion
-
+	tM = new TextureManager(renderer);
 	stateMachine = new GameStateMachine();
-	stateMachine->pushState(new MainMenuState());
+	stateMachine->pushState(new MainMenuState(this, tM));
 
 	exit = false;
 	hasSaved = false;
