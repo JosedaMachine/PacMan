@@ -6,6 +6,7 @@ PlayState::PlayState(Game* game, TextureManager* tM) : GameState(game, tM)
 	wantLoad = false;
 	Current_Level = 1;
 	points = 0;
+	amountFood = 0;
 
 	hasWon = false;
 	load(3);
@@ -85,7 +86,7 @@ void PlayState::load(int liv)
 	}
 	
 }
-//Cargamos una partida guardada, que contiene el mapa, el número de objetos, vidas y puntuación
+//Cargamos una partida guardada, que contiene el mapa, el nï¿½mero de objetos, vidas y puntuaciï¿½n
 void PlayState::loadMatch(ifstream& input)
 {
 	input >> lives >> points >> fils >> cols;
@@ -127,7 +128,7 @@ int PlayState::getGameFrameRate() const
 {
 	return g->getFrameRate();
 }
-//devolvemos el tipo de casilla en función de una posición dada
+//devolvemos el tipo de casilla en funciï¿½n de una posiciï¿½n dada
 int PlayState::getCellType(Point2D posPlayer) const
 {
 	return map->celdas[posPlayer.getY()][posPlayer.getX()];
@@ -174,7 +175,7 @@ bool PlayState::restLife()
 	lives--;
 	return lives > 0;
 }
-//Cambia el nivel en caso de que haya terminado de consumir todas las celdas de comida. Reinicia la puntuación pero mantiene las vidas.
+//Cambia el nivel en caso de que haya terminado de consumir todas las celdas de comida. Reinicia la puntuaciï¿½n pero mantiene las vidas.
 void PlayState::changeLevel()
 {
 	int currentLifes = lives;
@@ -238,7 +239,7 @@ void PlayState::createNPositionate(ifstream& input)
 		}
 	}
 }
-//comprobamos si los fantasmas y el pac-man están en la misma posición y actuamos en consecuencia
+//comprobamos si los fantasmas y el pac-man estï¿½n en la misma posiciï¿½n y actuamos en consecuencia
 void PlayState::colissions(const SDL_Rect rect) const
 {
 	for (Ghost* g : Ghosts){		
@@ -290,7 +291,7 @@ void PlayState::collisionGhost(const SDL_Rect rect, Ghost* ghost)
 		}
 	}
 }
-//Comprueba si el siguiente pixel es válido para moverse
+//Comprueba si el siguiente pixel es vï¿½lido para moverse
 bool PlayState::tryMove(SDL_Rect rect, Vector2D dir, Point2D Pos)
  {
 	 SDL_Rect newRect;
@@ -310,7 +311,7 @@ void PlayState::borraFantasma(list<GameObject*>::iterator it, Ghost* fantasma)
 	 Ghosts.remove(fantasma);
 	 objectsToErase.push_back(it);
  }
-//Guarda cada uno de los GameObjects del juego, incluyendo las vidas y la puntuación.
+//Guarda cada uno de los GameObjects del juego, incluyendo las vidas y la puntuaciï¿½n.
 void PlayState::saveToFileGame()
 {
 	ofstream output;
@@ -342,7 +343,7 @@ void PlayState::reproduce(SmartGhost* _father, Ghost* couple)
 		++i;
 	}
 
-	//Si no hay hueco, pues no se crea ningún fantasma
+	//Si no hay hueco, pues no se crea ningï¿½n fantasma
 	if (i < 4 && _father->getState() == Adult){
 		SmartGhost* mother = dynamic_cast<SmartGhost*>(couple);
 
@@ -368,7 +369,7 @@ void PlayState::reproduce(SmartGhost* _father, Ghost* couple)
 		}
 	}
 }
-//Dada una poscición y un n que hace referencia al tipo de celda, cambiamos el valor en el mapa
+//Dada una posciciï¿½n y un n que hace referencia al tipo de celda, cambiamos el valor en el mapa
 void PlayState::setCell(int n, Point2D posPlayer)
 {
 	map->celdas[posPlayer.getY()][posPlayer.getX()] = (MapCell)n;
