@@ -3,12 +3,12 @@
 #include "texture.h"
 #include "checkML.h"
 #include "GameCharacter.h"
+#include "EventHandler.h"
 
 class PlayState;
 
-class PacMan : public GameCharacter
+class PacMan : public GameCharacter, EventHandler
 {
-
 private:
 	
 	int energyLeft;
