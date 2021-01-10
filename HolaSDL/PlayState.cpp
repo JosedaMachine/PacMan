@@ -6,6 +6,7 @@ PlayState::PlayState(Game* game, TextureManager* tM) : GameState(game, tM)
 	wantLoad = false;
 	Current_Level = 1;
 	int liv = 3;
+	points = 0;
 
 	hasWon = false;
 	load(liv);
