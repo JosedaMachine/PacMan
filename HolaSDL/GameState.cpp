@@ -1,7 +1,7 @@
 #include "GameState.h"
-#include "Game.h";
+#include "SDLApplication.h";
 
-GameState::GameState(Game* game, TextureManager* textM)
+GameState::GameState(SDLApplication* game, TextureManager* textM)
 {
 	g = game;
 	tM = textM;

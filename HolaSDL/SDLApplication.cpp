@@ -1,6 +1,6 @@
-#include "Game.h"
+#include "SDLApplication.h"
 #include <ctime>
-Game::Game()
+SDLApplication::SDLApplication()
 {
 	//menu();
 
@@ -24,7 +24,7 @@ Game::Game()
 	srand(time(nullptr));
 }
 //Borramos toda la memoria dinámica que se había creado
-Game::~Game()
+SDLApplication::~SDLApplication()
 {
 	delete stateMachine;
 	delete tM;
@@ -130,7 +130,7 @@ Game::~Game()
 //	createNPositionate(input);
 //}
 //Bucle principal del juego que se encarga de actualizar las posiciones, puntuacion , perdida de vida y comprobar el estado del jugador.
-void Game::run()
+void SDLApplication::run()
 {
 	SDL_Event event;
 	int startTime, frameTime;
@@ -160,12 +160,12 @@ void Game::run()
 	else cout << " Hope you never come back.";*/
 }
 //Actualiza cada uno de los elementos del Juego: posicion, vidas y las colisiones entre el jugador y los fantasmas
-void Game::update()
+void SDLApplication::update()
 {
 	stateMachine->currentState()->update();
 }
 //renderiza el mapa, con cada textura correspondiente en su lugar. Luego renderiza el jugador y la barra de HUD. 
-void Game::render() 
+void SDLApplication::render() 
 {
 	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 	SDL_RenderClear(renderer);
@@ -304,7 +304,7 @@ void Game::render()
 //	map->celdas[posPlayer.getY()][posPlayer.getX()] = (MapCell)n;
 //}
 //Menu de juego, carga de partida asociada al nombrel usuario
-void Game::menu()
+void SDLApplication::menu()
 {
 	cout << "Welcome to PacMan \nControls: Use directionals arrows to move | Press at any moment the key S to save | Quit closing the window |\nPlease, enter your user name: " << endl;
 	user = "t";
@@ -319,7 +319,7 @@ void Game::menu()
 
 	//wantLoad = op;
 }
-void Game::ChangeState(States s)
+void SDLApplication::ChangeState(States s)
 {
 	switch (s)
 	{
@@ -342,7 +342,7 @@ void Game::ChangeState(States s)
 	}
 }
 //comprobamos que input está introduciendo el usuario y actuamos en consecuencia
-void Game::handleEvent(SDL_Event& event, bool& exit)
+void SDLApplication::handleEvent(SDL_Event& event, bool& exit)
 {
 	while (SDL_PollEvent(&event) && !exit) 
 	{

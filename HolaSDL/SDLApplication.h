@@ -31,7 +31,7 @@ const uint WIN_HEIGHT = 700;
 
 enum States {Menu, Play, Pause, End};
 
-class Game
+class SDLApplication
 {
 private:
 
@@ -73,8 +73,8 @@ private:
 
 
 public:
-	Game();
-	~Game();
+	SDLApplication();
+	~SDLApplication();
 
 	//Texture* getTexture(TextureName t);
 	//void load(int lifes);

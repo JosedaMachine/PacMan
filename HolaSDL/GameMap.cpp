@@ -1,5 +1,5 @@
 #include "GameMap.h"
-#include "Game.h"
+#include "SDLApplication.h"
 #include "PlayState.h"
 
 //Constructora

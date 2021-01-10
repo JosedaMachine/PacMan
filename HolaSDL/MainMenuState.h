@@ -3,7 +3,7 @@
 class MainMenuState : public GameState
 {
 public:
-	MainMenuState(Game* game, TextureManager* tM);
+	MainMenuState(SDLApplication* game, TextureManager* tM);
 
 	~MainMenuState();
 

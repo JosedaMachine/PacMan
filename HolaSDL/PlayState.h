@@ -37,7 +37,7 @@ class PlayState : public GameState
 	InfoBar* bar;			//Puntero al HUD
 
 public:
-	PlayState(Game* game, TextureManager* tM);
+	PlayState(SDLApplication* game, TextureManager* tM);
 	~PlayState();
 
 	void load(int lifes);

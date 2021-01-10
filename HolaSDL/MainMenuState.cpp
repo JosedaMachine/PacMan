@@ -1,7 +1,7 @@
 #include "MainMenuState.h"
-#include "Game.h"
+#include "SDLApplication.h"
 
-MainMenuState::MainMenuState(Game* game, TextureManager* tM) : GameState(game, tM)
+MainMenuState::MainMenuState(SDLApplication* game, TextureManager* tM) : GameState(game, tM)
 {
 
 }

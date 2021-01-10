@@ -3,6 +3,6 @@
 #include "TextureManager.h";
 class EndState : public GameState
 {
-	EndState(Game* g, TextureManager* Tm) : GameState(g, Tm) {};
+	EndState(SDLApplication* g, TextureManager* Tm) : GameState(g, Tm) {};
 };
 

@@ -34,6 +34,5 @@ public:
 	int GetEnergy()const { return energyLeft; }
 	bool GetRespawn() const { return respawn > 0; }
 #pragma endregion
-
 };
 

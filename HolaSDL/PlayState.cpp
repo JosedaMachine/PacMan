@@ -1,7 +1,7 @@
 #include "PlayState.h"
-#include "Game.h"
+#include "SDLApplication.h"
 
-PlayState::PlayState(Game* game, TextureManager* tM) : GameState(game, tM)
+PlayState::PlayState(SDLApplication* game, TextureManager* tM) : GameState(game, tM)
 {
 	wantLoad = false;
 	Current_Level = 1;
@@ -158,7 +158,6 @@ void PlayState::update()
 		Borra();
 	}
 	else {
-		this->g.
 	}
 }
 void PlayState::render()

@@ -8,7 +8,7 @@
 
 #include "texture.h"
 #include "Vector2D.h"
-#include "Game.h"
+#include "SDLApplication.h"
 
 using namespace std;
 
@@ -19,7 +19,7 @@ void PacManGame() {
 	//Si GameState tiene un campo Game* g. Y PlayState hereda g, si desde un GameCharacter intento llamar a un metodo de Game, tengo que hacer un getter de PlayState que devuelva un getter de Game. Es correcto?
 
 	//Es correcto tener en GameCharacter un puntero a PlayState? Y que Map , InfoBar,.. tengan los punteros correspondientes? Ya que en caso de los botones, hay 3 estados distintos en los que ellos existen
-	Game g;
+	SDLApplication g;
 	//menu y esas mierda
 	try
 	{
