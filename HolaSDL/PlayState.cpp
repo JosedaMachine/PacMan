@@ -115,6 +115,7 @@ void PlayState::loadMatch(ifstream& input)
 	bar = new InfoBar(this, tM->getTexture(Characters), tM->getTexture(Digits));
 	createNPositionate(input);
 }
+
 int PlayState::getWindowWidth() const
 {
 	return g->getWidth();
@@ -247,8 +248,12 @@ void PlayState::colissions(const SDL_Rect rect) const
 			if (player->GetEnergy() > 0 ) g->death();
 			else if (!player->GetRespawn()){
 				SmartGhost* fantasmita = dynamic_cast<SmartGhost*>(g);
-				if (fantasmita != NULL) if (fantasmita->getState() == Adult || fantasmita->getState() == Quarantine) player->death();
-				else player->death();
+				if (fantasmita != NULL)
+				{
+					if (fantasmita->getState() == Adult || fantasmita->getState() == Quarantine) player->death();
+				}
+				else 
+					player->death();
 			}
 		}
 	}
