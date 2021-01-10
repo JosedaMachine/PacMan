@@ -319,6 +319,28 @@ void Game::menu()
 
 	//wantLoad = op;
 }
+void Game::ChangeState(States s)
+{
+	switch (s)
+	{
+	case Menu:
+
+		stateMachine->changeState(new MainMenuState(this, tM));
+		break;
+	case Play:
+		//resume arreglo
+		stateMachine->changeState(new PlayState(this, tM));
+		break;
+	case Pause:
+		stateMachine->changeState(new PauseState(this, tM));
+		break;
+	case End:
+		stateMachine->changeState(new EndState(this, tM));
+		break;
+	default:
+		break;
+	}
+}
 //comprobamos que input está introduciendo el usuario y actuamos en consecuencia
 void Game::handleEvent(SDL_Event& event, bool& exit)
 {

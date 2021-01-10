@@ -20,6 +20,8 @@
 #include "PlayState.h"
 #include "MainMenuState.h"
 #include "TextureManager.h"
+#include "PauseState.h"
+#include "EndState.h"
 
 const int FRAME_RATE = 5;
 
@@ -27,7 +29,7 @@ const int FRAME_RATE = 5;
 const uint WIN_WIDTH = 700;
 const uint WIN_HEIGHT = 700;
 
-//enum TextureName { WallMap, Characters, Food, Digits, PowerUp };
+enum States {Menu, Play, Pause, End};
 
 class Game
 {
@@ -79,6 +81,7 @@ public:
 	void run();
 	void menu();
 	//void Borra();
+	void ChangeState(States s);
 	void render();
 	void update();
 	//bool restLife();

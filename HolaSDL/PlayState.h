@@ -18,7 +18,7 @@ class PlayState : public GameState
 {
 
 	int fils, cols;
-	int amountFood; //comida restante en el juego
+	int amountFood = 0; //comida restante en el juego
 	int points;  //Puntuacion del juego 
 	int Current_Level; //Nivel actual
 	int lives;
