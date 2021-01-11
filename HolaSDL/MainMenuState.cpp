@@ -11,3 +11,13 @@ MainMenuState::~MainMenuState()
 
 }
 
+void MainMenuState::render()
+{
+	GameState::render();
+}
+
+void MainMenuState::update()
+{
+	GameState::update();
+}
+

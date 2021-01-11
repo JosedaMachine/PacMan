@@ -7,8 +7,8 @@ public:
 
 	~MainMenuState();
 
-	virtual void render(){};
-	virtual void update(){};
+	virtual void render();
+	virtual void update();
 	virtual void handleEvents(SDL_Event& event){};
 };
 
