@@ -158,6 +158,7 @@ void PlayState::update()
 		Borra();
 	}
 	else {
+		g->ChangeState(End);
 	}
 }
 void PlayState::render()
