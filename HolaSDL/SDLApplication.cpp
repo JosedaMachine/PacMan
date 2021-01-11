@@ -42,7 +42,8 @@ void SDLApplication::run()
 		startTime = SDL_GetTicks();
 
 		handleEvent(event, exit);
-		update();
+		//Actualiza cada uno de los elementos del Juego: posicion, vidas y las colisiones entre el jugador y los fantasmas
+		stateMachine->currentState()->update();
 		render();
 
 		frameTime = SDL_GetTicks() - startTime; // Tiempo de la iteración
@@ -60,11 +61,6 @@ void SDLApplication::run()
 	else if (hasWon) cout << "You have won, go and fuck off";
 	else if (!hasWon && lives <= 0) cout << "You have lost, you are so bad, you literally suck";
 	else cout << " Hope you never come back.";*/
-}
-//Actualiza cada uno de los elementos del Juego: posicion, vidas y las colisiones entre el jugador y los fantasmas
-void SDLApplication::update()
-{
-	stateMachine->currentState()->update();
 }
 //renderiza el mapa, con cada textura correspondiente en su lugar. Luego renderiza el jugador y la barra de HUD. 
 void SDLApplication::render() 
