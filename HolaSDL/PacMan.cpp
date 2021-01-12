@@ -8,7 +8,7 @@ PacMan::PacMan(Point2D posi, PlayState* pSt, Texture* t, Point2D const size) : G
 
 	energyLeft = 0;
 
-	respawn = 8000000;
+	respawn = 1;
 }
 //Constructora por flujo
 PacMan::PacMan(ifstream& input, PlayState* pSt, Texture* t, Point2D const size) : GameCharacter(input, pSt, t, Point2D(10, 0), size)

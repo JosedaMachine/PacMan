@@ -14,7 +14,7 @@ SDLApplication::SDLApplication()
 	tM = new TextureManager(renderer);
 	stateMachine = new GameStateMachine();
 
-	stateMachine->pushState(new EndState(this, tM));
+	stateMachine->pushState(new MainMenuState(this, tM));
 
 	exit = false;
 	hasSaved = false;
