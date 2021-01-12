@@ -1,7 +1,9 @@
 #include "MenuButton.h"
 
-MenuButton::MenuButton(Point2D pos, Texture* te ,int w, int h) : GameObject(pos, w, h) {
+MenuButton::MenuButton(Point2D pos, SDLApplication* ga, Texture* te ,int w, int h, CallBackOnClick* function) : GameObject(pos, w, h) {
 	t = te;
+	g = ga;
+	cbOnClick = function;
 }
 
 void MenuButton::render() 
@@ -21,9 +23,9 @@ bool MenuButton::handleEvents(SDL_Event& event)
 		p.x = event.button.x;
 		p.y = event.button.y;
 
-		if (SDL_PointInRect(&p, &r) == SDL_TRUE) {
-
-			
+		if (SDL_PointInRect(&p, &r) == SDL_TRUE) 
+		{
+			cbOnClick(g);
 		}
 
 	}

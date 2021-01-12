@@ -16,8 +16,8 @@ void EndState::load() {
 	Point2D pos = Point2D(POS_WIDTH, POS_HEIGHT);
 
 	//Botón
-	MenuButton* newBut = new MenuButton(pos, t, t->getW()/3, t->getH());
-	gO.push_back(newBut);
+	//MenuButton* newBut = new MenuButton(pos, t, t->getW()/3, t->getH());
+	//gO.push_back(newBut);
 }
 
 void EndState ::render() {

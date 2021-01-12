@@ -10,7 +10,7 @@ MainMenuState::MainMenuState(SDLApplication* game, TextureManager* tM) : GameSta
 	Point2D pos = Point2D(OFFSET_WIDTH / 2 - (t->getW()/ (6* multiplier)) , OFFSET_HEIGHT / 2 - (t->getH() / multiplier));
 
 	//Botón
-	MenuButton* newBut = new MenuButton(pos, t, t->getW()/(3* multiplier), t->getH()/ multiplier);
+	MenuButton* newBut = new MenuButton(pos,game,t, t->getW()/(3* multiplier), t->getH()/ multiplier, play);
 	events.push_back(newBut);
 	gO.push_back(newBut);
 
@@ -19,6 +19,11 @@ MainMenuState::MainMenuState(SDLApplication* game, TextureManager* tM) : GameSta
 MainMenuState::~MainMenuState()
 {
 
+}
+
+void MainMenuState::play(SDLApplication* game)
+{
+	game->ChangeState(Play);
 }
 
 void MainMenuState::render()

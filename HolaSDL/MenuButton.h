@@ -9,11 +9,12 @@ using  CallBackOnClick = void(SDLApplication* g);
 class MenuButton :
     public EventHandler, public GameObject
 {
-	Texture* t;
 protected:
 	CallBackOnClick* cbOnClick;
 public:
-	MenuButton(Point2D pos, Texture* te, int w, int h);
+	SDLApplication* g;
+	Texture* t;
+	MenuButton(Point2D pos, SDLApplication* g, Texture* te, int w, int h, CallBackOnClick* function);
 	virtual void render();
 	bool handleEvents(SDL_Event& event);
 };
