@@ -7,12 +7,16 @@ EndState::EndState(SDLApplication* g, TextureManager* Tm) : GameState(g, Tm)
 }
 
 void EndState::load() {
-	POS_HEIGHT = OFFSET_HEIGHT / 2;
-	POS_WIDTH = OFFSET_WIDTH / 2;
+	Texture* t = tM->getTexture(mainButton); //Guardamos la textura
+
+	//Para que aparezca en mitad de pantalla
+	POS_HEIGHT = OFFSET_HEIGHT / 2 - (t->getH() / 2);
+	POS_WIDTH = OFFSET_WIDTH / 2  - (t->getH() / 2);
 
 	Point2D pos = Point2D(POS_WIDTH, POS_HEIGHT);
 
-	MenuButton* newBut = new MenuButton(pos, tM->getTexture(mainButton), tM->getTexture(mainButton)->getW()/3, tM->getTexture(mainButton)->getH());
+	//Botón
+	MenuButton* newBut = new MenuButton(pos, t, t->getW()/3, tM->getTexture(mainButton)->getH());
 	gO.push_back(newBut);
 }
 
