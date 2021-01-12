@@ -1,8 +1,5 @@
 #include "EndState.h"
 
-void EndState :: render() {
-	GameState::render();
-}
 
 EndState::EndState(SDLApplication* g, TextureManager* Tm) : GameState(g, Tm)
 {
@@ -12,6 +9,10 @@ EndState::EndState(SDLApplication* g, TextureManager* Tm) : GameState(g, Tm)
 void EndState::load() {
 	Point2D pos = Point2D(POS_WIDTH, POS_HEIGHT);
 
+	MenuButton* newBut = new MenuButton(pos, tM->getTexture(mainButton), tM->getTexture(mainButton)->getW()/3, tM->getTexture(mainButton)->getH());
+	gO.push_back(newBut);
+}
 
-	MenuButton* newBut = new MenuButton(pos, 50, 50, tM->getTexture(mainButton));
+void EndState :: render() {
+	GameState::render();
 }

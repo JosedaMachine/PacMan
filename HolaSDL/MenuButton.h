@@ -2,13 +2,14 @@
 #include "EventHandler.h"
 #include "GameObject.h"
 #include "texture.h";
+
 class MenuButton :
-    public EventHandler, GameObject
+    public GameObject, EventHandler
 {
 	Texture* t;
 
 public:
-	MenuButton(Point2D pos, int w, int h, Texture* te);
+	MenuButton(Point2D pos, Texture* te, int w, int h);
 	virtual void render();
 };
 

@@ -1,11 +1,12 @@
 #include "MenuButton.h"
 
-MenuButton::MenuButton(Point2D pos, int w, int h, Texture* te) : GameObject(pos, w, h) {
+MenuButton::MenuButton(Point2D pos, Texture* te ,int w, int h) : GameObject(pos, w, h) {
 	t = te;
 }
 
-void MenuButton::render() {
+void MenuButton::render() 
+{
 	SDL_Rect destRect = getDestRect();
 
-	t->renderFrame(destRect, 1, 1);
+	t->renderFrame(destRect, 0, 1);
 }

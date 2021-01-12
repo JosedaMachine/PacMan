@@ -92,7 +92,6 @@ void SDLApplication::ChangeState(States s)
 	switch (s)
 	{
 	case Menu:
-
 		stateMachine->changeState(new MainMenuState(this, tM));
 		break;
 	case Play:

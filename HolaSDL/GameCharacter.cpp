@@ -57,5 +57,5 @@ void GameCharacter::render()
 {
 	SDL_Rect destRect = getDestRect();
 	
-	texture->renderFrame(destRect,textureFrame.getY(), textureFrame.getX());
+	texture->renderFrame(destRect, textureFrame.getY(), textureFrame.getX());
 }
