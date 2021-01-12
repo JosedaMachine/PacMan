@@ -5,5 +5,7 @@ MenuButton::MenuButton(Point2D pos, int w, int h, Texture* te) : GameObject(pos,
 }
 
 void MenuButton::render() {
-	GameObject:render();
+	SDL_Rect destRect = getDestRect();
+
+	t->renderFrame(destRect, 1, 1);
 }

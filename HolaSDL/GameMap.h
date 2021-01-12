@@ -32,4 +32,3 @@ public:
 	void render();
 	bool intersectWall(const SDL_Rect& rect) const;
 };
-
