@@ -29,3 +29,12 @@ void MainMenuState::update()
 	GameState::update();
 }
 
+bool MainMenuState::handleEvents(SDL_Event& event)
+{
+	GameState::handleEvents(event);
+	//player->handleEvents(key);
+	//el handle event del player, sacar el menu y esas cosas
+
+	return true;
+}
+

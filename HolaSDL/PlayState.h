@@ -46,7 +46,7 @@ public:
 	void Borra();
 	virtual void update();
 	virtual void render();
-	virtual void handleEvents(SDL_Event& event);
+	virtual bool handleEvents(SDL_Event& event);
 
 	bool restLife();
 	void changeLevel();

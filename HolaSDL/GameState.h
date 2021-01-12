@@ -20,7 +20,7 @@ public:
 	virtual void render();
 	virtual void update();
 	//el HandlEvents si que va a ser distinto en cada uno de los estados
-	virtual void handleEvents(SDL_Event& event) = 0;
+	virtual bool handleEvents(SDL_Event& event) = 0;
 
 protected:
 	int OFFSET_WIDTH; //Tamaño de cada texturas en un mapa de casillas

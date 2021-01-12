@@ -79,8 +79,9 @@ void PacMan::death()
 	}
 }
 //Cambia la siguiente dirección del PacMan en función del input
-void PacMan::handleEvent(const SDL_Keycode& key)
+bool PacMan::handleEvents(const SDL_Event& event)
 {
+	SDL_Keycode key = event.key.keysym.sym;
 	switch (key)
 	{
 		case SDLK_UP:
@@ -99,6 +100,8 @@ void PacMan::handleEvent(const SDL_Keycode& key)
 			break;
 
 	}
+
+	return true;
 }
 //Verifica si el jugadro está sobre una celda donde hay comida, y en caso positivo cambia el tipo de esa celda a vacio y aumenta los puntos
 //Tambien activa el modo "Comer" a los fantasmas y su energia

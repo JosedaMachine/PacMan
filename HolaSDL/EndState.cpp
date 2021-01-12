@@ -20,6 +20,6 @@ void EndState::load() {
 	gO.push_back(newBut);
 }
 
-void EndState :: render() {
+void EndState ::render() {
 	GameState::render();
 }

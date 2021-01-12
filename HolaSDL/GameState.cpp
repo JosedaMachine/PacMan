@@ -20,7 +20,9 @@ void GameState::render()
 	for (GameObject* o : gO) o->render();
 }
 
-void GameState::handleEvents(SDL_Event& event) {
-	for (EventHandler* h : events)h->HandleEvents(event);
+bool GameState::handleEvents(SDL_Event& event) {
+	for (EventHandler* h : events) h->handleEvents(event);
+
+	return true;
 }
 

@@ -258,12 +258,10 @@ void PlayState::colissions(const SDL_Rect rect) const
 		}
 	}
 }
-void PlayState::handleEvents(SDL_Event& event)
+bool PlayState::handleEvents(SDL_Event& event)
 {
-	SDL_Keycode key = event.key.keysym.sym;
-
-	//   ;(
-	player->handleEvent(key);
+	GameState::handleEvents(event);
+	//player->handleEvents(key);
 	//el handle event del player, sacar el menu y esas cosas
 }
 //Convierte las coordenadas de las celdas a pixeles

@@ -1,8 +1,8 @@
 #pragma once
+#include "SDL.h"
 class EventHandler
 {
 public:
-
-	virtual void HandleEvents(SDL_Event& event) = 0;
+	virtual bool handleEvents(SDL_Event& event) = 0;
 };
 
