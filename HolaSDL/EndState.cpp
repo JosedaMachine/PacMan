@@ -11,12 +11,12 @@ void EndState::load() {
 
 	//Para que aparezca en mitad de pantalla
 	POS_HEIGHT = OFFSET_HEIGHT / 2 - (t->getH() / 2);
-	POS_WIDTH = OFFSET_WIDTH / 2  - (t->getH() / 2);
+	POS_WIDTH = OFFSET_WIDTH / 2  - (t->getW() / 6);
 
 	Point2D pos = Point2D(POS_WIDTH, POS_HEIGHT);
 
 	//Botón
-	MenuButton* newBut = new MenuButton(pos, t, t->getW()/3, tM->getTexture(mainButton)->getH());
+	MenuButton* newBut = new MenuButton(pos, t, t->getW()/3, t->getH());
 	gO.push_back(newBut);
 }
 
