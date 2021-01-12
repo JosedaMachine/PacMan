@@ -10,3 +10,10 @@ void MenuButton::render()
 
 	t->renderFrame(destRect, 0, 1);
 }
+
+bool MenuButton::handleEvent(SDL_Event& event)
+{
+	if (event.type == SDL_MOUSEBUTTONUP && event.button.button == SDL_BUTTON_LEFT) {
+		
+	}
+}
