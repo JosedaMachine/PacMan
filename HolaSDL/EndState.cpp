@@ -29,9 +29,27 @@ void EndState::load() {
 	Point2D posExit = Point2D(POS_WIDTH, POS_HEIGHT);
 
 	//Botón
-	MenuButton* newButExit = new MenuButton(posExit, g, tMain, tMain->getW() / 3, tMain->getH(), Exit);
+	MenuButton* newButExit = new MenuButton(posExit, g, tExit, tExit->getW() / 3, tExit->getH(), Exit);
 	gO.push_back(newButExit);
 	events.push_back(newButExit);
+}
+
+bool EndState::handleEvents(SDL_Event& event)
+{
+	GameState::handleEvents(event);
+	//player->handleEvents(key);
+	//el handle event del player, sacar el menu y esas cosas
+
+	return true;
+}
+
+void EndState::update()
+{
+	GameState::update();
+}
+
+void EndState::render() {
+	GameState::render();
 }
 
 void EndState::MainM(SDLApplication* game)
@@ -42,8 +60,4 @@ void EndState::MainM(SDLApplication* game)
 void EndState::Exit(SDLApplication* game)
 {
 	game->Salir();
-}
-
-void EndState ::render() {
-	GameState::render();
 }

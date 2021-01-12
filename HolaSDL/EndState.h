@@ -13,13 +13,14 @@ class EndState : public GameState
 public:
 	EndState(SDLApplication* g, TextureManager* Tm);
 
-	virtual void update() {};
-	virtual void render();
-	virtual bool handleEvents(SDL_Event& event) { return true; };
 	void load();
 
-private:
+	virtual void update();
+	virtual void render();
+	virtual bool handleEvents(SDL_Event& event);
+
 	static void MainM(SDLApplication* game);
 	static void Exit(SDLApplication* game);
+private:
 };
 
