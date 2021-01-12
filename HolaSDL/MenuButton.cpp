@@ -14,8 +14,17 @@ void MenuButton::render()
 bool MenuButton::handleEvents(SDL_Event& event)
 {
 	if (event.type == SDL_MOUSEBUTTONUP && event.button.button == SDL_BUTTON_LEFT) 
-	{
-		int x = event.button.x;
+	{	
+		SDL_Point p = SDL_Point();
+		SDL_Rect r = getDestRect();
+
+		p.x = event.button.x;
+		p.y = event.button.y;
+
+		if (SDL_PointInRect(&p, &r) == SDL_TRUE) {
+
+			
+		}
 
 	}
 
