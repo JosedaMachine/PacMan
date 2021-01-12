@@ -260,8 +260,7 @@ void PlayState::colissions(const SDL_Rect rect) const
 }
 bool PlayState::handleEvents(SDL_Event& event)
 {
-	GameState::handleEvents(event);
-	//player->handleEvents(key);
+	return GameState::handleEvents(event);
 	//el handle event del player, sacar el menu y esas cosas
 }
 //Convierte las coordenadas de las celdas a pixeles

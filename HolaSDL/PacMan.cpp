@@ -79,7 +79,7 @@ void PacMan::death()
 	}
 }
 //Cambia la siguiente dirección del PacMan en función del input
-bool PacMan::handleEvents(const SDL_Event& event)
+bool PacMan::handleEvents(SDL_Event& event)
 {
 	SDL_Keycode key = event.key.keysym.sym;
 	switch (key)
