@@ -9,7 +9,7 @@ class MenuButton :
 	Texture* t;
 
 public:
-	MenuButton(Point2D pos, Texture* te, int w, int h);
+	MenuButton(Point2D pos, Texture* te, int w, int h, float multiplier);
 	virtual void render();
 };
 
