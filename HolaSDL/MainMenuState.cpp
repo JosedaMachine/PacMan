@@ -11,7 +11,9 @@ MainMenuState::MainMenuState(SDLApplication* game, TextureManager* tM) : GameSta
 
 	//Botón
 	MenuButton* newBut = new MenuButton(pos, t, t->getW()/(3* multiplier), t->getH()/ multiplier);
+	events.push_back(newBut);
 	gO.push_back(newBut);
+
 }
 
 MainMenuState::~MainMenuState()

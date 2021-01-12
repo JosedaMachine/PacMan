@@ -7,7 +7,7 @@
 using  CallBackOnClick = void(SDLApplication* g);
 
 class MenuButton :
-    public GameObject, EventHandler
+    public EventHandler, public GameObject
 {
 	Texture* t;
 protected:

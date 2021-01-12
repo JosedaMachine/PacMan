@@ -9,8 +9,8 @@ class SDLApplication;
 
 class GameState
 {
-	list<EventHandler*> events;
 public:
+	list<EventHandler*> events;
 	SDLApplication* g;
 	TextureManager* tM;
 	list<GameObject*> gO;

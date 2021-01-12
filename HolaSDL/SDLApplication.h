@@ -49,7 +49,6 @@ public:
 	void menu();
 	void ChangeState(States s);
 	void render();
-	void update();
 	void handleEvent(SDL_Event& event, bool& exit);
 
 	#pragma region GETTERS
