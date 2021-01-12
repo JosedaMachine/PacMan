@@ -17,5 +17,9 @@ public:
 	virtual void render();
 	virtual bool handleEvents(SDL_Event& event) { return true; };
 	void load();
+
+private:
+	static void MainM(SDLApplication* game);
+	static void Exit(SDLApplication* game);
 };
 

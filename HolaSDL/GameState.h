@@ -22,6 +22,8 @@ public:
 	//el HandlEvents si que va a ser distinto en cada uno de los estados
 	virtual bool handleEvents(SDL_Event& event);
 
+	
+
 protected:
 	int OFFSET_WIDTH; //Tamaño de cada texturas en un mapa de casillas
 	int OFFSET_HEIGHT;
