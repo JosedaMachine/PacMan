@@ -7,7 +7,7 @@
 
 class PlayState;
 
-class PacMan : public GameCharacter, EventHandler
+class PacMan : public GameCharacter, public EventHandler
 {
 private:
 	

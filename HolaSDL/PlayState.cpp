@@ -55,6 +55,7 @@ void PlayState::load(int liv)
 					{
 						player = (new PacMan(Point2D(j * OFFSET_WIDTH, i * OFFSET_HEIGHT + OFFSET_HEIGHT), this, tM->getTexture(Characters), Point2D(OFFSET_WIDTH, OFFSET_HEIGHT))); //cambio el orden de j e i ya que las columnas( cada una representa una pos en X )
 						player->SetItList(gO.insert(gO.end(), player));
+						events.push_back(player);
 						//inserta en el iterador que tu le pasar, el obketo que tu le pasas, y te devuelve el iterador donde se ha insertado
 					}
 					else if (n != 4) {

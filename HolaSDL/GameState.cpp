@@ -21,7 +21,7 @@ void GameState::render()
 }
 
 bool GameState::handleEvents(SDL_Event& event) {
-	for (EventHandler* h : events) h->handleEvents(event);
+	for (EventHandler* h : events) if(h->handleEvents(event)) return true;
 
 	return true;
 }

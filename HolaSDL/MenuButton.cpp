@@ -26,9 +26,10 @@ bool MenuButton::handleEvents(SDL_Event& event)
 		if (SDL_PointInRect(&p, &r) == SDL_TRUE) 
 		{
 			cbOnClick(g);
+			return true;
 		}
 
 	}
-
-	return true;
+	return false;
+	
 }
