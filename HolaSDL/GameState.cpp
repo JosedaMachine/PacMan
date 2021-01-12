@@ -5,6 +5,8 @@ GameState::GameState(SDLApplication* game, TextureManager* textM)
 {
 	g = game;
 	tM = textM;
+	OFFSET_HEIGHT = g->getHeight();
+	OFFSET_WIDTH = g->getWidth();
 }
 
 void GameState::update()

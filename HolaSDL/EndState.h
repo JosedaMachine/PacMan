@@ -2,10 +2,12 @@
 #include "GameState.h";
 #include "TextureManager.h";
 #include "MenuButton.h";
+#include "SDLApplication.h";
+
 class EndState : public GameState
 {
-	int POS_HEIGHT = 50;
-	int POS_WIDTH = 50;
+	int POS_HEIGHT;
+	int POS_WIDTH;
 
 
 public:
