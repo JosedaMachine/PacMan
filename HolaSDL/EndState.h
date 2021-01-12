@@ -12,7 +12,7 @@ public:
 	EndState(SDLApplication* g, TextureManager* Tm);
 
 	virtual void update() {};
-	virtual void render() {};
+	virtual void render();
 	virtual void handleEvents(SDL_Event& event) {};
 	void load();
 };

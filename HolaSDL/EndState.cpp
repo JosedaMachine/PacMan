@@ -13,5 +13,5 @@ void EndState::load() {
 	Point2D pos = Point2D(POS_WIDTH, POS_HEIGHT);
 
 
-	MenuButton* newBut = new MenuButton(pos, g.get);
+	MenuButton* newBut = new MenuButton(pos, 50, 50, tM->getTexture(mainButton));
 }
