@@ -162,9 +162,11 @@ void SDLApplication::LoadGame(int codeNumber)
 {
 	PlayState* pS = static_cast<PlayState*>(stateMachine->currentState());
 
-	ifstream code;
+	string file = ".//matches.dat//match.dat" + to_string(codeNumber) + ".dat";
+	ifstream loadMatch;
+	loadMatch.open(file);
 
-	pS->loadMatch(code);
+	pS->loadMatch(loadMatch);
 }
 
 int SDLApplication::askCodeNumber()

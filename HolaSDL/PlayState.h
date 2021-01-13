@@ -64,8 +64,6 @@ public:
 	void saveToFileGame(int code);
 	void loadMatch(ifstream& input);
 
-	
-
 private:
 	void reproduce(SmartGhost* father, Ghost* mother);
 	bool equalRect(SDL_Rect r1, SDL_Rect r2) const { return r1.x == r2.x && r1.y == r2.y; };
