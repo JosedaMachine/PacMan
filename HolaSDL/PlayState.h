@@ -23,7 +23,7 @@ class PlayState : public GameState
 	int Current_Level; //Nivel actual
 	int lives;
 
-	bool hasWon, wantLoad;	//Controladores del juego
+	bool hasWon;//Controladores del juego
 	
 	//ARRAY DE NIVELES
 	const array<string, NUM_LEVELS> Levels = { "levels/level01.dat", "levels/level02.dat", "levels/level03.dat" , "levels/level04.dat", "levels/level05.dat", "levels/test1.dat" };
@@ -38,7 +38,7 @@ class PlayState : public GameState
 
 public:
 	PlayState(SDLApplication* game, TextureManager* tM);
-	PlayState(SDLApplication* game, TextureManager* tM, ifstream& input);
+	PlayState(SDLApplication* game, TextureManager* tM, string input);
 	~PlayState();
 
 	void load(int lifes);
@@ -63,7 +63,7 @@ public:
 	bool tryMove(SDL_Rect rect, Vector2D dir, Point2D newPos);
 	void borraFantasma(list<GameObject*>::iterator it, Ghost* fantasma);
 	void saveToFileGame(int code);
-	void loadMatch(ifstream& input);
+	void loadMatch(string input);
 
 private:
 	void reproduce(SmartGhost* father, Ghost* mother);

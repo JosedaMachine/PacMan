@@ -3,21 +3,17 @@
 
 PlayState::PlayState(SDLApplication* game, TextureManager* tM) : GameState(game, tM)
 {
-	wantLoad = false;
 	Current_Level = 1;
 	points = 0;
 	amountFood = 0;
 
 	hasWon = false;
 
-	if (!wantLoad)
-		load(3);
-	else loadMatch();
+	load(3);
 }
 
-PlayState::PlayState(SDLApplication* game, TextureManager* tM, ifstream& input) : GameState(game, tM)
+PlayState::PlayState(SDLApplication* game, TextureManager* tM, string input) : GameState(game, tM)
 {
-	wantLoad = false;
 	Current_Level = 1;
 	points = 0;
 	amountFood = 0;
@@ -40,72 +36,74 @@ void PlayState::load(int liv)
 {
 	ifstream input;
 	lives = liv;
-	if (!wantLoad)
-	{
-		input.open(Levels[Current_Level]);
-		if (!input.is_open()) throw FileNotFoundError("Can't find file " + Levels[Current_Level]);
 
-		input >> fils >> cols;
-		if (!input) throw FileFormatError("Format wrong. Data type unexpected.");
-		OFFSET_WIDTH = g->getWidth()/ cols;
-		OFFSET_HEIGHT = g->getHeight()/ fils;
+	input.open(Levels[Current_Level]);
+	if (!input.is_open()) throw FileNotFoundError("Can't find file " + Levels[Current_Level]);
 
-		map = new GameMap(Point2D(0, 0), fils, cols, this);
-		gO.push_back(map);
+	input >> fils >> cols;
+	if (!input) throw FileFormatError("Format wrong. Data type unexpected.");
+	OFFSET_WIDTH = g->getWidth()/ cols;
+	OFFSET_HEIGHT = g->getHeight()/ fils;
 
-		bar = new InfoBar(this, tM->getTexture(Characters), tM->getTexture(Digits));
+	map = new GameMap(Point2D(0, 0), fils, cols, this);
+	gO.push_back(map);
 
-		for (int i = 0; i < fils; i++) {
-			for (int j = 0; j < cols; j++) {
-				int n;
-				input >> n;
-				if (!input) throw FileFormatError("Format wrong. Data type unexpected.");
+	bar = new InfoBar(this, tM->getTexture(Characters), tM->getTexture(Digits));
 
-				if (n < 4) {
-					map->celdas[i][j] = (MapCell)n;
-					if (n == 2)++amountFood;
+	for (int i = 0; i < fils; i++) {
+		for (int j = 0; j < cols; j++) {
+			int n;
+			input >> n;
+			if (!input) throw FileFormatError("Format wrong. Data type unexpected.");
+
+			if (n < 4) {
+				map->celdas[i][j] = (MapCell)n;
+				if (n == 2)++amountFood;
+			}
+			else {
+				if (n == 9)
+				{
+					player = (new PacMan(Point2D(j * OFFSET_WIDTH, i * OFFSET_HEIGHT + OFFSET_HEIGHT), this, tM->getTexture(Characters), Point2D(OFFSET_WIDTH, OFFSET_HEIGHT))); //cambio el orden de j e i ya que las columnas( cada una representa una pos en X )
+					player->SetItList(gO.insert(gO.end(), player));
+					events.push_back(player);
+					//inserta en el iterador que tu le pasar, el obketo que tu le pasas, y te devuelve el iterador donde se ha insertado
 				}
-				else {
-					if (n == 9)
-					{
-						player = (new PacMan(Point2D(j * OFFSET_WIDTH, i * OFFSET_HEIGHT + OFFSET_HEIGHT), this, tM->getTexture(Characters), Point2D(OFFSET_WIDTH, OFFSET_HEIGHT))); //cambio el orden de j e i ya que las columnas( cada una representa una pos en X )
-						player->SetItList(gO.insert(gO.end(), player));
-						events.push_back(player);
-						//inserta en el iterador que tu le pasar, el obketo que tu le pasas, y te devuelve el iterador donde se ha insertado
-					}
-					else if (n != 4) {
-						Ghost* newG = new Ghost(Point2D(j * OFFSET_WIDTH, i * OFFSET_HEIGHT + OFFSET_HEIGHT), this, tM->getTexture(Characters), Point2D(OFFSET_WIDTH, OFFSET_HEIGHT), n - 5);
-						newG->SetItList(gO.insert(gO.end(), newG));
-						Ghosts.push_back(newG);
-					}
-					else if (n == 4){
-						SmartGhost* newG = new SmartGhost(Point2D(j * OFFSET_WIDTH, i * OFFSET_HEIGHT + OFFSET_HEIGHT), this, tM->getTexture(Characters), Point2D(OFFSET_WIDTH, OFFSET_HEIGHT), n, Point2D(12, 1));
-						newG->SetItList(gO.insert(gO.end(), newG));
-						Ghosts.push_back(newG);
-					}
-					map->celdas[i][j] = Empty;
+				else if (n != 4) {
+					Ghost* newG = new Ghost(Point2D(j * OFFSET_WIDTH, i * OFFSET_HEIGHT + OFFSET_HEIGHT), this, tM->getTexture(Characters), Point2D(OFFSET_WIDTH, OFFSET_HEIGHT), n - 5);
+					newG->SetItList(gO.insert(gO.end(), newG));
+					Ghosts.push_back(newG);
 				}
+				else if (n == 4){
+					SmartGhost* newG = new SmartGhost(Point2D(j * OFFSET_WIDTH, i * OFFSET_HEIGHT + OFFSET_HEIGHT), this, tM->getTexture(Characters), Point2D(OFFSET_WIDTH, OFFSET_HEIGHT), n, Point2D(12, 1));
+					newG->SetItList(gO.insert(gO.end(), newG));
+					Ghosts.push_back(newG);
+				}
+				map->celdas[i][j] = Empty;
 			}
 		}
 	}
-	else
-	{
-		//HAY QUE PONER EL CODIGO NUMERICO
-		string file = ".//matches.dat//match.dat" /*+ user + ".dat"*/;
-		input.open(file);
+	
+	//else
+	//{
+	//	//HAY QUE PONER EL CODIGO NUMERICO
+	//	string file = ".//matches.dat//match.dat" /*+ user + ".dat"*/;
+	//	input.open(file);
 
-		if (!input.is_open()) 
-			throw FileNotFoundError("Can't find file .dat" /*+ user + ".dat"*/);
+	//	if (!input.is_open()) 
+	//		throw FileNotFoundError("Can't find file .dat" /*+ user + ".dat"*/);
 
-		loadMatch(input);
+	//	loadMatch(input);
 
-		input.close();
-	}
+	//	input.close();
+	//}
 	
 }
 //Cargamos una partida guardada, que contiene el mapa, el n�mero de objetos, vidas y puntuaci�n
-void PlayState::loadMatch(ifstream& input)
+void PlayState::loadMatch(string file)
 {
+	ifstream input;
+	input.open(file);
+
 	input >> lives >> points >> fils >> cols;
 	if(!input) throw FileFormatError("Format wrong. Data type unexpected.");
 
@@ -131,6 +129,8 @@ void PlayState::loadMatch(ifstream& input)
 
 	bar = new InfoBar(this, tM->getTexture(Characters), tM->getTexture(Digits));
 	createNPositionate(input);
+
+	input.close();
 }
 
 void PlayState::Pausa(SDLApplication* game)
