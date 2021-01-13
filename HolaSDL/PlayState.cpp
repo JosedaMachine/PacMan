@@ -82,21 +82,6 @@ void PlayState::load(int liv)
 			}
 		}
 	}
-	
-	//else
-	//{
-	//	//HAY QUE PONER EL CODIGO NUMERICO
-	//	string file = ".//matches.dat//match.dat" /*+ user + ".dat"*/;
-	//	input.open(file);
-
-	//	if (!input.is_open()) 
-	//		throw FileNotFoundError("Can't find file .dat" /*+ user + ".dat"*/);
-
-	//	loadMatch(input);
-
-	//	input.close();
-	//}
-	
 }
 //Cargamos una partida guardada, que contiene el mapa, el n�mero de objetos, vidas y puntuaci�n
 void PlayState::loadMatch(string file)
@@ -248,6 +233,7 @@ void PlayState::createNPositionate(ifstream& input)
 		if (n == 9) {
 			player = new PacMan(input, this, tM->getTexture(Characters), Point2D(OFFSET_WIDTH, OFFSET_HEIGHT));
 			player->SetItList(gO.insert(gO.end(), player));
+			events.push_back(player);
 		}
 		else if (n != 4) {
 			Ghost* newG = new Ghost(input, this, tM->getTexture(Characters), Point2D(OFFSET_WIDTH, OFFSET_HEIGHT), n - 4);
