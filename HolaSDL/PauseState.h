@@ -6,7 +6,11 @@
 class PauseState : public GameState
 {
 public:
+	string inputText = "Some Text";
+	
 	PauseState(SDLApplication* g, TextureManager* TM);
+
+
 
 	virtual void update();
 	virtual void render();

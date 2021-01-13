@@ -148,12 +148,25 @@ void SDLApplication::ResumeGame()
 	stateMachine->popState();
 }
 
-void SDLApplication::SaveGame()
+void SDLApplication::SaveGame(int codeNumber)
 {
 	stateMachine->popState();
 
 	PlayState* actual = static_cast<PlayState*>(stateMachine->currentState());
 
-	actual->saveToFileGame();
+	actual->saveToFileGame(codeNumber);
 	exit = true;
+}
+
+int SDLApplication::askCodeNumber()
+{
+	cout << "Please enter your code number. Notice you will have to use it to load this match";
+	int code;
+
+	do
+	{
+		cin >> code;
+	} while (code<0);
+
+	return code;
 }

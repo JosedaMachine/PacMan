@@ -61,7 +61,7 @@ public:
 	void collisionGhost(const SDL_Rect rect, Ghost* ghost);
 	bool tryMove(SDL_Rect rect, Vector2D dir, Point2D newPos);
 	void borraFantasma(list<GameObject*>::iterator it, Ghost* fantasma);
-	void saveToFileGame();
+	void saveToFileGame(int code);
 
 	
 

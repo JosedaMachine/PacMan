@@ -69,7 +69,6 @@ void PauseState::LoadButtons()
 	POS_WIDTH = OFFSET_WIDTH / 2 - (tSave->getW() / 6);
 
 	Point2D posResume = Point2D(POS_WIDTH, POS_HEIGHT);
-
 	//Botón
 	MenuButton* newButResume = new MenuButton(posResume, g, tResume, tResume->getW() / 3, tResume->getH(), Resume);
 	gO.push_back(newButResume);
@@ -78,7 +77,8 @@ void PauseState::LoadButtons()
 
 void PauseState::Save(SDLApplication* game)
 {
-	game->SaveGame();
+	int code = game->askCodeNumber();
+	game->SaveGame(code);
 }
 
 void PauseState::MainM(SDLApplication* game)

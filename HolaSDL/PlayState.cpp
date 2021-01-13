@@ -323,12 +323,12 @@ void PlayState::borraFantasma(list<GameObject*>::iterator it, Ghost* fantasma)
 	 objectsToErase.push_back(it);
  }
 //Guarda cada uno de los GameObjects del juego, incluyendo las vidas y la puntuaci�n.
-void PlayState::saveToFileGame()
+void PlayState::saveToFileGame(int code)
 {
 	ofstream output;
-	string file = ".//matches//match.dat"/*+ user + ".dat"*/;
+	string file = ".//matches//" + to_string(code) + ".dat";
 	output.open(file);
-	if (!output.is_open()) throw FileNotFoundError("Can't find file" /*+ user + ".dat"*/);
+	if (!output.is_open()) throw FileNotFoundError("Can't find file" + to_string(code) + ".dat");
 
 	output << lives << " " << points << endl;
 	map->saveToFile(output);

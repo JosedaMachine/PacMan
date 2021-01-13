@@ -53,7 +53,8 @@ public:
 	void Salir() { exit = true; }
 	void PauseGame();
 	void ResumeGame();
-	void SaveGame();
+	void SaveGame(int codeNumber);
+	int askCodeNumber();
 
 	#pragma region GETTERS
 	int getWidth() const { return WIN_WIDTH; }
