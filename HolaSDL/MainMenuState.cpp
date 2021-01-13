@@ -19,8 +19,7 @@ MainMenuState::MainMenuState(SDLApplication* game, TextureManager* tM) : GameSta
 	//Botón de cargar
 	Texture* load = tM->getTexture(loadButton); //Guardamos la textura
 	//Para que aparezca en mitad de pantalla
-	//int multiplier = 2;
-	//se puede pillar el numero de rows y cols de cada textura 
+	//int multiplier = 2;	//se puede pillar el numero de rows y cols de cada textura 
 	Point2D posload = Point2D(OFFSET_WIDTH / 2 - (load->getW() / (4 * multiplier)), OFFSET_HEIGHT / 1.5 - (load->getH() / multiplier));
 	//Botones
 #pragma region Load

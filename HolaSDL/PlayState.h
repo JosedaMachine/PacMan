@@ -38,6 +38,7 @@ class PlayState : public GameState
 
 public:
 	PlayState(SDLApplication* game, TextureManager* tM);
+	PlayState(SDLApplication* game, TextureManager* tM, ifstream& input);
 	~PlayState();
 
 	void load(int lifes);

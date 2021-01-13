@@ -9,7 +9,22 @@ PlayState::PlayState(SDLApplication* game, TextureManager* tM) : GameState(game,
 	amountFood = 0;
 
 	hasWon = false;
-	load(3);
+
+	if (!wantLoad)
+		load(3);
+	else loadMatch();
+}
+
+PlayState::PlayState(SDLApplication* game, TextureManager* tM, ifstream& input) : GameState(game, tM)
+{
+	wantLoad = false;
+	Current_Level = 1;
+	points = 0;
+	amountFood = 0;
+
+	hasWon = false;
+
+	loadMatch(input); 
 }
 
 PlayState::~PlayState()

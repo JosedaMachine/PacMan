@@ -160,13 +160,15 @@ void SDLApplication::SaveGame(int codeNumber)
 
 void SDLApplication::LoadGame(int codeNumber)
 {
-	PlayState* pS = static_cast<PlayState*>(stateMachine->currentState());
+	ifstream input;
+	string file = ".//matches.dat//match.dat" /*+ user + ".dat"*/;
+	input.open(file);
 
-	string file = ".//matches//" + to_string(codeNumber) + ".dat";
-	ifstream loadMatch;
-	loadMatch.open(file);
+	PlayState* pS = new PlayState(this, tM, input);
+	stateMachine->popState();
+	stateMachine->pushState(pS);
 
-	pS->loadMatch(loadMatch);
+	input.close();
 }
 
 int SDLApplication::askCodeNumber()
