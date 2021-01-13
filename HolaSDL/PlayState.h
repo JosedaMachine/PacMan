@@ -62,13 +62,13 @@ public:
 	bool tryMove(SDL_Rect rect, Vector2D dir, Point2D newPos);
 	void borraFantasma(list<GameObject*>::iterator it, Ghost* fantasma);
 	void saveToFileGame(int code);
+	void loadMatch(ifstream& input);
 
 	
 
 private:
 	void reproduce(SmartGhost* father, Ghost* mother);
 	bool equalRect(SDL_Rect r1, SDL_Rect r2) const { return r1.x == r2.x && r1.y == r2.y; };
-	void loadMatch(ifstream& input);
 
 	static void Pausa(SDLApplication* game);
 

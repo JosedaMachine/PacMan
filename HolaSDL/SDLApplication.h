@@ -54,6 +54,7 @@ public:
 	void PauseGame();
 	void ResumeGame();
 	void SaveGame(int codeNumber);
+	void LoadGame(int codeNumber);
 	int askCodeNumber();
 
 	#pragma region GETTERS

@@ -16,6 +16,20 @@ MainMenuState::MainMenuState(SDLApplication* game, TextureManager* tM) : GameSta
 		gO.push_back(newBut);
 	#pragma endregion
 
+	//Botón de cargar
+	Texture* load = tM->getTexture(loadButton); //Guardamos la textura
+	//Para que aparezca en mitad de pantalla
+	int multiplier = 2;
+	//se puede pillar el numero de rows y cols de cada textura 
+	Point2D posload = Point2D(OFFSET_WIDTH / 2 - (load->getW() / (4 * multiplier)), OFFSET_HEIGHT / 2 - (load->getH() / multiplier));
+	//Botones
+#pragma region Start
+	MenuButton* newButLoad = new MenuButton(pos, game, start, start->getW() / (2 * multiplier), start->getH() / multiplier, Load);
+	events.push_back(newButLoad);
+	gO.push_back(newButLoad);
+#pragma endregion
+
+
 }
 
 MainMenuState::~MainMenuState()
@@ -26,6 +40,12 @@ MainMenuState::~MainMenuState()
 void MainMenuState::play(SDLApplication* game)
 {
 	game->ChangeState(Play);
+}
+
+void MainMenuState::Load(SDLApplication* game)
+{
+	int code = game->askCodeNumber();
+	game->LoadGame(code);
 }
 
 void MainMenuState::render()
