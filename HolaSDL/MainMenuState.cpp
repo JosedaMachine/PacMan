@@ -3,16 +3,18 @@
 
 MainMenuState::MainMenuState(SDLApplication* game, TextureManager* tM) : GameState(game, tM)
 {
-	Texture* t = tM->getTexture(playButton); //Guardamos la textura
-
+	title = tM->getTexture(Title);
+	Texture* start = tM->getTexture(playButton); //Guardamos la textura
 	//Para que aparezca en mitad de pantalla
 	int multiplier = 2;
-	Point2D pos = Point2D(OFFSET_WIDTH / 2 - (t->getW()/ (6* multiplier)) , OFFSET_HEIGHT / 2 - (t->getH() / multiplier));
-
-	//Botón
-	MenuButton* newBut = new MenuButton(pos,game,t, t->getW()/(3* multiplier), t->getH()/ multiplier, play);
-	events.push_back(newBut);
-	gO.push_back(newBut);
+	//se puede pillar el numero de rows y cols de cada textura 
+	Point2D pos = Point2D(OFFSET_WIDTH / 2 - (start->getW()/ (4* multiplier)) , OFFSET_HEIGHT / 2 - (start->getH() / multiplier));
+	//Botones
+	#pragma region Start
+		MenuButton* newBut = new MenuButton(pos,game, start, start->getW()/(2* multiplier), start->getH()/ multiplier, play);
+		events.push_back(newBut);
+		gO.push_back(newBut);
+	#pragma endregion
 
 }
 
@@ -28,6 +30,7 @@ void MainMenuState::play(SDLApplication* game)
 
 void MainMenuState::render()
 {
+	renderTitle();
 	GameState::render();
 }
 
@@ -36,12 +39,14 @@ void MainMenuState::update()
 	GameState::update();
 }
 
-bool MainMenuState::handleEvents(SDL_Event& event)
+void MainMenuState::renderTitle()
 {
-	GameState::handleEvents(event);
-	//player->handleEvents(key);
-	//el handle event del player, sacar el menu y esas cosas
+	int multiplier = 5;
 
-	return true;
+	SDL_Rect destRect;
+	destRect.w = title->getW() / multiplier;
+	destRect.h = title->getH() / multiplier;
+	destRect.x = OFFSET_WIDTH / 2 - destRect.w/2;
+	destRect.y = OFFSET_HEIGHT / 3 - destRect.h;
+	title->render(destRect);
 }
-

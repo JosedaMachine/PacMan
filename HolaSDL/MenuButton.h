@@ -9,6 +9,8 @@ using  CallBackOnClick = void(SDLApplication* g);
 class MenuButton :
     public EventHandler, public GameObject
 {
+private:
+	int textureFrame;
 protected:
 	CallBackOnClick* cbOnClick;
 public:

@@ -3,6 +3,7 @@
 class MainMenuState : public GameState
 {
 public:
+	Texture* title;
 	MainMenuState(SDLApplication* game, TextureManager* tM);
 
 	~MainMenuState();
@@ -11,6 +12,10 @@ public:
 
 	virtual void render();
 	virtual void update();
-	virtual bool handleEvents(SDL_Event& event);
+
+	void renderTitle();
+
+	//Como estamos llamando al handleEvent de GameState, no hace falta tener esto
+	//virtual bool handleEvents(SDL_Event& event);
 };
 
