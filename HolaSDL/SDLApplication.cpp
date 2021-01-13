@@ -162,7 +162,7 @@ void SDLApplication::LoadGame(int codeNumber)
 {
 	PlayState* pS = static_cast<PlayState*>(stateMachine->currentState());
 
-	string file = ".//matches.dat//match.dat" + to_string(codeNumber) + ".dat";
+	string file = ".//matches//" + to_string(codeNumber) + ".dat";
 	ifstream loadMatch;
 	loadMatch.open(file);
 
