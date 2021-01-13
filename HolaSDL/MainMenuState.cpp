@@ -51,7 +51,7 @@ void MainMenuState::renderTitle()
 	title->render(destRect);
 }
 
-bool MainMenuState::handleEvents(SDL_Event& event)
-{
-	return GameState::handleEvents(event);
-}
+//bool MainMenuState::handleEvents(SDL_Event& event)
+//{
+//	return GameState::handleEvents(event);
+//}

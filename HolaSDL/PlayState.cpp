@@ -75,7 +75,8 @@ void PlayState::load(int liv)
 	}
 	else
 	{
-		string file = ".//matches.dat//" /*+ user + ".dat"*/;
+		//HAY QUE PONER EL CODIGO NUMERICO
+		string file = ".//matches.dat//match.dat" /*+ user + ".dat"*/;
 		input.open(file);
 
 		if (!input.is_open()) 
@@ -325,7 +326,7 @@ void PlayState::borraFantasma(list<GameObject*>::iterator it, Ghost* fantasma)
 void PlayState::saveToFileGame()
 {
 	ofstream output;
-	string file = ".//matches//" /*+ user + ".dat"*/;
+	string file = ".//matches//match.dat"/*+ user + ".dat"*/;
 	output.open(file);
 	if (!output.is_open()) throw FileNotFoundError("Can't find file" /*+ user + ".dat"*/);
 
