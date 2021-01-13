@@ -50,3 +50,8 @@ void MainMenuState::renderTitle()
 	destRect.y = OFFSET_HEIGHT / 3 - destRect.h;
 	title->render(destRect);
 }
+
+bool MainMenuState::handleEvents(SDL_Event& event)
+{
+	return GameState::handleEvents(event);
+}

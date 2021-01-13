@@ -117,6 +117,11 @@ void PlayState::loadMatch(ifstream& input)
 	createNPositionate(input);
 }
 
+void PlayState::Pausa(SDLApplication* game)
+{
+	game->ChangeState(Pause);
+}
+
 int PlayState::getWindowWidth() const
 {
 	return g->getWidth();
@@ -261,7 +266,14 @@ void PlayState::colissions(const SDL_Rect rect) const
 }
 bool PlayState::handleEvents(SDL_Event& event)
 {
-	return GameState::handleEvents(event);
+	GameState::handleEvents(event);
+
+	SDL_Keycode key = event.key.keysym.sym;
+	if (key == SDLK_ESCAPE) {
+		Pausa(g);
+	}
+
+	return true;
 	//el handle event del player, sacar el menu y esas cosas
 }
 //Convierte las coordenadas de las celdas a pixeles

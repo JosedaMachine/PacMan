@@ -15,7 +15,9 @@ public:
 
 	void renderTitle();
 
+	
+
 	//Como estamos llamando al handleEvent de GameState, no hace falta tener esto
-	//virtual bool handleEvents(SDL_Event& event);
+	virtual bool handleEvents(SDL_Event& event);
 };
 

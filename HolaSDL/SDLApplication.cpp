@@ -120,9 +120,11 @@ void SDLApplication::handleEvent(SDL_Event& event, bool& exit)
 		}
 		else
 		{
-			stateMachine->currentState()->handleEvents(event);
+			GameState* current = stateMachine->currentState();
 
-			SDL_Keycode key = event.key.keysym.sym;
+			current->handleEvents(event);
+
+			//SDL_Keycode key = event.key.keysym.sym;
 
 			//if(key != SDLK_s)player->handleEvent(key);
 			//else

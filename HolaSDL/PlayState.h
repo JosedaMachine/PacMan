@@ -70,6 +70,8 @@ private:
 	bool equalRect(SDL_Rect r1, SDL_Rect r2) const { return r1.x == r2.x && r1.y == r2.y; };
 	void loadMatch(ifstream& input);
 
+	static void Pausa(SDLApplication* game);
+
 #pragma region GETTERS
 	int getCols() const { return cols; }
 	int getFils() const { return fils; }
