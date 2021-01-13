@@ -51,6 +51,9 @@ public:
 	void render();
 	void handleEvent(SDL_Event& event, bool& exit);
 	void Salir() { exit = true; }
+	void PauseGame();
+	void ResumeGame();
+	void SaveGame();
 
 	#pragma region GETTERS
 	int getWidth() const { return WIN_WIDTH; }

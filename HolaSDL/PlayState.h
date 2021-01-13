@@ -61,11 +61,11 @@ public:
 	void collisionGhost(const SDL_Rect rect, Ghost* ghost);
 	bool tryMove(SDL_Rect rect, Vector2D dir, Point2D newPos);
 	void borraFantasma(list<GameObject*>::iterator it, Ghost* fantasma);
+	void saveToFileGame();
 
 	
 
 private:
-	void saveToFileGame();
 	void reproduce(SmartGhost* father, Ghost* mother);
 	bool equalRect(SDL_Rect r1, SDL_Rect r2) const { return r1.x == r2.x && r1.y == r2.y; };
 	void loadMatch(ifstream& input);

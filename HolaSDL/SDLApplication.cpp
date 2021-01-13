@@ -137,3 +137,23 @@ void SDLApplication::handleEvent(SDL_Event& event, bool& exit)
 
 	}
 }
+
+void SDLApplication::PauseGame()
+{
+	stateMachine->pushState(new PauseState(this,tM));
+}
+
+void SDLApplication::ResumeGame()
+{
+	stateMachine->popState();
+}
+
+void SDLApplication::SaveGame()
+{
+	stateMachine->popState();
+
+	PlayState* actual = static_cast<PlayState*>(stateMachine->currentState());
+
+	actual->saveToFileGame();
+	exit = true;
+}

@@ -119,7 +119,7 @@ void PlayState::loadMatch(ifstream& input)
 
 void PlayState::Pausa(SDLApplication* game)
 {
-	game->ChangeState(Pause);
+	game->PauseGame();
 }
 
 int PlayState::getWindowWidth() const
