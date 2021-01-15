@@ -90,7 +90,13 @@ void PlayState::loadMatch(string file)
 	input.open(file);
 
 	input >> lives >> points >> fils >> cols;
-	if(!input) throw FileFormatError("Format wrong. Data type unexpected.");
+	if (!input) {
+		SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR,
+			"Missing file",
+			"File is missing. Please reinstall the program.",
+			NULL);
+		throw FileFormatError("Format wrong. Data type unexpected.");
+	}
 
 	OFFSET_WIDTH = WIN_WIDTH / cols;
 	OFFSET_HEIGHT = WIN_HEIGHT / fils;
