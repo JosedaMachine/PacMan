@@ -38,7 +38,7 @@ class PlayState : public GameState
 
 public:
 	PlayState(SDLApplication* game, TextureManager* tM);
-	PlayState(SDLApplication* game, TextureManager* tM, string input);
+	PlayState(SDLApplication* game, TextureManager* tM, ifstream& input);
 	~PlayState();
 
 	void load(int lifes);
@@ -63,7 +63,7 @@ public:
 	bool tryMove(SDL_Rect rect, Vector2D dir, Point2D newPos);
 	void borraFantasma(list<GameObject*>::iterator it, Ghost* fantasma);
 	void saveToFileGame(int code);
-	void loadMatch(string input);
+	bool loadMatch(ifstream& input);
 
 private:
 	void reproduce(SmartGhost* father, Ghost* mother);

@@ -162,10 +162,20 @@ void SDLApplication::LoadGame(int codeNumber)
 {
 	string file = ".//matches//" + to_string(codeNumber) + ".dat";
 
-	PlayState* pS = new PlayState(this, tM, file);
-	stateMachine->popState();
-	stateMachine->pushState(pS);
-
+	ifstream input;
+	input.open(file);
+	if (!input) {
+		SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR,
+			"Missing file",
+			"File is missing. Please reinstall the program.",
+			NULL);
+	}
+	else {
+		PlayState* pS = new PlayState(this, tM, input);
+		stateMachine->popState();
+		stateMachine->pushState(pS);
+		input.close();
+	}
 }
 
 int SDLApplication::askCodeNumber()

@@ -12,7 +12,7 @@ PlayState::PlayState(SDLApplication* game, TextureManager* tM) : GameState(game,
 	load(3);
 }
 
-PlayState::PlayState(SDLApplication* game, TextureManager* tM, string input) : GameState(game, tM)
+PlayState::PlayState(SDLApplication* game, TextureManager* tM, ifstream& input) : GameState(game, tM)
 {
 	Current_Level = 1;
 	points = 0;
@@ -20,7 +20,7 @@ PlayState::PlayState(SDLApplication* game, TextureManager* tM, string input) : G
 
 	hasWon = false;
 
-	loadMatch(input); 
+	loadMatch(input);
 }
 
 PlayState::~PlayState()
@@ -84,19 +84,10 @@ void PlayState::load(int liv)
 	}
 }
 //Cargamos una partida guardada, que contiene el mapa, el n�mero de objetos, vidas y puntuaci�n
-void PlayState::loadMatch(string file)
+bool PlayState::loadMatch(ifstream& input)
 {
-	ifstream input;
-	input.open(file);
 
 	input >> lives >> points >> fils >> cols;
-	if (!input) {
-		SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR,
-			"Missing file",
-			"File is missing. Please reinstall the program.",
-			NULL);
-		throw FileFormatError("Format wrong. Data type unexpected.");
-	}
 
 	OFFSET_WIDTH = WIN_WIDTH / cols;
 	OFFSET_HEIGHT = WIN_HEIGHT / fils;
@@ -121,7 +112,7 @@ void PlayState::loadMatch(string file)
 	bar = new InfoBar(this, tM->getTexture(Characters), tM->getTexture(Digits));
 	createNPositionate(input);
 
-	input.close();
+	return true;
 }
 
 void PlayState::Pausa(SDLApplication* game)
