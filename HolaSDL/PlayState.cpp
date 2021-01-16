@@ -51,6 +51,7 @@ void PlayState::load(int liv)
 
 	bar = new InfoBar(this, tM->getTexture(Characters), tM->getTexture(Digits));
 
+
 	gO.push_back(bar);
 
 	for (int i = 0; i < fils; i++) {
