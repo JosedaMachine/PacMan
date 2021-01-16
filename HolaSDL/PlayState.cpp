@@ -25,7 +25,6 @@ PlayState::PlayState(SDLApplication* game, TextureManager* tM, ifstream& input) 
 
 PlayState::~PlayState()
 {
-	delete bar;
 
 	
 	//for (GameObject* gameOb : gO) delete gameOb;
@@ -50,9 +49,9 @@ void PlayState::load(int liv)
 	gO.push_back(map);
 
 	bar = new InfoBar(this, tM->getTexture(Characters), tM->getTexture(Digits));
-
-
 	gO.push_back(bar);
+
+
 
 	for (int i = 0; i < fils; i++) {
 		for (int j = 0; j < cols; j++) {
@@ -114,6 +113,7 @@ bool PlayState::loadMatch(ifstream& input)
 	}
 
 	bar = new InfoBar(this, tM->getTexture(Characters), tM->getTexture(Digits));
+	gO.push_back(bar);
 	createNPositionate(input);
 
 	return true;
