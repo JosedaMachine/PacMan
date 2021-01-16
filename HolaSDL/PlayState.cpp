@@ -27,6 +27,7 @@ PlayState::~PlayState()
 {
 	delete bar;
 
+	
 	//for (GameObject* gameOb : gO) delete gameOb;
 	Ghosts.clear();
 	//gO.clear();
@@ -49,6 +50,8 @@ void PlayState::load(int liv)
 	gO.push_back(map);
 
 	bar = new InfoBar(this, tM->getTexture(Characters), tM->getTexture(Digits));
+
+	gO.push_back(bar);
 
 	for (int i = 0; i < fils; i++) {
 		for (int j = 0; j < cols; j++) {

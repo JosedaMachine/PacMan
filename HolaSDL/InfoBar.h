@@ -1,9 +1,10 @@
 #pragma once
+#include "GameObject.h"
 #include "texture.h"
 #include "checkML.h"
 class PlayState;
 //InfoBar tiene que ser un GameObject?
-class InfoBar
+class InfoBar : public GameObject
 {
 private:
 	Texture* lifes;
@@ -19,7 +20,7 @@ public:
 
 	InfoBar(PlayState* game, Texture* lives, Texture* digits);
 
-	void render()const;
+	virtual void render();
 	void updateInfo(int vidas, int points);
 
 private:

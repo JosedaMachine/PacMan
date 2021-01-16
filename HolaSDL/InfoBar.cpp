@@ -1,7 +1,8 @@
 #include "InfoBar.h"
 #include "PlayState.h"
 //Constructora de la barra HUB
-InfoBar::InfoBar(PlayState* pSt, Texture* life, Texture* digits)
+//ESTO HAY QUE ARREGLARLO PARA QUE HEREDE BIEN
+InfoBar::InfoBar(PlayState* pSt, Texture* life, Texture* digits) : GameObject(Point2D(0,0), 0, 0)
 {
 	maxLifes = 3;
 	maxDigits = 3;
@@ -18,7 +19,7 @@ InfoBar::InfoBar(PlayState* pSt, Texture* life, Texture* digits)
 	vidas = 3;
 }
 //Pinta las vidas y los puntos
-void InfoBar::render() const
+void InfoBar::render() 
 {
 	SDL_Rect destRect;
 
