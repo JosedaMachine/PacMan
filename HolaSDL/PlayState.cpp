@@ -27,9 +27,9 @@ PlayState::~PlayState()
 {
 	delete bar;
 
-	for (GameObject* gameOb : gO) delete gameOb;
+	//for (GameObject* gameOb : gO) delete gameOb;
 	Ghosts.clear();
-	gO.clear();
+	//gO.clear();
 }
 
 void PlayState::load(int liv)
@@ -214,10 +214,10 @@ void PlayState::ToroidalPos(Point2D& pos)
 ////Coloca a cada fantasma como "comible" o no
 void PlayState::setGhostsEdables(bool eda)
 {
-	 for (Ghost* g : Ghosts) g->setEdable(eda);
+	 for (Ghost* g : Ghosts) g->setEdable(eda);	
 }
 //crea los fantasmas y el player dado un flujo de entrada y el numero de objetos
-void PlayState::createNPositionate(ifstream& input)
+void PlayState::createNPositionate(ifstream&	input)
 {
 	int gameObjects;
 	input >> gameObjects;

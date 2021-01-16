@@ -123,16 +123,6 @@ void SDLApplication::handleEvent(SDL_Event& event, bool& exit)
 			GameState* current = stateMachine->currentState();
 
 			current->handleEvents(event);
-
-			//SDL_Keycode key = event.key.keysym.sym;
-
-			//if(key != SDLK_s)player->handleEvent(key);
-			//else
-			//{
-			//	exit = true;
-			//	hasSaved = true;
-			//	saveToFileGame();
-			//}
 		}
 
 	}

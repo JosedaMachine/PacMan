@@ -9,6 +9,14 @@ GameState::GameState(SDLApplication* game, TextureManager* textM)
 	OFFSET_WIDTH = g->getWidth();
 }
 
+GameState::~GameState()
+{
+	for (GameObject* gameOb : gO) delete gameOb;
+
+	gO.clear();
+}
+
+
 void GameState::update()
 {
 	for (GameObject* gameOb : gO)

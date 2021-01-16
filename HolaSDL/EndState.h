@@ -9,9 +9,10 @@ class EndState : public GameState
 	int POS_HEIGHT;
 	int POS_WIDTH;
 
-
 public:
 	EndState(SDLApplication* g, TextureManager* Tm);
+
+	~EndState();
 
 	void load();
 
