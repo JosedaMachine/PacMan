@@ -2,7 +2,7 @@
 #include "PlayState.h"
 //Constructora de la barra HUB
 //ESTO HAY QUE ARREGLARLO PARA QUE HEREDE BIEN
-InfoBar::InfoBar(PlayState* pSt, Texture* life, Texture* digits, int* lives, int* point) : GameObject(Point2D(0,0), 0, 0)
+InfoBar::InfoBar(PlayState* pSt, Texture* life, Texture* digits, int& lives, int& point) : GameObject(Point2D(0,0), 0, 0)
 {
 	maxLifes = 3;
 	maxDigits = 3;
@@ -15,8 +15,8 @@ InfoBar::InfoBar(PlayState* pSt, Texture* life, Texture* digits, int* lives, int
 	lifesRow = 0;
 	lifesCol = 10;
 
-	points = point;
-	vidas = lives;
+	points = &point;
+	vidas = &lives;
 }
 //Pinta las vidas y los puntos
 void InfoBar::render() 

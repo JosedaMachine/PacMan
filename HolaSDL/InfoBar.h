@@ -18,7 +18,7 @@ private:
 
 public:
 
-	InfoBar(PlayState* game, Texture* lives, Texture* digits, int* vidas, int* puntos);
+	InfoBar(PlayState* game, Texture* lives, Texture* digits, int& vidas, int& puntos);
 
 	virtual void render();
 

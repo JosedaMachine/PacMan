@@ -31,7 +31,7 @@ PlayState::~PlayState()
 void PlayState::load(int liv)
 {
 	ifstream input;
-	lives = &liv;
+	lives = liv;
 
 	input.open(Levels[Current_Level]);
 	if (!input.is_open()) throw FileNotFoundError("Can't find file " + Levels[Current_Level]);
@@ -94,11 +94,7 @@ void PlayState::CreatePlayer(int j, int i)
 bool PlayState::loadMatch(ifstream& input)
 {
 	//Para leer los ints y luego hacer punteros
-	int vidasAux, pointAux;
-	input >> vidasAux >> pointAux >> fils >> cols;
-
-	lives = &vidasAux;
-	points = &pointAux;
+	input >> lives >> points >> fils >> cols;
 
 	OFFSET_WIDTH = WIN_WIDTH / cols;
 	OFFSET_HEIGHT = WIN_HEIGHT / fils;
@@ -193,7 +189,7 @@ bool PlayState::restLife()
 //Cambia el nivel en caso de que haya terminado de consumir todas las celdas de comida. Reinicia la puntuaci�n pero mantiene las vidas.
 void PlayState::changeLevel()
 {
-	int currentLifes = *lives;
+	int currentLifes = lives;
 	
 	for (GameObject* gameOb : gO) delete gameOb;
 	

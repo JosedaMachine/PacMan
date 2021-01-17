@@ -19,9 +19,9 @@ class PlayState : public GameState
 
 	int fils, cols;
 	int amountFood = 0; //comida restante en el juego
-	int* points;  //Puntuacion del juego 
+	int points;  //Puntuacion del juego 
 	int Current_Level; //Nivel actual
-	int* lives;
+	int lives;
 
 	bool hasWon;//Controladores del juego
 	
@@ -77,7 +77,7 @@ private:
 #pragma region GETTERS
 	int getCols() const { return cols; }
 	int getFils() const { return fils; }
-	int GetLives() const { return *lives; }
+	int GetLives() const { return lives; }
 	bool GetRunning() const { return !hasWon && lives > 0; }
 	
 public:
