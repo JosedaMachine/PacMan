@@ -3,7 +3,7 @@
 #include "texture.h"
 #include "checkML.h"
 class PlayState;
-//InfoBar tiene que ser un GameObject?
+//InfoBar GameObject para no tener que llamar a sus métodos por separado
 class InfoBar : public GameObject
 {
 private:
@@ -12,16 +12,15 @@ private:
 
 	int maxLifes, maxDigits;
 	int lifesCol, lifesRow;
-	int points, vidas;
+	int* points,* vidas;
 
 	PlayState * pS;
 
 public:
 
-	InfoBar(PlayState* game, Texture* lives, Texture* digits);
+	InfoBar(PlayState* game, Texture* lives, Texture* digits, int* vidas, int* puntos);
 
 	virtual void render();
-	void updateInfo(int vidas, int points);
 
 private:
 	void renderNum(const SDL_Rect& destRect, int n) const;

@@ -13,7 +13,7 @@ GameMap::GameMap(Point2D pos, int f, int c, PlayState* pSt) : GameObject(pos, c,
 }
 //Destructora(borramos memoria dinámica)
 GameMap::~GameMap()
-{
+{	//Por cada celda hay que destruir todo su array y luego destruir el array principal
 	for (size_t i = 0; i < height; i++)
 		delete[] celdas[i];
 

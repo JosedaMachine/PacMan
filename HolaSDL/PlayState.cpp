@@ -31,7 +31,7 @@ PlayState::~PlayState()
 void PlayState::load(int liv)
 {
 	ifstream input;
-	lives = liv;
+	lives = &liv;
 
 	input.open(Levels[Current_Level]);
 	if (!input.is_open()) throw FileNotFoundError("Can't find file " + Levels[Current_Level]);
@@ -40,53 +40,65 @@ void PlayState::load(int liv)
 	if (!input) throw FileFormatError("Format wrong. Data type unexpected.");
 	OFFSET_WIDTH = g->getWidth()/ cols;
 	OFFSET_HEIGHT = g->getHeight()/ fils;
-
+	//Mapa
 	map = new GameMap(Point2D(0, 0), fils, cols, this);
 	gO.push_back(map);
-
-	bar = new InfoBar(this, tM->getTexture(Characters), tM->getTexture(Digits));
+	//InfoBar
+	bar = new InfoBar(this, tM->getTexture(Characters), tM->getTexture(Digits), lives, points);
 	gO.push_back(bar);
-
-
 
 	for (int i = 0; i < fils; i++) {
 		for (int j = 0; j < cols; j++) {
 			int n;
 			input >> n;
 			if (!input) throw FileFormatError("Format wrong. Data type unexpected.");
-
-			if (n < 4) {
+			if (n < 4){
 				map->celdas[i][j] = (MapCell)n;
 				if (n == 2)++amountFood;
 			}
-			else {
-				if (n == 9)
-				{
-					player = (new PacMan(Point2D(j * OFFSET_WIDTH, i * OFFSET_HEIGHT + OFFSET_HEIGHT), this, tM->getTexture(Characters), Point2D(OFFSET_WIDTH, OFFSET_HEIGHT))); //cambio el orden de j e i ya que las columnas( cada una representa una pos en X )
-					player->SetItList(gO.insert(gO.end(), player));
-					events.push_back(player);
+			else {	//Métodos para acortar código
+				if (n == 9){
+					CreatePlayer(j, i);
 					//inserta en el iterador que tu le pasar, el obketo que tu le pasas, y te devuelve el iterador donde se ha insertado
 				}
 				else if (n != 4) {
-					Ghost* newG = new Ghost(Point2D(j * OFFSET_WIDTH, i * OFFSET_HEIGHT + OFFSET_HEIGHT), this, tM->getTexture(Characters), Point2D(OFFSET_WIDTH, OFFSET_HEIGHT), n - 5);
-					newG->SetItList(gO.insert(gO.end(), newG));
-					Ghosts.push_back(newG);
+					CreateGhost(j, i, n);
 				}
 				else if (n == 4){
-					SmartGhost* newG = new SmartGhost(Point2D(j * OFFSET_WIDTH, i * OFFSET_HEIGHT + OFFSET_HEIGHT), this, tM->getTexture(Characters), Point2D(OFFSET_WIDTH, OFFSET_HEIGHT), n, Point2D(12, 1));
-					newG->SetItList(gO.insert(gO.end(), newG));
-					Ghosts.push_back(newG);
+					CreateSmartGhost(j, i, n);
 				}
 				map->celdas[i][j] = Empty;
 			}
 		}
 	}
 }
+void PlayState::CreateSmartGhost(int j, int i, int n)
+{
+	SmartGhost* newG = new SmartGhost(Point2D(j * OFFSET_WIDTH, i * OFFSET_HEIGHT + OFFSET_HEIGHT), this, tM->getTexture(Characters), Point2D(OFFSET_WIDTH, OFFSET_HEIGHT), n, Point2D(12, 1));
+	newG->SetItList(gO.insert(gO.end(), newG));
+	Ghosts.push_back(newG);
+}
+void PlayState::CreateGhost(int j, int i, int n)
+{
+	Ghost* newG = new Ghost(Point2D(j * OFFSET_WIDTH, i * OFFSET_HEIGHT + OFFSET_HEIGHT), this, tM->getTexture(Characters), Point2D(OFFSET_WIDTH, OFFSET_HEIGHT), n - 5);
+	newG->SetItList(gO.insert(gO.end(), newG));
+	Ghosts.push_back(newG);
+}
+void PlayState::CreatePlayer(int j, int i)
+{
+	player = (new PacMan(Point2D(j * OFFSET_WIDTH, i * OFFSET_HEIGHT + OFFSET_HEIGHT), this, tM->getTexture(Characters), Point2D(OFFSET_WIDTH, OFFSET_HEIGHT))); //cambio el orden de j e i ya que las columnas( cada una representa una pos en X )
+	player->SetItList(gO.insert(gO.end(), player));
+	events.push_back(player);
+}
 //Cargamos una partida guardada, que contiene el mapa, el n�mero de objetos, vidas y puntuaci�n
 bool PlayState::loadMatch(ifstream& input)
 {
+	//Para leer los ints y luego hacer punteros
+	int vidasAux, pointAux;
+	input >> vidasAux >> pointAux >> fils >> cols;
 
-	input >> lives >> points >> fils >> cols;
+	lives = &vidasAux;
+	points = &pointAux;
 
 	OFFSET_WIDTH = WIN_WIDTH / cols;
 	OFFSET_HEIGHT = WIN_HEIGHT / fils;
@@ -108,7 +120,7 @@ bool PlayState::loadMatch(ifstream& input)
 		}
 	}
 
-	bar = new InfoBar(this, tM->getTexture(Characters), tM->getTexture(Digits));
+	bar = new InfoBar(this, tM->getTexture(Characters), tM->getTexture(Digits),lives,points);
 	gO.push_back(bar);
 	createNPositionate(input);
 
@@ -170,7 +182,6 @@ void PlayState::render()
 	GameState::render();
 
 	//estos valores hay que cambiarlos para que sean una referencia y no hacer el Update en el render
-	bar->updateInfo(lives, points);
 	bar->render();
 }
 //resta en una unidad las vidas y devuelve si el jugador sigue vivo
@@ -182,7 +193,7 @@ bool PlayState::restLife()
 //Cambia el nivel en caso de que haya terminado de consumir todas las celdas de comida. Reinicia la puntuaci�n pero mantiene las vidas.
 void PlayState::changeLevel()
 {
-	int currentLifes = lives;
+	int currentLifes = *lives;
 	
 	for (GameObject* gameOb : gO) delete gameOb;
 	

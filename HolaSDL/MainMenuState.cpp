@@ -31,11 +31,6 @@ MainMenuState::MainMenuState(SDLApplication* game, TextureManager* tM) : GameSta
 
 }
 
-MainMenuState::~MainMenuState()
-{
-
-}
-
 void MainMenuState::play(SDLApplication* game)
 {
 	game->ChangeState(Play);
@@ -53,10 +48,6 @@ void MainMenuState::render()
 	GameState::render();
 }
 
-void MainMenuState::update()
-{
-	GameState::update();
-}
 
 void MainMenuState::renderTitle()
 {
@@ -70,7 +61,3 @@ void MainMenuState::renderTitle()
 	title->render(destRect);
 }
 
-//bool MainMenuState::handleEvents(SDL_Event& event)
-//{
-//	return GameState::handleEvents(event);
-//}

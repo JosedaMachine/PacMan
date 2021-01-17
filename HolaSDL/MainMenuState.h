@@ -6,13 +6,11 @@ public:
 	Texture* title;
 	MainMenuState(SDLApplication* game, TextureManager* tM);
 
-	~MainMenuState();
 
 	static void play(SDLApplication* game);
 	static void Load(SDLApplication* game);
 
 	virtual void render();
-	virtual void update();
 
 	void renderTitle();
 

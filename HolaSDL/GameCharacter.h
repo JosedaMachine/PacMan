@@ -22,7 +22,7 @@ protected:
 	GameCharacter(Point2D posInitial, PlayState* pSt, Texture* t, Point2D textureFrame, Point2D const size);
 	GameCharacter(ifstream& input, PlayState* pSt , Texture* t, Point2D textureFrame , Point2D size);
 
-	//No se declaera un update porque ya está declarado en GameObjecyt
+	//No se declaera un update porque cada hijo lo redefine y no hay que hacer nada en especial en GameCharacte
 
 	//por convenio
 };

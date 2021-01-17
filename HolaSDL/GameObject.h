@@ -21,7 +21,7 @@ public:
 	//Abstracto
 	virtual ~GameObject() {};
 
-	virtual void render() = 0; //si no le pongo const, no funka
+	virtual void render() = 0; // = 0 abstracto(Hay que redefinirlo {} virtual normal(Si no tiene llama al padre))
 	virtual void update() {}; // si pongo = 0 tengo que redefinirlo obligatoriamente, de lo contrario seria opcional
 
 	//Virtual

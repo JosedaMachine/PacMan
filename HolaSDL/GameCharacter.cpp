@@ -29,6 +29,7 @@ GameCharacter::GameCharacter(ifstream& input, PlayState* pSt, Texture* t, Point2
 	input >> x >> y;
 	Point2D posi (x, y); 
 	
+	//Cambiamos la posicion a punto de SDL
 	pS->mapCoordToSDLPoint(posi,posIni);
 
 	input >> x >> y;

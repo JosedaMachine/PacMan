@@ -18,6 +18,14 @@ public:
 
 	void LoadButtons();
 
+	void LoadResumeButton();
+
+	void LoadSaveButton();
+
+	void LoadExitButton();
+
+	void LoadMainButton();
+
 private:
 	static void MainM(SDLApplication* game);
 	static void Exit(SDLApplication* game);

@@ -2,7 +2,7 @@
 #include "PlayState.h"
 //Constructora de la barra HUB
 //ESTO HAY QUE ARREGLARLO PARA QUE HEREDE BIEN
-InfoBar::InfoBar(PlayState* pSt, Texture* life, Texture* digits) : GameObject(Point2D(0,0), 0, 0)
+InfoBar::InfoBar(PlayState* pSt, Texture* life, Texture* digits, int* lives, int* point) : GameObject(Point2D(0,0), 0, 0)
 {
 	maxLifes = 3;
 	maxDigits = 3;
@@ -15,8 +15,8 @@ InfoBar::InfoBar(PlayState* pSt, Texture* life, Texture* digits) : GameObject(Po
 	lifesRow = 0;
 	lifesCol = 10;
 
-	points = 0;
-	vidas = 3;
+	points = point;
+	vidas = lives;
 }
 //Pinta las vidas y los puntos
 void InfoBar::render() 
@@ -29,7 +29,7 @@ void InfoBar::render()
 	//VIDAS
 	destRect.x = 0; destRect.y = 0;
 
-	for (int i = 0; i < vidas; i++)
+	for (int i = 0; i < *vidas; i++)
 	{
 		lifes->renderFrame(destRect, lifesRow, lifesCol);
 		destRect.x += destRect.w;	
@@ -38,7 +38,7 @@ void InfoBar::render()
 	//PUNTOS
 	destRect.x = pS->getWindowWidth() - pS->getOffsetWidth();
 
-	int n = points;
+	int n = *points;
 
 	for(int i = 0; i<maxDigits;i++)
 	{
@@ -49,11 +49,6 @@ void InfoBar::render()
 	}
 }
 //Actualiza la informacion de la barra HUD. Tanto las vidas como los puntos
-void InfoBar::updateInfo(int vids, int point)
-{
-	vidas = vids;
-	points = point;
-}
 //Dibuja los números de la puntuación
 void InfoBar::renderNum(const SDL_Rect& destRect, int n) const
 {

@@ -15,6 +15,7 @@ public:
 
 	GameStateMachine(){};
 
+	//Cuando se destruye la máquina de estados, saca todos los estados, que se van destruyendo ellos solos
 	~GameStateMachine()
 	{
 		while (!states.empty())

@@ -1,6 +1,6 @@
 #include "EndState.h"
 
-
+//Llamamos a la constructora padre y luego al load para cargar los botones
 EndState::EndState(SDLApplication* g, TextureManager* Tm) : GameState(g, Tm)
 {
 	load();
@@ -33,23 +33,12 @@ void EndState::load() {
 	gO.push_back(newButExit);
 	events.push_back(newButExit);
 }
-
+//Llamamos al método padre
 bool EndState::handleEvents(SDL_Event& event)
 {
 	GameState::handleEvents(event);
-	//player->handleEvents(key);
-	//el handle event del player, sacar el menu y esas cosas
 
 	return true;
-}
-
-void EndState::update()
-{
-	GameState::update();
-}
-
-void EndState::render() {
-	GameState::render();
 }
 
 void EndState::MainM(SDLApplication* game)

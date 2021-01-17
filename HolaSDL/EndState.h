@@ -4,6 +4,8 @@
 #include "MenuButton.h";
 #include "SDLApplication.h";
 
+//No se declara update y render porque no hay que hacer nada especial
+//Y así se llama directamente al padre
 class EndState : public GameState
 {
 	int POS_HEIGHT;
@@ -13,9 +15,6 @@ public:
 	EndState(SDLApplication* g, TextureManager* Tm);
 
 	void load();
-
-	virtual void update();
-	virtual void render();
 	virtual bool handleEvents(SDL_Event& event);
 
 	static void MainM(SDLApplication* game);
