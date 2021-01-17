@@ -83,7 +83,7 @@ void PauseState::Save(SDLApplication* game)
 
 void PauseState::MainM(SDLApplication* game)
 {
-	game->ChangeState(Menu);
+	game->MainM();
 }
 
 void PauseState::Exit(SDLApplication* game)

@@ -53,6 +53,7 @@ public:
 	void Salir() { exit = true; }
 	void PauseGame();
 	void ResumeGame();
+	void MainM();
 	void SaveGame(int codeNumber);
 	void LoadGame(int codeNumber);
 	int askCodeNumber();

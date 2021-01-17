@@ -138,6 +138,11 @@ void SDLApplication::ResumeGame()
 	stateMachine->popState();
 }
 
+void SDLApplication::MainM() {
+	stateMachine->popState();
+	ChangeState(Menu);
+}
+
 void SDLApplication::SaveGame(int codeNumber)
 {
 	stateMachine->popState();
