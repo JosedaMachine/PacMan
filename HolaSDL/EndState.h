@@ -12,8 +12,6 @@ class EndState : public GameState
 public:
 	EndState(SDLApplication* g, TextureManager* Tm);
 
-	~EndState();
-
 	void load();
 
 	virtual void update();

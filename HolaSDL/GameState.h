@@ -17,7 +17,7 @@ public:
 
 
 	GameState(SDLApplication* game, TextureManager* textM);
-	~GameState();	
+	virtual ~GameState();	
 	
 	virtual void render();
 	virtual void update();
