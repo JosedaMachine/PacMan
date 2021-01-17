@@ -25,11 +25,7 @@ PlayState::PlayState(SDLApplication* game, TextureManager* tM, ifstream& input) 
 
 PlayState::~PlayState()
 {
-
-	
-	//for (GameObject* gameOb : gO) delete gameOb;
 	Ghosts.clear();
-	//gO.clear();
 }
 
 void PlayState::load(int liv)

@@ -17,6 +17,7 @@ public:
 
 
 	GameState(SDLApplication* game, TextureManager* textM);
+	//este virtual va a hacer la cascada de los hijos. Es de padres a hijos, usando el virtual 
 	virtual ~GameState();	
 	
 	virtual void render();
