@@ -3,6 +3,7 @@
 class MainMenuState : public GameState
 {
 public:
+	Texture* bG;
 	Texture* title;
 	MainMenuState(SDLApplication* game, TextureManager* tM);
 
@@ -12,7 +13,7 @@ public:
 
 	virtual void render();
 
-	void renderTitle();
+	void renderTitleNBg();
 
 	
 
