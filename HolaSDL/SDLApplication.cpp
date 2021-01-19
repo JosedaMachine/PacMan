@@ -17,7 +17,7 @@ SDLApplication::SDLApplication()
 	stateMachine->pushState(new MainMenuState(this, tM));
 
 	exit = false;
-	hasSaved = false;
+	hasWon = false;
 	
 	srand(time(nullptr));
 }
@@ -49,18 +49,7 @@ void SDLApplication::run()
 		frameTime = SDL_GetTicks() - startTime; // Tiempo de la iteración
 		if (frameTime < FRAME_RATE)
 			SDL_Delay(FRAME_RATE - frameTime); // Suspende por el tiempo restante
-
-		//if (amountFood == 0)
-		//{
-		//	if(Current_Level<Levels.size()) changeLevel();
-		//	else  hasWon = true;
-		//}
 	}
-
-	/*if(hasSaved) cout << "Congratulations! You have saved cause you're a pussy. Hope you never come back.";
-	else if (hasWon) cout << "You have won, go and fuck off";
-	else if (!hasWon && lives <= 0) cout << "You have lost, you are so bad, you literally suck";
-	else cout << " Hope you never come back.";*/
 }
 //renderiza el mapa, con cada textura correspondiente en su lugar. Luego renderiza el jugador y la barra de HUD. 
 void SDLApplication::render() 
@@ -71,22 +60,7 @@ void SDLApplication::render()
 	stateMachine->currentState()->render();
 	SDL_RenderPresent(renderer);
 }
-//Menu de juego, carga de partida asociada al nombrel usuario
-void SDLApplication::menu()
-{
-	cout << "Welcome to PacMan \nControls: Use directionals arrows to move | Press at any moment the key S to save | Quit closing the window |\nPlease, enter your user name: " << endl;
-	//user = "t";
-	//cin >> user;
-	cout << "Want to load? Note: your user name is associated to your match file.\nY: 1 | N: 0" << endl;
 
-	int op;
-	do
-	{
-		cin >> op;
-	} while (op != 1 && op != 0);
-
-	//wantLoad = op;
-}//tengo la idea de que cuando queramos pausar el juego, si estamos en PlayState y le damos a scape, llamamos a un metodo de Game que haga un push de PauseMenu y que si le da a resume, se haga un pop del PauseMenu y se continue ejecutando el PLayState
 void SDLApplication::ChangeState(States s)
 {
 	switch (s)

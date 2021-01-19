@@ -8,6 +8,7 @@
 //Y así se llama directamente al padre
 class EndState : public GameState
 {
+	Texture* title;
 	int POS_HEIGHT;
 	int POS_WIDTH;
 
@@ -16,9 +17,11 @@ public:
 
 	void load();
 	virtual bool handleEvents(SDL_Event& event);
+	virtual void render();
 
 	static void MainM(SDLApplication* game);
 	static void Exit(SDLApplication* game);
 private:
+	void renderTitle();
 };
 

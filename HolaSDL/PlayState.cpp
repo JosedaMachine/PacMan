@@ -3,7 +3,7 @@
 
 PlayState::PlayState(SDLApplication* game, TextureManager* tM) : GameState(game, tM)
 {
-	Current_Level = 1;
+	Current_Level = 0;
 	points = 0;
 	amountFood = 0;
 
@@ -14,9 +14,6 @@ PlayState::PlayState(SDLApplication* game, TextureManager* tM) : GameState(game,
 
 PlayState::PlayState(SDLApplication* game, TextureManager* tM, ifstream& input) : GameState(game, tM)
 {
-	Current_Level = 1;
-	points = 0;
-	amountFood = 0;
 
 	hasWon = false;
 
@@ -94,7 +91,7 @@ void PlayState::CreatePlayer(int j, int i)
 bool PlayState::loadMatch(ifstream& input)
 {
 	//Para leer los ints y luego hacer punteros
-	input >> lives >> points >> fils >> cols;
+	input >> lives >> points >> Current_Level >>fils >> cols;
 
 	OFFSET_WIDTH = WIN_WIDTH / cols;
 	OFFSET_HEIGHT = WIN_HEIGHT / fils;
@@ -161,10 +158,15 @@ void PlayState::update()
 	if (GetRunning()) {
 		GameState::update();
 
-		if (amountFood == 0)
+		if (amountFood == 226)
 		{
-			if (Current_Level < Levels.size()) changeLevel();
-			else  hasWon = true;
+			if (Current_Level < Levels.size()) 
+				changeLevel();
+			else
+			{
+				hasWon = true;
+				g->Won();
+			}
 		}
 
 		Borra();
@@ -192,7 +194,8 @@ void PlayState::changeLevel()
 	int currentLifes = lives;
 	
 	for (GameObject* gameOb : gO) delete gameOb;
-	
+
+	events.clear();
 	Ghosts.clear();
 	gO.clear();
 	
@@ -229,8 +232,8 @@ void PlayState::createNPositionate(ifstream&	input)
 	int gameObjects;
 	input >> gameObjects;
 	if (!input) throw FileFormatError("Format wrong. Data type unexpected.");
-					//no se incluye el mapa
-	for (int i = 0; i < gameObjects -1; i++) {
+					//no se incluye el mapa ni la barra 
+	for (int i = 0; i < gameObjects -2; i++) {
 		int n;
 		input >> n;
 		if (!input) throw FileFormatError("Format wrong. Data type unexpected.");
@@ -335,7 +338,8 @@ void PlayState::saveToFileGame(int code)
 	output.open(file);
 	if (!output.is_open()) throw FileNotFoundError("Can't find file" + to_string(code) + ".dat");
 
-	output << lives << " " << points << endl;
+
+	output << lives << " " << points << " " << Current_Level << endl;
 	map->saveToFile(output);
 
 	output << gO.size() << endl;

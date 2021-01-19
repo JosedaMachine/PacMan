@@ -12,6 +12,15 @@ void PauseState::update()
 
 void PauseState::render()
 {
+	SDL_Rect destRect;
+	int multiplier = 5;
+
+	destRect.w = title->getW() / 2;
+	destRect.h = title->getH();
+	destRect.x = OFFSET_WIDTH / 2 - destRect.w / 2;
+	destRect.y = OFFSET_HEIGHT / 4 - destRect.h;
+	title->renderFrame(destRect, 0, 0);
+
 	GameState::render();
 }
 
@@ -23,6 +32,8 @@ bool PauseState::handleEvents(SDL_Event& event)
 void PauseState::LoadButtons()
 {
 	//Cargamos cada método por separado para que no sea tan largo
+	LoadTitle();
+
 	LoadMainButton();
 
 	LoadExitButton();
@@ -32,12 +43,17 @@ void PauseState::LoadButtons()
 	LoadResumeButton();
 }
 
+void PauseState::LoadTitle()
+{
+	title = tM->getTexture(PauseButton);
+}
+
 void PauseState::LoadResumeButton()
 {
 	Texture* tResume = tM->getTexture(resumeButton); //Guardamos la textura
 
 													 //Para que aparezca en mitad de pantalla
-	int POS_HEIGHT = (OFFSET_HEIGHT - OFFSET_HEIGHT / 4) - (tResume->getH() / 2);
+	int POS_HEIGHT = (OFFSET_HEIGHT / 2) - (tResume->getH() / 2);
 	int POS_WIDTH = OFFSET_WIDTH / 2 - (tResume->getW() / 6);
 
 	Point2D posResume = Point2D(POS_WIDTH, POS_HEIGHT);
@@ -52,7 +68,7 @@ void PauseState::LoadSaveButton()
 	Texture* tSave = tM->getTexture(saveButton); //Guardamos la textura
 
 												 //Para que aparezca en mitad de pantalla
-	int POS_HEIGHT = OFFSET_HEIGHT / 8 - (tSave->getH() / 2);
+	int POS_HEIGHT = OFFSET_HEIGHT / 3 - (tSave->getH() / 2);
 	int POS_WIDTH = OFFSET_WIDTH / 2 - (tSave->getW() / 6);
 
 	Point2D posSave = Point2D(POS_WIDTH, POS_HEIGHT);
@@ -68,7 +84,7 @@ void PauseState::LoadExitButton()
 	Texture* tExit = tM->getTexture(exitButton); //Guardamos la textura
 
 												 //Para que aparezca en mitad de pantalla
-	int POS_HEIGHT = OFFSET_HEIGHT / 4 - (tExit->getH() / 2);
+	int POS_HEIGHT = OFFSET_HEIGHT / 1.2 - (tExit->getH() / 2);
 	int POS_WIDTH = OFFSET_WIDTH / 2 - (tExit->getW() / 6);
 
 	Point2D posExit = Point2D(POS_WIDTH, POS_HEIGHT);
@@ -84,7 +100,7 @@ void PauseState::LoadMainButton()
 	Texture* tMain = tM->getTexture(mainButton); //Guardamos la textura
 
 												 //Para que aparezca en mitad de pantalla
-	int POS_HEIGHT = OFFSET_HEIGHT / 2 - (tMain->getH() / 2);
+	int POS_HEIGHT = OFFSET_HEIGHT / 1.5 - (tMain->getH() / 2);
 	int POS_WIDTH = OFFSET_WIDTH / 2 - (tMain->getW() / 6);
 
 	Point2D posMain = Point2D(POS_WIDTH, POS_HEIGHT);

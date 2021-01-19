@@ -40,17 +40,17 @@ private:
 	GameStateMachine* stateMachine;
 	TextureManager* tM;
 
-	bool exit, hasSaved; //Controladores del juego
+	bool exit, hasWon; //Controladores del juego
 public:
 	SDLApplication();
 	~SDLApplication();
 
 	void run();
-	void menu();
 	void ChangeState(States s);
 	void render();
 	void handleEvent(SDL_Event& event, bool& exit);
 	void Salir() { exit = true; }
+	void Won() { hasWon = true; }
 	void PauseGame();
 	void ResumeGame();
 	void MainM();
@@ -59,6 +59,7 @@ public:
 	int askCodeNumber();
 
 	#pragma region GETTERS
+	bool getHasWon() const { return hasWon; }
 	int getWidth() const { return WIN_WIDTH; }
 	int getHeight() const { return WIN_HEIGHT; }
 	int getFrameRate() const { return FRAME_RATE; }

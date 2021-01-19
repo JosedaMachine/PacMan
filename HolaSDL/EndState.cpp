@@ -7,6 +7,11 @@ EndState::EndState(SDLApplication* g, TextureManager* Tm) : GameState(g, Tm)
 }
 
 void EndState::load() {
+
+	if (g->getHasWon())
+		title = tM->getTexture(Win);
+	else title = tM->getTexture(Lost);
+
 	Texture* tMain = tM->getTexture(mainButton); //Guardamos la textura
 
 	//Para que aparezca en mitad de pantalla
@@ -37,8 +42,13 @@ void EndState::load() {
 bool EndState::handleEvents(SDL_Event& event)
 {
 	GameState::handleEvents(event);
-
 	return true;
+}
+
+void EndState::render()
+{
+	renderTitle();
+	GameState::render();
 }
 
 void EndState::MainM(SDLApplication* game)
@@ -49,4 +59,17 @@ void EndState::MainM(SDLApplication* game)
 void EndState::Exit(SDLApplication* game)
 {
 	game->Salir();
+}
+
+void EndState::renderTitle()
+{
+	SDL_Rect destRect;
+	int multiplier = 2;
+
+	destRect.w = title->getW() / multiplier;
+	destRect.h = title->getH() / multiplier;
+	destRect.x = OFFSET_WIDTH / 2 - destRect.w / 2;
+	destRect.y = 0;
+
+	title->render(destRect);
 }

@@ -6,6 +6,7 @@
 class PauseState : public GameState
 {
 public:
+	Texture* title;
 	string inputText = "Some Text";
 	
 	PauseState(SDLApplication* g, TextureManager* TM);
@@ -16,6 +17,8 @@ public:
 	virtual void render();
 	virtual bool handleEvents(SDL_Event& event);
 
+	void LoadTitle();
+	
 	void LoadButtons();
 
 	void LoadResumeButton();

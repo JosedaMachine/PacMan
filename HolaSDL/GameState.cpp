@@ -11,8 +11,9 @@ GameState::GameState(SDLApplication* game, TextureManager* textM)
 
 GameState::~GameState()
 {	//Borramos todos los elementos de la lista y vaciamos la lista
-	for (GameObject* gameOb : gO) delete gameOb;	
+	for (GameObject* gameOb : gO) delete gameOb;
 
+	events.clear();
 	gO.clear();
 }
 
